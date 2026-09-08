@@ -1,0 +1,263 @@
+.ts-stage {
+  --ts-surface: #ffffff;
+  --ts-border: #e4e4e7;
+  --ts-text: #18181b;
+  --ts-muted: #71717a;
+  --ts-success: #16a34a;
+  --ts-info: #0284c7;
+  --ts-warning: #d97706;
+  --ts-error: #dc2626;
+  --ts-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ts-gap: 10px;
+
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 36px 20px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+/* ---- 演示面板 ---- */
+.ts-panel {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.ts-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ts-text);
+}
+
+.ts-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ts-muted);
+}
+
+.ts-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.ts-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--ts-border);
+  border-radius: 8px;
+  background: var(--ts-surface);
+  font-size: 13px;
+  font-weight: 500;
+  color: #27272a;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s var(--ts-ease);
+}
+
+.ts-btn:hover {
+  background: #f4f4f5;
+  border-color: #d4d4d8;
+}
+
+.ts-btn:active {
+  transform: scale(0.97);
+}
+
+.ts-btn:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* ---- 堆叠容器 ---- */
+.ts-stack {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: grid;
+  gap: var(--ts-gap);
+  width: min(330px, calc(100vw - 40px));
+  z-index: 10;
+}
+
+/* ---- 单条通知 ---- */
+.ts-toast {
+  position: relative;
+  display: flex;
+  gap: 11px;
+  padding: 12px 13px;
+  border: 1px solid var(--ts-border);
+  border-radius: 12px;
+  background: var(--ts-surface);
+  box-shadow:
+    0 1px 2px rgba(24, 24, 27, 0.05),
+    0 8px 24px rgba(24, 24, 27, 0.08);
+  overflow: hidden;
+  animation: ts-in 0.34s var(--ts-ease) both;
+}
+
+@keyframes ts-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 退场：滑出 + 收拢自己占的高度，后面的通知平滑上移。
+   --ts-h 由 JS 在关闭前写入实际高度，负 margin 才能精确抵消行高与间距。 */
+.ts-toast.is-leaving {
+  animation: ts-out 0.3s var(--ts-ease) forwards;
+  pointer-events: none;
+}
+
+@keyframes ts-out {
+  0% {
+    opacity: 1;
+    transform: none;
+    margin-bottom: 0;
+  }
+  35% {
+    opacity: 0;
+    transform: translateX(24px) scale(0.96);
+    margin-bottom: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(24px) scale(0.96);
+    margin-bottom: calc(-1 * var(--ts-h, 80px) - var(--ts-gap));
+  }
+}
+
+.ts-icon {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+}
+
+.ts-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ts-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.ts-toast-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ts-text);
+}
+
+.ts-toast-desc {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ts-muted);
+}
+
+.ts-close {
+  flex: 0 0 auto;
+  align-self: start;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #a1a1aa;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.16s ease,
+    color 0.16s ease;
+}
+
+.ts-close:hover {
+  background: #f4f4f5;
+  color: #3f3f46;
+}
+
+.ts-close:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 1px;
+}
+
+/* ---- 倒计时进度条 ---- */
+.ts-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.5;
+  transform-origin: left center;
+  animation: ts-countdown var(--ts-duration, 4000ms) linear forwards;
+}
+
+@keyframes ts-countdown {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* 悬停暂停：进度条动画即计时器，暂停动画等于暂停关闭 */
+.ts-toast:hover .ts-bar,
+.ts-toast:focus-within .ts-bar {
+  animation-play-state: paused;
+}
+
+/* ---- 四种状态的色板：用 currentColor 让图标与进度条自动跟随 ---- */
+.ts-toast[data-type="success"] { color: var(--ts-success); }
+.ts-toast[data-type="info"] { color: var(--ts-info); }
+.ts-toast[data-type="warning"] { color: var(--ts-warning); }
+.ts-toast[data-type="error"] { color: var(--ts-error); }
+
+.ts-toast .ts-icon svg { stroke: currentColor; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ts-toast,
+  .ts-toast.is-leaving {
+    animation-duration: 0.01ms;
+  }
+  .ts-btn:active {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .ts-stack {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+  }
+}

@@ -1,0 +1,50 @@
+<div class="pd-page">
+  <main class="pd">
+    <section class="pd-gallery" aria-label="Product images">
+      <div class="pd-stage" id="pd-stage">
+        <div class="pd-visual pd-visual--clay" data-variant="clay"></div>
+        <div class="pd-visual pd-visual--sage" data-variant="sage" hidden></div>
+        <div class="pd-visual pd-visual--charcoal" data-variant="charcoal" hidden></div>
+      </div>
+      <div class="pd-thumbs" role="tablist" aria-label="Color variants">
+        <button class="pd-thumb pd-thumb--clay" role="tab" aria-selected="true" data-variant="clay" aria-label="Clay" type="button"></button>
+        <button class="pd-thumb pd-thumb--sage" role="tab" aria-selected="false" data-variant="sage" aria-label="Sage" type="button"></button>
+        <button class="pd-thumb pd-thumb--charcoal" role="tab" aria-selected="false" data-variant="charcoal" aria-label="Charcoal" type="button"></button>
+      </div>
+    </section>
+
+    <section class="pd-info">
+      <p class="pd-brand">Studio Terra</p>
+      <h1 class="pd-name">Terra Pour-over Kettle</h1>
+      <p class="pd-rating" aria-label="Rated 4.9 from 218 reviews">★★★★★ <span>4.9 · 218 reviews</span></p>
+      <p class="pd-price" id="pd-price">$89</p>
+      <p class="pd-desc">
+        A stoneware kettle with a gooseneck spout for precision pouring. Hand-thrown, glazed and
+        fired in small batches — every piece varies slightly, and that is the point.
+      </p>
+
+      <div class="pd-field">
+        <span class="pd-field__label" id="pd-color-label">Color</span>
+        <div class="pd-variants" role="radiogroup" aria-labelledby="pd-color-label">
+          <button class="pd-variant pd-variant--clay" role="radio" aria-checked="true" data-variant="clay" data-name="Clay" data-price="89" type="button" aria-label="Clay"></button>
+          <button class="pd-variant pd-variant--sage" role="radio" aria-checked="false" data-variant="sage" data-name="Sage" data-price="94" type="button" aria-label="Sage"></button>
+          <button class="pd-variant pd-variant--charcoal" role="radio" aria-checked="false" data-variant="charcoal" data-name="Charcoal" data-price="94" type="button" aria-label="Charcoal"></button>
+        </div>
+      </div>
+
+      <div class="pd-field">
+        <span class="pd-field__label">Quantity</span>
+        <div class="pd-qty">
+          <button id="pd-minus" type="button" aria-label="Decrease quantity">−</button>
+          <span id="pd-qty" aria-live="polite">1</span>
+          <button id="pd-plus" type="button" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+
+      <div class="pd-actions">
+        <button class="pd-add" id="pd-add" type="button">Add to cart — <span id="pd-total">$89</span></button>
+        <p class="pd-note">Free shipping over $75 · 30-day returns</p>
+      </div>
+    </section>
+  </main>
+</div>

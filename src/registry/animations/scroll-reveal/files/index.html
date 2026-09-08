@@ -1,0 +1,14 @@
+<div class="sr-stage" id="sr-stage">
+  <header class="sr-hero">
+    <h1 class="sr-hero__title">Scroll down</h1>
+    <p class="sr-hero__text">Each card reveals as it enters the viewport — once.</p>
+  </header>
+  <div class="sr-grid">
+    <div class="sr-card" style="--d: 0"><h3>Observation, not scroll events</h3><p>IntersectionObserver fires only when needed — no scroll listener thrash.</p></div>
+    <div class="sr-card" style="--d: 1"><h3>One class to animate</h3><p>The observer adds .is-visible; CSS owns the transition entirely.</p></div>
+    <div class="sr-card" style="--d: 2"><h3>Unobserve after reveal</h3><p>Once shown, the observer releases the element — zero ongoing cost.</p></div>
+    <div class="sr-card" style="--d: 3"><h3>Stagger via --d</h3><p>A custom property delays each card by 70ms for a cascade feel.</p></div>
+    <div class="sr-card" style="--d: 4"><h3>Respects reduced motion</h3><p>With prefers-reduced-motion, everything is simply visible.</p></div>
+    <div class="sr-card" style="--d: 5"><h3>Works in any layout</h3><p>Grids, lists, articles — the observer does not care about CSS.</p></div>
+  </div>
+</div>

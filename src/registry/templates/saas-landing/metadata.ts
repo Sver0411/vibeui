@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "saas-landing",
+  slug: "saas-landing",
+  name: "SaaS 落地页",
+  description: "完整营销页：吸顶导航、Hero、功能网格、客户 Logo 条、推荐语与页脚。响应式且零依赖。",
+  category: "templates",
+  subcategory: "Marketing",
+  type: "template",
+  tags: ["落地页", "SaaS", "Hero", "功能", "营销"],
+  technologies: ["HTML", "CSS", "JavaScript"],
+  styles: ["极简"],
+  difficulty: "intermediate",
+  featured: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-07-21",
+  updatedAt: "2026-08-22",
+  dir: "templates/saas-landing",
+};

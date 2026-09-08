@@ -1,0 +1,40 @@
+<div class="pv-stage">
+  <p class="pv-hint">点击按钮打开浮层 · 点外部或按 Esc 关闭 · 空间不足自动翻转</p>
+
+  <div class="pv-demo-row">
+    <div class="pv-anchor">
+      <button class="pv-trigger" id="pv-trigger-1" type="button" aria-expanded="false" aria-controls="pv-panel-1">
+        分享
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 11 3.5 6.5 4.56 5.44 8 8.88l3.44-3.44 1.06 1.06L8 11Z"/></svg>
+      </button>
+      <div class="pv-panel pv--top" id="pv-panel-1" role="dialog" aria-label="分享选项" hidden>
+        <p class="pv-panel-title">分享到</p>
+        <div class="pv-share-row">
+          <button class="pv-share" type="button" aria-label="复制链接"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z"/><path d="M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z"/></svg>链接</button>
+          <button class="pv-share" type="button" aria-label="生成海报"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1 4.75C1 3.784 1.784 3 2.75 3h14.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 17.25 17H2.75A1.75 1.75 0 0 1 1 15.25V4.75Zm9.5 2.75a2.75 2.75 0 1 1-5.5 0 2.75 2.75 0 0 1 5.5 0ZM3 13.705V15.5h9.896A4.75 4.75 0 0 0 3 13.705Z" clip-rule="evenodd"/></svg>海报</button>
+          <button class="pv-share" type="button" aria-label="嵌入网页"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M6.28 5.22a.75.75 0 0 1 0 1.06L2.56 10l3.72 3.72a.75.75 0 0 1-1.06 1.06L.44 10.53a.75.75 0 0 1 0-1.06l4.78-4.78a.75.75 0 0 1 1.06 0Zm7.44 0a.75.75 0 0 1 1.06 0l4.78 4.78a.75.75 0 0 1 0 1.06l-4.78 4.78a.75.75 0 0 1-1.06-1.06L17.44 10l-3.72-3.72a.75.75 0 0 1 0-1.06ZM11.357 3.076a.75.75 0 0 1 .567.905l-3 12a.75.75 0 0 1-1.455-.362l3-12a.75.75 0 0 1 .888-.543Z" clip-rule="evenodd"/></svg>嵌入</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pv-anchor">
+      <button class="pv-trigger pv-trigger--soft" id="pv-trigger-2" type="button" aria-expanded="false" aria-controls="pv-panel-2">
+        <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-7-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM9 9a.75.75 0 0 0 0 1.5h.25v3.25h-.5a.75.75 0 0 0 0 1.5h2a.75.75 0 0 0 0-1.5h-.5V9.75A.75.75 0 0 0 9 9Z" clip-rule="evenodd"/></svg>
+        什么是 VibeUI？
+      </button>
+      <div class="pv-panel pv--bottom" id="pv-panel-2" role="dialog" aria-label="关于 VibeUI" hidden>
+        <p class="pv-panel-title">VibeUI 是什么</p>
+        <p class="pv-panel-text">一个本地优先的界面素材库：每个资源都能跑、能抄源码，还带 AI 提示词，让 AI 照着做出一样的效果。</p>
+      </div>
+    </div>
+
+    <div class="pv-anchor pv-anchor--edge">
+      <button class="pv-trigger" id="pv-trigger-3" type="button" aria-expanded="false" aria-controls="pv-panel-3">
+        视口边缘 ⌄
+      </button>
+      <div class="pv-panel pv--top" id="pv-panel-3" role="dialog" aria-label="边缘演示" hidden>
+        <p class="pv-panel-text">这个按钮贴近视口顶部，浮层自动翻转到下方打开。</p>
+      </div>
+    </div>
+  </div>
+</div>

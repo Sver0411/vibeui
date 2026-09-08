@@ -1,0 +1,131 @@
+.fl-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, minmax(0, 210px));
+  gap: 22px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (max-width: 560px) {
+  .fl-stage { grid-template-columns: minmax(0, 230px); }
+}
+
+/* button 作为触发器，触屏点击也能翻转 */
+.fl {
+  --fl-accent: #4f46e5;
+  --fl-accent-soft: #eef2ff;
+  position: relative;
+  height: 260px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  perspective: 1000px;
+  border-radius: 16px;
+}
+
+.fl--teal { --fl-accent: #0d9488; --fl-accent-soft: #ecfdf5; }
+
+.fl:focus-visible { outline: 2px solid var(--fl-accent); outline-offset: 3px; }
+
+.fl-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.1, 0.2, 1);
+}
+
+.fl:hover .fl-inner,
+.fl:focus-visible .fl-inner,
+.fl[aria-pressed="true"] .fl-inner {
+  transform: rotateY(180deg);
+}
+
+.fl-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  padding: 20px;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  background: #ffffff;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.fl-face--front { box-shadow: 0 1px 3px rgba(24, 24, 27, 0.06); }
+
+.fl-face--back {
+  transform: rotateY(180deg);
+  align-content: center;
+  background: var(--fl-accent-soft);
+  border-color: color-mix(in srgb, var(--fl-accent) 30%, #ffffff);
+}
+
+.fl-avatar {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  background: var(--fl-accent);
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.fl-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.fl-role { font-size: 12.5px; color: #71717a; }
+
+.fl-tap {
+  margin-top: 10px;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: #c4c4cc;
+}
+
+.fl-back-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fl-accent);
+}
+
+.fl-back-text {
+  font-size: 12.5px;
+  line-height: 1.75;
+  text-align: center;
+  color: #3f3f46;
+}
+
+.fl-back-meta {
+  margin-top: 6px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #a1a1aa;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fl-inner { transition: opacity 0.2s ease; }
+  .fl:hover .fl-inner,
+  .fl:focus-visible .fl-inner,
+  .fl[aria-pressed="true"] .fl-inner { transform: none; }
+  .fl-face--back { transform: none; opacity: 0; }
+  .fl:hover .fl-face--front,
+  .fl[aria-pressed="true"] .fl-face--front { opacity: 0; }
+  .fl:hover .fl-face--back,
+  .fl[aria-pressed="true"] .fl-face--back { opacity: 1; }
+}

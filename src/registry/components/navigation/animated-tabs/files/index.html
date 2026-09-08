@@ -1,0 +1,21 @@
+<div class="at-stage">
+  <div class="at-tabs" role="tablist" aria-label="Product sections" id="at-tablist">
+    <button class="at-tab" role="tab" id="at-tab-overview" aria-selected="true" aria-controls="at-panel-overview" type="button">Overview</button>
+    <button class="at-tab" role="tab" id="at-tab-analytics" aria-selected="false" aria-controls="at-panel-analytics" tabindex="-1" type="button">Analytics</button>
+    <button class="at-tab" role="tab" id="at-tab-reports" aria-selected="false" aria-controls="at-panel-reports" tabindex="-1" type="button">Reports</button>
+    <span class="at-indicator" id="at-indicator" aria-hidden="true"></span>
+  </div>
+
+  <div class="at-panel" role="tabpanel" id="at-panel-overview" aria-labelledby="at-tab-overview">
+    <h3 class="at-panel__title">Overview</h3>
+    <p class="at-panel__text">The indicator measures each tab's offsetLeft and width, so it slides correctly at any font size or spacing.</p>
+  </div>
+  <div class="at-panel" role="tabpanel" id="at-panel-analytics" aria-labelledby="at-tab-analytics" hidden>
+    <h3 class="at-panel__title">Analytics</h3>
+    <p class="at-panel__text">Panels cross-fade with a quick opacity + translate transition. Arrow keys move focus and selection.</p>
+  </div>
+  <div class="at-panel" role="tabpanel" id="at-panel-reports" aria-labelledby="at-tab-reports" hidden>
+    <h3 class="at-panel__title">Reports</h3>
+    <p class="at-panel__text">Home / End jump to the first and last tab, matching WAI-ARIA tab pattern behavior.</p>
+  </div>
+</div>

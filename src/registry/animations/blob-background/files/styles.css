@@ -1,0 +1,160 @@
+.bb-stage {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---- 前景内容 ---- */
+.bb-hero {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.bb-badge {
+  padding: 5px 14px;
+  border: 1px solid rgba(15, 118, 110, 0.3);
+  border-radius: 999px;
+  background: rgba(240, 253, 250, 0.8);
+  color: #0f766e;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bb-title {
+  margin: 0;
+  font-size: clamp(28px, 6vw, 46px);
+  font-weight: 800;
+  color: #18181b;
+}
+
+.bb-text {
+  max-width: 400px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #52525b;
+}
+
+.bb-btn {
+  margin-top: 8px;
+  padding: 11px 26px;
+  border: 0;
+  border-radius: 999px;
+  background: #0f766e;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.bb-btn:hover {
+  background: #115e59;
+}
+.bb-btn:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 3px;
+}
+
+/* ---- 色斑层：模糊 + 有机形变 ---- */
+.bb-field {
+  position: absolute;
+  inset: 0;
+  filter: blur(52px) saturate(1.15);
+  pointer-events: none;
+}
+
+.bb-blob {
+  position: absolute;
+  display: block;
+  opacity: 0.55;
+  will-change: transform, border-radius;
+}
+
+.bb-blob--a {
+  top: -10%;
+  left: 8%;
+  width: 44vmax;
+  height: 40vmax;
+  background: #5eead4;
+  border-radius: 58% 42% 55% 45% / 52% 56% 44% 48%;
+  animation: bb-drift-a 18s ease-in-out infinite alternate;
+}
+
+.bb-blob--b {
+  right: -6%;
+  top: 24%;
+  width: 38vmax;
+  height: 36vmax;
+  background: #a5b4fc;
+  border-radius: 45% 55% 48% 52% / 58% 44% 56% 42%;
+  animation: bb-drift-b 22s ease-in-out infinite alternate;
+}
+
+.bb-blob--c {
+  bottom: -18%;
+  left: 26%;
+  width: 40vmax;
+  height: 34vmax;
+  background: #fde68a;
+  border-radius: 52% 48% 60% 40% / 46% 58% 42% 54%;
+  animation: bb-drift-c 26s ease-in-out infinite alternate;
+}
+
+/* 每个色斑：平移游走 + border-radius 形变，产生"果冻"呼吸感 */
+@keyframes bb-drift-a {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    border-radius: 58% 42% 55% 45% / 52% 56% 44% 48%;
+  }
+  50% {
+    border-radius: 42% 58% 44% 56% / 48% 44% 56% 52%;
+  }
+  100% {
+    transform: translate(8vw, 6vh) rotate(24deg);
+    border-radius: 50% 50% 42% 58% / 56% 48% 52% 44%;
+  }
+}
+
+@keyframes bb-drift-b {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    border-radius: 45% 55% 48% 52% / 58% 44% 56% 42%;
+  }
+  50% {
+    border-radius: 56% 44% 52% 48% / 44% 56% 42% 58%;
+  }
+  100% {
+    transform: translate(-7vw, -5vh) rotate(-18deg);
+    border-radius: 48% 52% 58% 42% / 52% 46% 54% 48%;
+  }
+}
+
+@keyframes bb-drift-c {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    border-radius: 52% 48% 60% 40% / 46% 58% 42% 54%;
+  }
+  50% {
+    border-radius: 44% 56% 48% 52% / 56% 46% 54% 44%;
+  }
+  100% {
+    transform: translate(5vw, -7vh) rotate(14deg);
+    border-radius: 58% 42% 46% 54% / 48% 54% 46% 52%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-blob {
+    animation: none;
+  }
+}

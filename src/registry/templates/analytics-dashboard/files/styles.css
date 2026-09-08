@@ -1,0 +1,267 @@
+.db-shell {
+  display: grid;
+  grid-template-columns: 208px 1fr;
+  min-height: 100vh;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #26262b;
+}
+
+@media (max-width: 720px) {
+  .db-shell {
+    grid-template-columns: 1fr;
+  }
+  .db-sidebar {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    border-right: 0;
+    border-bottom: 1px solid #e4e4e7;
+    padding: 10px 14px;
+    overflow-x: auto;
+  }
+  .db-brand__name {
+    display: none;
+  }
+  .db-nav {
+    display: flex;
+    gap: 4px;
+  }
+}
+
+.db-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 16px 12px;
+  border-right: 1px solid #e4e4e7;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.db-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 2px 8px;
+}
+
+.db-brand__mark {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: conic-gradient(from 200deg, #0f766e, #14b8a6, #0f766e);
+}
+
+.db-brand__name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.db-nav {
+  display: grid;
+  gap: 2px;
+}
+
+.db-nav__item {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #71717a;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.db-nav__item:hover {
+  background: #f4f4f5;
+  color: #26262b;
+}
+
+.db-nav__item--active {
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+}
+
+.db-main {
+  padding: 22px 24px 40px;
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.db-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.db-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.db-subtitle {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: #71717a;
+}
+
+.db-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #15803d;
+  background: rgba(21, 128, 61, 0.1);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.db-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: db-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes db-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.db-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.db-stat {
+  display: grid;
+  gap: 3px;
+  padding: 14px 15px;
+  border: 1px solid #e4e4e7;
+  border-radius: 13px;
+  background: #ffffff;
+}
+
+.db-stat__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a1a1aa;
+}
+
+.db-stat__value {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.db-stat__delta {
+  font-size: 11.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.db-stat__delta--up {
+  color: #15803d;
+}
+
+.db-stat__delta--down {
+  color: #b3261e;
+}
+
+.db-panel {
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 16px;
+}
+
+.db-panel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.db-panel__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.db-legend {
+  display: flex;
+  gap: 14px;
+}
+
+.db-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: #71717a;
+}
+
+.db-legend__swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+}
+
+.db-legend__swatch--a {
+  background: #0f766e;
+}
+
+.db-legend__swatch--b {
+  background: #cbd5d3;
+}
+
+.db-chart {
+  width: 100%;
+  height: 190px;
+  display: block;
+}
+
+.db-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.db-table th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a1a1aa;
+  padding: 8px 6px;
+  border-bottom: 1px solid #e4e4e7;
+}
+
+.db-table td {
+  padding: 9px 6px;
+  border-bottom: 1px solid #f4f4f5;
+  font-variant-numeric: tabular-nums;
+}
+
+.db-table td:first-child {
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .db-badge__dot {
+    animation: none;
+  }
+}

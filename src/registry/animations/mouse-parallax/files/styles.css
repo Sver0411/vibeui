@@ -1,0 +1,70 @@
+:root {
+  --mx-ink: #0f172a;
+  --mx-sub: #64748b;
+}
+
+.mx-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--mx-ink);
+  box-sizing: border-box;
+}
+
+/* 场景容器：perspective 让位移带纵深感 */
+.mx-scene {
+  position: relative;
+  width: min(400px, 100%);
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 22px;
+  background: linear-gradient(160deg, #eef2ff, #fdf4ff);
+  border: 1px solid #e2e8f0;
+}
+
+.mx-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 16px;
+  padding: 24px 26px;
+  text-align: center;
+  box-shadow: 0 14px 34px rgba(79, 70, 229, 0.14);
+  will-change: transform;
+}
+
+.mx-title { margin: 0 0 8px; font-size: 17px; }
+.mx-sub { margin: 0; font-size: 12.5px; color: var(--mx-sub); line-height: 1.7; }
+
+/* 装饰元素 */
+.mx-layer {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0.7;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.mx-layer:nth-of-type(1) { top: 24px; left: 36px; font-size: 17px; }
+.mx-layer:nth-of-type(2) { top: 44px; right: 52px; font-size: 14px; }
+.mx-layer:nth-of-type(4) { bottom: 40px; left: 58px; font-size: 13px; }
+.mx-layer:nth-of-type(5) { bottom: 26px; right: 40px; font-size: 18px; }
+
+.mx-hint { font-size: 12.5px; color: var(--mx-sub); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mx-layer, .mx-card { transform: none !important; }
+}
+
+@media (max-width: 480px) {
+  .mx-scene { height: 220px; }
+}

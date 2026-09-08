@@ -1,0 +1,95 @@
+.cd-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 22px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.cd {
+  --cd-accent: #18181b;
+  --cd-bg: #ffffff;
+  --cd-urgent: #dc2626;
+  display: flex;
+  gap: 8px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 14px;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: var(--cd-bg);
+  box-shadow: 0 1px 2px rgba(24, 24, 27, 0.05);
+}
+
+.cd--compact { --cd-accent: #18181b; padding: 8px; gap: 6px; border-radius: 11px; }
+
+.cd-cell {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  min-width: 58px;
+  padding: 10px 6px 8px;
+  border-radius: 9px;
+  background: #f4f4f5;
+}
+
+.cd--compact .cd-cell { min-width: 46px; padding: 7px 4px 5px; }
+
+.cd-value {
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--cd-accent);
+  line-height: 1.1;
+}
+
+.cd--compact .cd-value { font-size: 19px; }
+
+.cd-label {
+  font-size: 11px;
+  color: #71717a;
+  letter-spacing: 0.08em;
+}
+
+/* 翻牌动画：旧值下沉淡出感由 text 内容替换 + 轻微弹跳模拟 */
+.cd-value.is-tick {
+  animation: cd-tick 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes cd-tick {
+  0% { transform: translateY(-55%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* 紧急态 */
+.cd.is-urgent { --cd-accent: var(--cd-urgent); animation: cd-pulse 1s ease-in-out infinite; }
+
+.cd.is-urgent .cd-cell { background: #fef2f2; }
+
+@keyframes cd-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.28); }
+  50% { box-shadow: 0 0 0 7px rgba(220, 38, 38, 0); }
+}
+
+/* 结束态 */
+.cd.is-done { opacity: 0.6; }
+
+.cd-done-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.cd-caption {
+  margin: 0;
+  text-align: center;
+  font-size: 12.5px;
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-value.is-tick { animation: none; }
+  .cd.is-urgent { animation: none; }
+}

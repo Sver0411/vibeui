@@ -1,0 +1,74 @@
+.mq-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 18px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.mq-caption {
+  margin: 0 0 -8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a1a1aa;
+}
+
+.mq {
+  width: min(560px, 92vw);
+  overflow: hidden;
+  /* Fade edges so items slide in/out gracefully */
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.mq__track {
+  display: flex;
+  gap: 44px;
+  width: max-content;
+  padding-right: 44px; /* keeps the loop seam identical to the gap */
+  animation: mq-scroll 22s linear infinite;
+}
+
+.mq:hover .mq__track {
+  animation-play-state: paused;
+}
+
+@keyframes mq-scroll {
+  /* Half the track = one full item set, thanks to the duplicated content */
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.mq__item {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #b9b9c2;
+  white-space: nowrap;
+}
+
+.mq-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 12.5px;
+  color: #a1a1aa;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mq__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    row-gap: 10px;
+  }
+  .mq__item[aria-hidden="true"] {
+    display: none;
+  }
+}

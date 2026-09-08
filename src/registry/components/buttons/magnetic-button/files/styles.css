@@ -1,0 +1,47 @@
+.magnetic-demo {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 22px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.magnetic-button {
+  position: relative;
+  border: 0;
+  border-radius: 999px;
+  background: #26262b;
+  color: #fafafa;
+  padding: 16px 38px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease;
+}
+
+.magnetic-button:hover {
+  box-shadow: 0 14px 30px rgba(38, 38, 43, 0.25);
+}
+
+.magnetic-button__label {
+  display: inline-block;
+  will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.magnetic-demo__hint {
+  margin: 0;
+  font-size: 13px;
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magnetic-button,
+  .magnetic-button__label {
+    transition: none;
+  }
+}

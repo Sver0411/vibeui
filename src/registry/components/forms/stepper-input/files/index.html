@@ -1,0 +1,41 @@
+<div class="st-stage">
+  <div class="st-case">
+    <p class="st-caption">基础款 · 点击 ±1 · 长按连发</p>
+    <div class="stepper" id="stBasic">
+      <button type="button" class="stepper__btn" data-dir="-1" aria-label="减少数量">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7h9" /></svg>
+      </button>
+      <output class="stepper__value" aria-live="polite">1</output>
+      <button type="button" class="stepper__btn" data-dir="1" aria-label="增加数量">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2.5v9M2.5 7h9" /></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="st-case">
+    <p class="st-caption">带边界 · 1 – 9 · 到达边界自动禁用</p>
+    <div class="stepper stepper--boxed" id="stBounded">
+      <button type="button" class="stepper__btn" data-dir="-1" aria-label="减少数量">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7h9" /></svg>
+      </button>
+      <output class="stepper__value" aria-live="polite">1</output>
+      <button type="button" class="stepper__btn" data-dir="1" aria-label="增加数量">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2.5v9M2.5 7h9" /></svg>
+      </button>
+    </div>
+    <p class="st-hint" id="stBoundedHint">库存充足</p>
+  </div>
+
+  <div class="st-case">
+    <p class="st-caption">禁用态</p>
+    <div class="stepper stepper--boxed is-disabled">
+      <button type="button" class="stepper__btn" data-dir="-1" aria-label="减少数量" disabled>
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7h9" /></svg>
+      </button>
+      <output class="stepper__value">0</output>
+      <button type="button" class="stepper__btn" data-dir="1" aria-label="增加数量" disabled>
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2.5v9M2.5 7h9" /></svg>
+      </button>
+    </div>
+  </div>
+</div>

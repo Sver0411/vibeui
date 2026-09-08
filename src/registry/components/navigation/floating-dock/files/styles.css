@@ -1,0 +1,100 @@
+.fd-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 44px;
+  background:
+    radial-gradient(60vmax 40vmax at 50% -10%, rgba(20, 184, 166, 0.12), transparent),
+    #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.fd-hint {
+  margin: 0;
+  font-size: 13px;
+  color: #71717a;
+}
+
+.fd {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 50px rgba(24, 24, 27, 0.13);
+}
+
+.fd__item {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  padding: 0;
+  border-radius: 13px;
+  background: transparent;
+  cursor: pointer;
+  /* --magnify is set from JS based on cursor distance */
+  transform: scale(calc(1 + var(--magnify, 0) * 0.35)) translateY(calc(var(--magnify, 0) * -8px));
+  transition: transform 0.12s ease-out;
+  transform-origin: bottom center;
+}
+
+.fd__glyph {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(160deg, var(--c1), var(--c2));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 8px 18px rgba(24, 24, 27, 0.16);
+}
+
+/* Active indicator dot */
+.fd__item[data-active="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #18181b;
+}
+
+/* Floating tooltip */
+.fd__item::before {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid #e4e4e7;
+  background: #ffffff;
+  color: #27272a;
+  box-shadow: 0 8px 24px rgba(24, 24, 27, 0.12);
+  font-size: 11.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.fd__item:hover::before,
+.fd__item:focus-visible::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fd__item {
+    transition: none;
+  }
+}

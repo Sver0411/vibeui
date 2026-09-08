@@ -1,0 +1,200 @@
+.fa-stage {
+  --fa-accent: #0f766e;
+  --fa-surface: #ffffff;
+  --fa-border: #e4e4e7;
+  --fa-text: #18181b;
+  --fa-muted: #71717a;
+  --fa-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  display: grid;
+  justify-items: center;
+  gap: 26px;
+  padding: 44px 20px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--fa-text);
+}
+
+.fa-head {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.fa-eyebrow {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fa-accent);
+}
+
+.fa-title {
+  margin: 0;
+  font-size: clamp(22px, 3.6vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.fa-list {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 620px);
+}
+
+/* ---- 每一项 ---- */
+.fa-item {
+  border: 1px solid var(--fa-border);
+  border-radius: 12px;
+  background: var(--fa-surface);
+  overflow: hidden;
+  transition:
+    border-color 0.24s ease,
+    box-shadow 0.24s var(--fa-ease);
+}
+
+.fa-item.is-open {
+  border-color: #d4d4d8;
+  box-shadow: 0 6px 20px rgba(24, 24, 27, 0.06);
+}
+
+/* ---- 问题行 ---- */
+.fa-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 18px;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--fa-text);
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.18s ease;
+}
+
+.fa-q::-webkit-details-marker {
+  display: none;
+}
+
+.fa-q:hover {
+  color: var(--fa-accent);
+}
+
+.fa-q:focus-visible {
+  outline: 2px solid var(--fa-accent);
+  outline-offset: -2px;
+  border-radius: 12px;
+}
+
+/* ---- 加减号：整体旋转 135° 就从 + 变成 × ---- */
+.fa-icon {
+  position: relative;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  color: #a1a1aa;
+  transition:
+    transform 0.32s var(--fa-ease),
+    color 0.24s ease;
+}
+
+.fa-icon::before,
+.fa-icon::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.fa-icon::before {
+  top: 7.25px;
+  left: 0;
+  width: 16px;
+  height: 1.5px;
+}
+
+.fa-icon::after {
+  left: 7.25px;
+  top: 0;
+  width: 1.5px;
+  height: 16px;
+}
+
+.fa-q:hover .fa-icon {
+  color: var(--fa-accent);
+}
+
+.fa-item.is-open .fa-icon {
+  transform: rotate(135deg);
+  color: var(--fa-accent);
+}
+
+/* ---- 答案区：grid-template-rows 0fr → 1fr 实现无需测量高度的展开动画 ---- */
+.fa-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s var(--fa-ease);
+}
+
+.fa-item.is-open .fa-wrap {
+  grid-template-rows: 1fr;
+}
+
+.fa-a {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.fa-a p {
+  margin: 0;
+  padding: 0 18px 17px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--fa-muted);
+}
+
+/* ---- 底部兜底文案 ---- */
+.fa-foot {
+  margin: 0;
+  font-size: 13px;
+  color: var(--fa-muted);
+}
+
+.fa-link {
+  color: var(--fa-accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(15, 118, 110, 0.3);
+  transition: border-color 0.18s ease;
+}
+
+.fa-link:hover {
+  border-bottom-color: var(--fa-accent);
+}
+
+.fa-link:focus-visible {
+  outline: 2px solid var(--fa-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-wrap,
+  .fa-icon {
+    transition-duration: 0.01ms;
+  }
+}
+
+@media (max-width: 480px) {
+  .fa-q {
+    padding: 13px 15px;
+    font-size: 14px;
+  }
+  .fa-a p {
+    padding: 0 15px 15px;
+  }
+}

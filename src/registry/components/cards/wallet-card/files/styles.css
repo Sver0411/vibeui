@@ -1,0 +1,119 @@
+.wc-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.wc {
+  position: relative;
+  width: min(360px, 88vw);
+  padding: 22px 22px 20px;
+  border-radius: 20px;
+  background:
+    radial-gradient(120% 90% at 85% -10%, rgba(129, 140, 248, 0.35), transparent 55%),
+    radial-gradient(90% 70% at 0% 110%, rgba(56, 189, 248, 0.18), transparent 50%),
+    linear-gradient(135deg, #1e1b4b, #0f172a);
+  color: #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.35);
+}
+
+.wc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.wc-name { font-size: 12.5px; color: #94a3b8; }
+
+.wc-brand {
+  font-size: 13px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  color: #c7d2fe;
+}
+
+.wc-balance-label {
+  margin: 0 0 4px;
+  font-size: 11.5px;
+  color: #94a3b8;
+}
+
+.wc-balance {
+  margin: 0 0 18px;
+  font-size: 33px;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  color: #f8fafc;
+}
+
+.wc-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 12px;
+  margin-bottom: 18px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.wc-number {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: #cbd5e1;
+}
+
+.wc-eye {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.wc-eye:hover { background: rgba(255, 255, 255, 0.1); color: #e2e8f0; }
+.wc-eye:focus-visible { outline: 2px solid #a5b4fc; outline-offset: 1px; }
+.wc-eye svg { width: 15px; height: 15px; }
+.wc-eye .wc-eye-closed { display: none; }
+.wc-eye[aria-pressed="true"] .wc-eye-open { display: none; }
+.wc-eye[aria-pressed="true"] .wc-eye-closed { display: block; }
+
+.wc-actions { display: flex; gap: 10px; }
+
+.wc-action {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f1f5f9;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.wc-action:hover { background: rgba(255, 255, 255, 0.2); }
+.wc-action:focus-visible { outline: 2px solid #a5b4fc; outline-offset: 2px; }
+.wc-action svg { width: 15px; height: 15px; }

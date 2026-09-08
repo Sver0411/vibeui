@@ -1,0 +1,110 @@
+.co-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.co {
+  /* 四档只换变量：档位色 + 底色透明度 */
+  --co-accent: #2563eb;
+  --co-bg: #eef4ff;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: min(460px, 86vw);
+  padding: 13px 14px 13px 17px;
+  border-radius: 12px;
+  background: var(--co-bg);
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.co::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--co-accent);
+}
+
+.co--success { --co-accent: #16a34a; --co-bg: #edfaf2; }
+.co--warning { --co-accent: #d97706; --co-bg: #fdf4e7; }
+.co--danger  { --co-accent: #dc2626; --co-bg: #fdeeee; }
+
+.co-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: var(--co-accent);
+}
+
+.co-body { flex: 1; min-width: 0; }
+
+.co-title {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 650;
+  color: #18181b;
+}
+
+.co-text {
+  margin: 3px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #52525b;
+}
+
+.co-close {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin: -2px -4px 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.co-close:hover { background: rgba(0, 0, 0, 0.05); color: var(--co-accent); }
+.co-close:focus-visible { outline: 2px solid var(--co-accent); outline-offset: 1px; }
+.co-close svg { width: 15px; height: 15px; }
+
+/* 关闭折叠：JS 先固定当前高度，再加此类过渡到 0 */
+.co.is-leaving {
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: height 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
+}
+
+.co-restore {
+  justify-self: center;
+  padding: 7px 18px;
+  border: 1px solid #d4d4d8;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 550;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.co-restore:hover { border-color: #a1a1aa; color: #18181b; }
+.co-restore:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .co.is-leaving { transition: none; }
+}

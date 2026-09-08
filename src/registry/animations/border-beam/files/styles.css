@@ -1,0 +1,102 @@
+:root {
+  --bb-ink: #0f172a;
+  --bb-sub: #64748b;
+  --bb-line: #e2e8f0;
+  --bb-beam: #6366f1;
+  --bb-beam-2: #22d3ee;
+}
+
+.bb-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--bb-ink);
+  box-sizing: border-box;
+}
+
+.bb-card {
+  position: relative;
+  width: min(320px, 100%);
+  border-radius: 18px;
+  padding: 30px 28px;
+  background: var(--bb-bg, #ffffff);
+  overflow: hidden; /* 光束层裁剪进卡片 */
+  isolation: isolate; /* 防止 z-index 泄漏 */
+}
+
+/* 1px 边框 */
+.bb-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--bb-line);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* 光束层：conic-gradient 只在边框区域可见 */
+.bb-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--bb-angle, 0deg),
+    transparent 0deg,
+    transparent 300deg,
+    var(--bb-beam) 330deg,
+    var(--bb-beam-2) 355deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: bb-orbit 4s linear infinite;
+  pointer-events: none;
+}
+
+@property --bb-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes bb-orbit {
+  to { --bb-angle: 360deg; }
+}
+
+.bb-title { margin: 0 0 8px; font-size: 17px; }
+.bb-sub { margin: 0; font-size: 13px; color: var(--bb-sub); line-height: 1.7; }
+
+.bb-hint { font-size: 12.5px; color: var(--bb-sub); margin: 0; }
+
+/* 不支持 @property 的浏览器：整圈渐变缓慢旋转（无光点效果但不空白） */
+@supports not (background: paint(x)) {
+  .bb-card::after { animation-duration: 8s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bb-card::after {
+    animation: none;
+    /* 静态呈现：整圈微光边框 */
+    background: linear-gradient(140deg, var(--bb-beam), var(--bb-beam-2));
+    opacity: 0.55;
+  }
+}
+
+@media (max-width: 480px) {
+  .bb-card { padding: 24px 20px; }
+}

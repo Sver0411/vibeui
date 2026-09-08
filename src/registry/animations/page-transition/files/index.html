@@ -1,0 +1,21 @@
+<div class="pt-stage">
+  <nav class="pt-nav" aria-label="Demo pages">
+    <button class="pt-nav__link" data-page="home" type="button" aria-current="page">Home</button>
+    <button class="pt-nav__link" data-page="work" type="button">Work</button>
+    <button class="pt-nav__link" data-page="about" type="button">About</button>
+  </nav>
+  <main class="pt-screen" id="pt-screen" aria-live="polite">
+    <section class="pt-page" data-page="home">
+      <h2 class="pt-page__title">Home</h2>
+      <p class="pt-page__text">Tap another tab — the current screen exits down while the next one rises in.</p>
+    </section>
+    <section class="pt-page" data-page="work" hidden>
+      <h2 class="pt-page__title">Work</h2>
+      <p class="pt-page__text">The transition is timed (200ms out, 260ms in) and queued so rapid clicks never overlap.</p>
+    </section>
+    <section class="pt-page" data-page="about" hidden>
+      <h2 class="pt-page__title">About</h2>
+      <p class="pt-page__text">In a real app, await your route data before playing the enter animation.</p>
+    </section>
+  </main>
+</div>

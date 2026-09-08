@@ -1,0 +1,40 @@
+<div class="cc-stage">
+  <div class="cc-demo">
+    <h2 class="cc-demo-title">示例页面</h2>
+    <p class="cc-demo-text">这里是站点内容。首次访问时页面底部会出现 Cookie 同意条。</p>
+    <button type="button" class="cc-reset" id="cc-reset">重置演示（清除已保存的选择）</button>
+  </div>
+
+  <div class="cc-bar" id="cc-bar" role="dialog" aria-label="Cookie 使用偏好" hidden>
+    <div class="cc-text">
+      <strong>我们使用 Cookie</strong>
+      <span>用于改进体验与分析访问情况。你可以在偏好中调整。</span>
+    </div>
+    <div class="cc-actions">
+      <button type="button" class="cc-link" id="cc-settings" aria-expanded="false">Cookie 设置</button>
+      <button type="button" class="cc-ghost" id="cc-essential">仅必要</button>
+      <button type="button" class="cc-solid" id="cc-accept">全部接受</button>
+    </div>
+
+    <div class="cc-prefs" id="cc-prefs" hidden>
+      <label class="cc-pref">
+        <span>必要 Cookie</span>
+        <span class="cc-switch"><input type="checkbox" checked disabled aria-label="必要 Cookie（始终开启）" /><i></i></span>
+        <em>登录态与安全，始终开启</em>
+      </label>
+      <label class="cc-pref">
+        <span>分析 Cookie</span>
+        <span class="cc-switch"><input type="checkbox" id="cc-analytics" aria-label="允许分析 Cookie" /><i></i></span>
+        <em>帮助我们了解页面使用情况</em>
+      </label>
+      <label class="cc-pref">
+        <span>营销 Cookie</span>
+        <span class="cc-switch"><input type="checkbox" id="cc-marketing" aria-label="允许营销 Cookie" /><i></i></span>
+        <em>用于个性化推荐内容</em>
+      </label>
+      <button type="button" class="cc-solid cc-save" id="cc-save">保存偏好</button>
+    </div>
+  </div>
+
+  <p class="cc-toast" id="cc-toast" role="status" aria-live="polite"></p>
+</div>

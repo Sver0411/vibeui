@@ -1,0 +1,41 @@
+<div class="st-stage">
+  <div class="st-panel">
+    <div class="st-bar">
+      <div class="st-seg" role="tablist" aria-label="版式切换">
+        <button type="button" class="st-segbtn is-on" role="tab" aria-selected="true" data-view="table">表格</button>
+        <button type="button" class="st-segbtn" role="tab" aria-selected="false" data-view="list">列表</button>
+      </div>
+      <button type="button" class="st-reload" id="st-reload">
+        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        重新加载
+      </button>
+    </div>
+
+    <div class="st-body" id="st-body" aria-busy="true" aria-live="polite">
+      <table class="st-table" id="st-table" hidden>
+        <thead>
+          <tr><th>订单号</th><th>客户</th><th>状态</th><th class="st-num">金额</th><th>时间</th></tr>
+        </thead>
+        <tbody id="st-tbody"></tbody>
+      </table>
+
+      <ul class="st-list" id="st-list" hidden></ul>
+
+      <div class="st-skeleton" id="st-skeleton">
+        <div class="st-sk-row st-sk-head">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="st-sk-row"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="st-sk-row"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="st-sk-row"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="st-sk-row"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="st-sk-row"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+
+    <p class="st-foot">骨架条宽度按列权重分配，数据到达后原位替换，不产生跳动。</p>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "gooey-morph-menu",
+  slug: "gooey-morph-menu",
+  name: "黏液形变菜单",
+  description:
+    "触发器通过 SVG 黏液滤镜形变为操作面板，带连续焦点、方向键导航与完整关闭状态机。",
+  category: "navigation",
+  subcategory: "Morphing Menu",
+  type: "component",
+  tags: ["黏液", "形变", "菜单", "SVG 滤镜", "键盘导航"],
+  technologies: ["HTML", "CSS", "JavaScript", "SVG", "React"],
+  styles: ["实验性", "流体", "高级"],
+  difficulty: "advanced",
+  featured: true,
+  isNew: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  engine: "SVG",
+  performanceTier: "medium",
+  reducedMotionFallback: "保留菜单展开与键盘导航，取消黏液桥接和分段延迟。",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-08-31",
+  updatedAt: "2026-08-31",
+  dir: "components/navigation/gooey-morph-menu",
+};

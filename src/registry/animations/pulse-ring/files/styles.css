@@ -1,0 +1,82 @@
+:root {
+  --pr-ink: #0f172a;
+  --pr-sub: #64748b;
+  --pr-line: #e2e8f0;
+  --pr-bg: #ffffff;
+}
+
+.pr-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 32px 20px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--pr-ink);
+  box-sizing: border-box;
+}
+
+.pr-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 26px;
+}
+
+.pr-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 84px;
+  padding: 20px 0;
+  background: var(--pr-bg);
+  border: 1px solid var(--pr-line);
+  border-radius: 14px;
+}
+
+.pr-label { font-size: 12px; color: var(--pr-sub); }
+
+/* 状态点：核心圆 + 两层扩散环 */
+.pr-dot {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.pr-dot::before, .pr-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  animation: pr-pulse 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.pr-dot::after { animation-delay: 0.66s; }
+
+@keyframes pr-pulse {
+  from { transform: scale(1); opacity: 0.6; }
+  to { transform: scale(2.6); opacity: 0; }
+}
+
+.pr-live { background: #dc2626; }
+.pr-rec { background: #ea580c; }
+.pr-online { background: #16a34a; }
+
+/* 离线：灰色静止 */
+.pr-off { background: #cbd5e1; }
+.pr-off::before, .pr-off::after { animation: none; opacity: 0; }
+
+.pr-hint { font-size: 12.5px; color: var(--pr-sub); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pr-dot::before, .pr-dot::after { animation: none; opacity: 0; }
+}
+
+@media (max-width: 560px) {
+  .pr-grid { grid-template-columns: repeat(2, auto); }
+}

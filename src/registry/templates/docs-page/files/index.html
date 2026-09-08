@@ -1,0 +1,43 @@
+<div class="dp-stage">
+  <aside class="dp-side" aria-label="文档导航">
+    <span class="dp-logo">◈ Docs</span>
+    <nav class="dp-nav">
+      <h4 class="dp-grouptitle">开始</h4>
+      <a href="#dp-intro" class="dp-navlink">介绍</a>
+      <a href="#dp-install" class="dp-navlink">安装</a>
+      <h4 class="dp-grouptitle">核心概念</h4>
+      <a href="#dp-registry" class="dp-navlink">资源注册</a>
+      <a href="#dp-theming" class="dp-navlink">主题变量</a>
+      <a href="#dp-cli" class="dp-navlink">命令行</a>
+    </nav>
+  </aside>
+
+  <main class="dp-main">
+    <h1 class="dp-h1" id="dp-intro">介绍</h1>
+    <p class="dp-p">这是一套文档站布局模板：左侧固定导航、中间正文、右侧页内目录。滚动时右侧目录自动高亮当前章节。</p>
+    <div class="dp-callout">💡 所有区块间距与字体收敛在 CSS 变量里，改一处即可整体换风格。</div>
+
+    <h2 class="dp-h2" id="dp-install">安装</h2>
+    <p class="dp-p">使用你熟悉的包管理器安装依赖：</p>
+    <pre class="dp-code"><code>npm install
+npm run dev</code></pre>
+
+    <h2 class="dp-h2" id="dp-registry">资源注册</h2>
+    <p class="dp-p">每个资源是一个目录，包含元数据与源码文件；注册中心按约定自动加载，无需手动登记代码文件。</p>
+
+    <h2 class="dp-h2" id="dp-theming">主题变量</h2>
+    <p class="dp-p">颜色、圆角、密度全部走 CSS 变量，深浅主题通过根节点 data 属性切换。</p>
+
+    <h2 class="dp-h2" id="dp-cli">命令行</h2>
+    <p class="dp-p">构建命令会同时完成类型检查与静态生成，产物可直接部署到任意静态托管。</p>
+  </main>
+
+  <aside class="dp-toc" aria-label="本页目录">
+    <h4 class="dp-toc-title">本页目录</h4>
+    <a href="#dp-intro" class="dp-toclink" data-toc>介绍</a>
+    <a href="#dp-install" class="dp-toclink" data-toc>安装</a>
+    <a href="#dp-registry" class="dp-toclink" data-toc>资源注册</a>
+    <a href="#dp-theming" class="dp-toclink" data-toc>主题变量</a>
+    <a href="#dp-cli" class="dp-toclink" data-toc>命令行</a>
+  </aside>
+</div>

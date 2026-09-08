@@ -1,0 +1,30 @@
+.sc-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.sc-line {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #18181b;
+  font-variant-numeric: tabular-nums;
+}
+
+.sc-line--alt {
+  font-size: 20px;
+  font-weight: 500;
+  color: #52525b;
+}
+
+.sc-hint {
+  margin: 18px 0 0;
+  font-size: 13px;
+  color: #71717a;
+}

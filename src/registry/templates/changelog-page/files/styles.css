@@ -1,0 +1,189 @@
+.cl-page {
+  min-height: 100vh;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 52px 24px 72px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.cl-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.cl-title {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  color: #18181b;
+}
+
+.cl-sub {
+  margin: 0;
+  font-size: 13px;
+  color: #71717a;
+}
+
+.cl-subscribe {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 15px;
+  border: 1px solid #d4d4d8;
+  border-radius: 9px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.cl-subscribe:hover { border-color: #6366f1; color: #4f46e5; }
+.cl-subscribe:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+.cl-subscribe svg { width: 14px; height: 14px; }
+
+.cl-layout {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 30px;
+}
+
+.cl-nav {
+  position: sticky;
+  top: 28px;
+  align-self: start;
+  display: grid;
+  gap: 2px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.cl-nav-item {
+  display: block;
+  padding: 6px 12px;
+  border-left: 2px solid #e4e4e7;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+  color: #71717a;
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.cl-nav-item:hover { color: #18181b; }
+.cl-nav-item:focus-visible { outline: 2px solid #6366f1; outline-offset: 1px; border-radius: 3px; }
+
+.cl-nav-item.is-active {
+  border-left-color: #6366f1;
+  color: #4f46e5;
+  font-weight: 650;
+}
+
+.cl-feed {
+  position: relative;
+  display: grid;
+  gap: 30px;
+  padding-left: 22px;
+}
+
+/* 时间轴竖线 */
+.cl-feed::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  border-radius: 2px;
+  background: #e4e4e7;
+}
+
+.cl-version {
+  position: relative;
+  scroll-margin-top: 28px;
+}
+
+.cl-node {
+  position: absolute;
+  left: -24.5px;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #6366f1;
+}
+
+.cl-version-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 11px;
+}
+
+.cl-version-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #18181b;
+  font-variant-numeric: tabular-nums;
+}
+
+.cl-version-date { font-size: 12px; color: #a1a1aa; }
+
+.cl-entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.cl-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #3f3f46;
+}
+
+.cl-tag {
+  flex-shrink: 0;
+  padding: 1.5px 8px;
+  border-radius: 5px;
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.cl-tag--new { background: #16a34a; }
+.cl-tag--fix { background: #dc2626; }
+.cl-tag--opt { background: #2563eb; }
+
+@media (max-width: 640px) {
+  .cl-layout { grid-template-columns: 1fr; gap: 20px; }
+  .cl-nav {
+    position: static;
+    grid-auto-flow: column;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .cl-nav-item {
+    border-left: 0;
+    border-bottom: 2px solid #e4e4e7;
+    white-space: nowrap;
+    padding: 5px 10px;
+  }
+  .cl-nav-item.is-active { border-bottom-color: #6366f1; }
+}

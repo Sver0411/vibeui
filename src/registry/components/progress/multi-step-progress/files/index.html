@@ -1,0 +1,35 @@
+<div class="msp-demo">
+  <ol class="msp" id="msp" aria-label="Checkout progress">
+    <li class="msp__step" data-step="1">
+      <button class="msp__dot" type="button" aria-label="Step 1: Cart">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5 5.5 10.5 11.5 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <span class="msp__label">Cart</span>
+    </li>
+    <li class="msp__step" data-step="2">
+      <button class="msp__dot" type="button" aria-label="Step 2: Shipping">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5 5.5 10.5 11.5 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <span class="msp__label">Shipping</span>
+    </li>
+    <li class="msp__step" data-step="3">
+      <button class="msp__dot" type="button" aria-label="Step 3: Payment">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5 5.5 10.5 11.5 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <span class="msp__label">Payment</span>
+    </li>
+    <li class="msp__step" data-step="4">
+      <button class="msp__dot" type="button" aria-label="Step 4: Review">
+        <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.5 5.5 10.5 11.5 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <span class="msp__label">Review</span>
+    </li>
+    <div class="msp__line" aria-hidden="true"><div class="msp__line-fill" id="msp-fill"></div></div>
+  </ol>
+
+  <div class="msp-demo__controls">
+    <button class="msp-demo__btn" id="msp-prev" type="button">Back</button>
+    <span class="msp-demo__status" id="msp-status">Step 2 of 4 — Shipping</span>
+    <button class="msp-demo__btn msp-demo__btn--primary" id="msp-next" type="button">Next</button>
+  </div>
+</div>

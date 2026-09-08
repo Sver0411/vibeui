@@ -1,0 +1,143 @@
+.tt-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 40px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.tt-case {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.tt-caption {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+.tt-state {
+  margin: 0;
+  font-size: 13px;
+  color: #52525b;
+}
+.tt-state strong {
+  color: #18181b;
+}
+
+/* ---- 开关本体 ---- */
+.tt {
+  --tt-w: 58px;
+  --tt-h: 32px;
+
+  position: relative;
+  width: var(--tt-w);
+  height: var(--tt-h);
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #e4e4e7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.tt--sm {
+  --tt-w: 44px;
+  --tt-h: 25px;
+}
+
+.tt.is-on {
+  background: #312e81;
+}
+
+.tt:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 3px;
+}
+
+/* ---- 滑块：太阳 ⇄ 月亮 ---- */
+.tt-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: grid;
+  place-items: center;
+  width: calc(var(--tt-h) - 6px);
+  height: calc(var(--tt-h) - 6px);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+}
+.tt.is-on .tt-knob {
+  transform: translateX(calc(var(--tt-w) - var(--tt-h)));
+  background: #1e1b4b;
+}
+.tt--sm.is-on .tt-knob {
+  /* 小尺寸滑块略小，留出图标空隙 */
+  transform: translateX(calc(var(--tt-w) - var(--tt-h) + 1px));
+}
+
+.tt-sun,
+.tt-moon {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: opacity 0.25s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tt-sun {
+  stroke: #f59e0b;
+  stroke-width: 1.4;
+}
+.tt-sun .tt-rays {
+  stroke-width: 1.6;
+}
+
+.tt-moon {
+  stroke: #c7d2fe;
+  stroke-width: 1.4;
+  fill: #c7d2fe;
+  opacity: 0;
+  transform: rotate(-60deg) scale(0.5);
+}
+
+.tt.is-on .tt-sun {
+  opacity: 0;
+  transform: rotate(60deg) scale(0.5);
+}
+.tt.is-on .tt-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* ---- 深色卡片场景 ---- */
+.tt-dark-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: #18181b;
+}
+
+.tt-dark-label {
+  font-size: 13px;
+  color: #d4d4d8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tt,
+  .tt-knob,
+  .tt-sun,
+  .tt-moon {
+    transition-duration: 0.01ms;
+  }
+}

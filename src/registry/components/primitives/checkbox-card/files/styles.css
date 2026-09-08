@@ -1,0 +1,96 @@
+.cb-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 16px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.cb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cb input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cb-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid #d4d4d8;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cb-check {
+  width: 11px;
+  stroke-dasharray: 16;
+  stroke-dashoffset: 16;
+  transition: stroke-dashoffset 0.25s ease 0.05s, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0.5);
+}
+
+.cb input:checked + .cb-box {
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+.cb input:checked + .cb-box .cb-check {
+  stroke-dashoffset: 0;
+  transform: scale(1);
+}
+
+.cb input:focus-visible + .cb-box {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+.cb input:disabled + .cb-box { opacity: 0.45; }
+.cb:has(input:disabled) { cursor: not-allowed; }
+
+.cb-text {
+  font-size: 14px;
+  color: #18181b;
+}
+
+/* 卡片式变体 */
+.cb--card {
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cb--card .cb-text { display: flex; flex-direction: column; gap: 3px; }
+.cb--card strong { font-size: 14px; font-weight: 500; }
+.cb--card small { font-size: 12px; color: #71717a; }
+
+.cb--card:hover { border-color: #d4d4d8; }
+
+.cb input:checked ~ .cb-text strong { color: #0f766e; }
+.cb:has(input:checked) { border-color: #0f766e; box-shadow: 0 0 0 1px #0f766e; }
+
+.cb-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cb-check, .cb-box { transition-duration: 0.01ms; }
+}

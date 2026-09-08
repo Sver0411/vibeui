@@ -1,0 +1,121 @@
+.kpt-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #fafafa;
+  color: #18181b;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.kpt-demo {
+  width: min(420px, 100vw);
+  padding: 18px 0 14px;
+}
+
+.kpt-heading,
+.kpt-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 18px;
+}
+
+.kpt-heading p,
+.kpt-footer p {
+  margin: 0 0 4px;
+  color: #71717a;
+  font-size: 8px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.kpt-heading h2 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+}
+
+.kpt-readout {
+  display: grid;
+  grid-template-columns: 34px auto;
+  align-items: center;
+  gap: 7px;
+  color: #a1a1aa;
+  font: 8px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.kpt-readout i {
+  width: 34px;
+  height: 2px;
+  border-radius: 999px;
+  background: #0f766e;
+  transform: scaleX(0.26);
+  transform-origin: left;
+  transition: transform 120ms linear;
+}
+
+.kpt-canvas {
+  position: relative;
+  height: 246px;
+  margin: 6px 0 2px;
+  overflow: hidden;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
+.kpt-canvas::before {
+  content: "";
+  position: absolute;
+  inset: 18px 0;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(20, 184, 166, 0.11), transparent 25%),
+    radial-gradient(circle at 78% 72%, rgba(99, 102, 241, 0.09), transparent 25%);
+  filter: blur(18px);
+}
+
+.kpt-canvas svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.kpt-guide {
+  fill: none;
+  stroke: rgba(24, 24, 27, 0.08);
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+}
+
+.kpt-text {
+  fill: #18181b;
+  font-size: 22px;
+  font-weight: 760;
+  letter-spacing: -0.035em;
+}
+
+.kpt-text--b { fill: #0f766e; font-size: 18px; letter-spacing: 0.02em; }
+.kpt-text--c { fill: #5b4bc4; font-size: 20px; font-weight: 620; }
+
+.kpt-footer { align-items: center; }
+.kpt-footer p { margin: 0; letter-spacing: 0.06em; }
+.kpt-footer button {
+  padding: 5px 0;
+  border: 0;
+  border-bottom: 1px solid #a1a1aa;
+  background: transparent;
+  color: #27272a;
+  font-size: 9px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.kpt-footer button:focus-visible { outline: 3px solid rgba(15,118,110,.16); outline-offset: 4px; border-radius: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .kpt-canvas { cursor: default; }
+  .kpt-readout i { transition: none; }
+}

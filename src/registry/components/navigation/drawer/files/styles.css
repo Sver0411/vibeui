@@ -1,0 +1,226 @@
+.dw-stage {
+  --dw-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dw-width: 300px;
+
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  padding: 32px 20px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.dw-bar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.dw-caption {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #71717a;
+}
+
+.dw-open {
+  padding: 9px 18px;
+  border: 1px solid #d4d4d8;
+  border-radius: 10px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 14px;
+  color: #18181b;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.dw-open:hover {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+.dw-open:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* ---- 抽屉层：遮罩 + 面板 ---- */
+.dw-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.dw-layer[hidden] {
+  display: none;
+}
+
+.dw-mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 24, 27, 0.4);
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+.dw-layer.is-open .dw-mask {
+  opacity: 1;
+}
+
+.dw-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--dw-width);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.16);
+  transition: transform 0.28s var(--dw-ease);
+}
+.dw-panel--left {
+  left: 0;
+  transform: translateX(-100%);
+}
+.dw-panel--right {
+  right: 0;
+  transform: translateX(100%);
+}
+.dw-layer.is-open .dw-panel {
+  transform: translateX(0);
+}
+
+.dw-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid #f4f4f5;
+}
+
+.dw-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.dw-close {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #71717a;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.dw-close:hover {
+  background: #f4f4f5;
+  color: #18181b;
+}
+.dw-close:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 1px;
+}
+.dw-close svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.dw-nav {
+  display: grid;
+  gap: 2px;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.dw-link {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #3f3f46;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.dw-link:hover {
+  background: #f0fdfa;
+  color: #0f766e;
+}
+.dw-link:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: -2px;
+}
+
+.dw-body {
+  flex: 1;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 16px 18px;
+  overflow-y: auto;
+}
+
+.dw-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-size: 14px;
+  color: #52525b;
+}
+.dw-row strong {
+  font-variant-numeric: tabular-nums;
+  color: #18181b;
+}
+.dw-row--total {
+  padding-top: 10px;
+  border-top: 1px dashed #e4e4e7;
+  color: #18181b;
+}
+
+.dw-foot {
+  padding: 14px 18px;
+  border-top: 1px solid #f4f4f5;
+  font-size: 12px;
+  color: #a1a1aa;
+}
+
+.dw-cta {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background: #0f766e;
+  font: inherit;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.dw-cta:hover {
+  background: #115e59;
+}
+.dw-cta:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dw-panel,
+  .dw-mask {
+    transition-duration: 0.01ms;
+  }
+}
+
+@media (max-width: 480px) {
+  .dw-stage {
+    --dw-width: min(82vw, 300px);
+  }
+}

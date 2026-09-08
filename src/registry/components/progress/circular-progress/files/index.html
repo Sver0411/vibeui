@@ -1,0 +1,15 @@
+<div class="cp-demo">
+  <div class="cp-ring" id="cp-ring" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Task completion">
+    <svg viewBox="0 0 96 96" aria-hidden="true">
+      <circle class="cp-ring__track" cx="48" cy="48" r="42" />
+      <circle class="cp-ring__fill" id="cp-fill" cx="48" cy="48" r="42" pathLength="100" />
+    </svg>
+    <span class="cp-ring__value" id="cp-value">0%</span>
+  </div>
+  <div class="cp-demo__row">
+    <button class="cp-demo__btn" id="cp-replay" type="button">Replay</button>
+    <label class="cp-demo__slider">
+      <input type="range" id="cp-range" min="0" max="100" value="72" aria-label="Set progress value" />
+    </label>
+  </div>
+</div>

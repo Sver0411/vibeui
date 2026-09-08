@@ -1,0 +1,47 @@
+<div class="sp-page">
+  <header class="sp-top">
+    <span class="sp-product">VibeUI Cloud</span>
+    <button class="sp-subscribe" type="button">订阅更新</button>
+  </header>
+
+  <div class="sp-banner" id="sp-banner" role="img" aria-label="所有系统运行正常">
+    <span class="sp-banner-dot" aria-hidden="true"></span>
+    <div>
+      <p class="sp-banner-title" id="sp-banner-title">所有系统运行正常</p>
+      <p class="sp-banner-meta">最后更新：<span id="sp-updated">刚刚</span></p>
+    </div>
+  </div>
+
+  <section class="sp-services" aria-label="服务状态">
+    <h2 class="sp-section-title">服务状态</h2>
+    <div id="sp-service-list"></div>
+  </section>
+
+  <section class="sp-incidents" aria-label="历史事件">
+    <h2 class="sp-section-title">最近事件</h2>
+
+    <article class="sp-incident">
+      <header class="sp-incident-head">
+        <span class="sp-sev sp-sev--minor" aria-label="严重度：轻微"></span>
+        <div>
+          <p class="sp-incident-title">API 响应延迟升高</p>
+          <time class="sp-incident-date" datetime="2026-09-02">2026-09-02 · 08:15 – 09:02 (UTC+8)</time>
+        </div>
+        <span class="sp-duration">47 分钟</span>
+      </header>
+      <p class="sp-incident-body">数据库连接池瞬时耗尽导致部分请求超时，已扩容连接池并增加自动告警阈值。</p>
+    </article>
+
+    <article class="sp-incident">
+      <header class="sp-incident-head">
+        <span class="sp-sev sp-sev--maintenance" aria-label="类型：计划维护"></span>
+        <div>
+          <p class="sp-incident-title">存储集群例行维护</p>
+          <time class="sp-incident-date" datetime="2026-08-24">2026-08-24 · 02:00 – 03:40 (UTC+8)</time>
+        </div>
+        <span class="sp-duration">1 小时 40 分</span>
+      </header>
+      <p class="sp-incident-body">按计划完成固件升级，期间写入延迟短暂上升，未影响可用性。</p>
+    </article>
+  </section>
+</div>

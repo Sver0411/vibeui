@@ -1,0 +1,134 @@
+.glass-stage {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #f7faf9;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 20px;
+}
+
+/* Aurora backdrop: gives the backdrop-blur something to refract */
+.glass-aurora {
+  position: absolute;
+  inset: -20%;
+  filter: blur(60px) saturate(1.2);
+  opacity: 0.52;
+}
+
+.glass-aurora__blob {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.glass-aurora__blob--a {
+  width: 45vmax;
+  height: 45vmax;
+  left: 8%;
+  top: 12%;
+  background: rgba(20, 184, 166, 0.24);
+  animation: glass-drift-a 26s ease-in-out infinite alternate;
+}
+
+.glass-aurora__blob--b {
+  width: 38vmax;
+  height: 38vmax;
+  right: 5%;
+  top: 30%;
+  background: rgba(99, 102, 241, 0.18);
+  animation: glass-drift-b 32s ease-in-out infinite alternate;
+}
+
+.glass-aurora__blob--c {
+  width: 30vmax;
+  height: 30vmax;
+  left: 35%;
+  bottom: 5%;
+  background: rgba(244, 114, 182, 0.14);
+  animation: glass-drift-c 38s ease-in-out infinite alternate;
+}
+
+@keyframes glass-drift-a {
+  to {
+    transform: translate(9vmax, 6vmax) scale(1.12);
+  }
+}
+
+@keyframes glass-drift-b {
+  to {
+    transform: translate(-8vmax, -5vmax) scale(0.92);
+  }
+}
+
+@keyframes glass-drift-c {
+  to {
+    transform: translate(6vmax, -7vmax) scale(1.08);
+  }
+}
+
+.glass-card {
+  position: relative;
+  width: min(320px, 88vw);
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.62);
+  /* Layered borders: hairline + inner highlight */
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 24px 60px rgba(24, 24, 27, 0.14);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  color: #18181b;
+  display: grid;
+  gap: 10px;
+}
+
+.glass-card__icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(24, 24, 27, 0.08);
+  color: #0f766e;
+}
+
+.glass-card__icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.glass-card__title {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.glass-card__text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #52525b;
+}
+
+.glass-card__link {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f766e;
+  text-decoration: none;
+}
+
+.glass-card__link:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-aurora__blob {
+    animation: none;
+  }
+}

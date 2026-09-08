@@ -1,0 +1,43 @@
+<div class="dp-stage">
+  <div class="dp-case">
+    <p class="dp-caption">可交互 · 点击选择 · 左右切换月份</p>
+    <div class="dp-cal" id="dpMain">
+      <header class="dp-head">
+        <button type="button" class="dp-nav" data-nav="-1" aria-label="上一个月">
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5L4 6l3.5 3.5" /></svg>
+        </button>
+        <strong class="dp-label" id="dpMainLabel" aria-live="polite">—</strong>
+        <button type="button" class="dp-nav" data-nav="1" aria-label="下一个月">
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5" /></svg>
+        </button>
+      </header>
+      <div class="dp-week" aria-hidden="true">
+        <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span class="dp-weekend">六</span><span class="dp-weekend">日</span>
+      </div>
+      <div class="dp-grid" id="dpMainGrid"></div>
+      <footer class="dp-foot">
+        <button type="button" class="dp-today" id="dpMainToday">回到今天</button>
+        <output class="dp-value" id="dpMainValue" aria-live="polite">未选择日期</output>
+      </footer>
+    </div>
+  </div>
+
+  <div class="dp-case">
+    <p class="dp-caption">紧凑变体 · 预选 9 月 18 日</p>
+    <div class="dp-cal dp-cal--sm" id="dpMini">
+      <header class="dp-head">
+        <button type="button" class="dp-nav" data-nav="-1" aria-label="上一个月">
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M7.5 2.5L4 6l3.5 3.5" /></svg>
+        </button>
+        <strong class="dp-label" id="dpMiniLabel">—</strong>
+        <button type="button" class="dp-nav" data-nav="1" aria-label="下一个月">
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5" /></svg>
+        </button>
+      </header>
+      <div class="dp-week" aria-hidden="true">
+        <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span class="dp-weekend">六</span><span class="dp-weekend">日</span>
+      </div>
+      <div class="dp-grid" id="dpMiniGrid"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+# Standalone browser snippets are validated with `node --check`; Next's Babel
+# parser is intended for bundled app code and can time out on the raw registry.
+src/registry/**/files/script.js

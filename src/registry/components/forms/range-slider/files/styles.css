@@ -1,0 +1,135 @@
+.rs-stage {
+  --rs-accent: #0f766e;
+  --rs-track: #e4e4e7;
+  --rs-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 34px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.rs-case {
+  display: grid;
+  gap: 12px;
+  width: min(340px, 84vw);
+}
+
+.rs-caption {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+.rs-value {
+  margin: 0;
+  font-size: 13px;
+  color: #52525b;
+}
+.rs-value strong {
+  font-variant-numeric: tabular-nums;
+  color: #18181b;
+}
+
+/* ---- 滑块结构：轨道 + 填充 + 拇指 ---- */
+.rs-slider {
+  position: relative;
+  height: 28px;
+  touch-action: none; /* 拖拽期间阻止页面滚动 */
+}
+
+.rs-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: var(--rs-track);
+  pointer-events: none;
+}
+
+.rs-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: var(--rs-accent);
+  pointer-events: none;
+  transition: width 0.12s var(--rs-ease), left 0.12s var(--rs-ease);
+}
+/* 双端区间拖动时关闭过渡，避免填充跟不上手指 */
+.rs-slider.is-dragging .rs-fill {
+  transition: none;
+}
+
+.rs-thumb {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: 2px solid var(--rs-accent);
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  cursor: grab;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: transform 0.15s var(--rs-ease), box-shadow 0.15s var(--rs-ease);
+}
+
+.rs-thumb:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.rs-thumb:active {
+  cursor: grabbing;
+  transform: translate(-50%, -50%) scale(1.12);
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.28);
+}
+
+.rs-thumb:focus-visible {
+  outline: 2px solid var(--rs-accent);
+  outline-offset: 3px;
+}
+
+/* ---- 步进刻度 ---- */
+.rs-ticks {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.rs-ticks i {
+  width: 2px;
+  height: 12px;
+  border-radius: 1px;
+  background: #d4d4d8;
+}
+.rs-ticks i:first-child,
+.rs-ticks i:last-child {
+  background: #a1a1aa;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-fill,
+  .rs-thumb {
+    transition-duration: 0.01ms;
+  }
+  .rs-thumb:hover,
+  .rs-thumb:active {
+    transform: translate(-50%, -50%);
+  }
+}

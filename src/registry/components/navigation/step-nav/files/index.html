@@ -1,0 +1,42 @@
+<div class="sn-stage">
+  <div class="sn-case">
+    <p class="sn-caption">可交互 · 点击已完成步骤回退 · 当前步继续</p>
+    <ol class="sn" id="snSteps">
+      <li class="sn-step is-done" data-step="0">
+        <button type="button" class="sn-btn">
+          <span class="sn-dot"><svg class="sn-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.4 2.4L9.5 3.6" /></svg><span class="sn-num">1</span></span>
+          <span class="sn-name">选择方向</span>
+        </button>
+        <i class="sn-line" aria-hidden="true"></i>
+      </li>
+      <li class="sn-step is-current" data-step="1">
+        <button type="button" class="sn-btn">
+          <span class="sn-dot"><svg class="sn-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.4 2.4L9.5 3.6" /></svg><span class="sn-num">2</span></span>
+          <span class="sn-name">填写问卷</span>
+        </button>
+        <i class="sn-line" aria-hidden="true"></i>
+      </li>
+      <li class="sn-step" data-step="2">
+        <button type="button" class="sn-btn" disabled>
+          <span class="sn-dot"><svg class="sn-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.4 2.4L9.5 3.6" /></svg><span class="sn-num">3</span></span>
+          <span class="sn-name">生成推荐</span>
+        </button>
+        <i class="sn-line" aria-hidden="true"></i>
+      </li>
+      <li class="sn-step" data-step="3">
+        <button type="button" class="sn-btn" disabled>
+          <span class="sn-dot"><svg class="sn-check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.4 2.4L9.5 3.6" /></svg><span class="sn-num">4</span></span>
+          <span class="sn-name">确认路径</span>
+        </button>
+        <i class="sn-line" aria-hidden="true"></i>
+      </li>
+    </ol>
+    <div class="sn-body">
+      <p class="sn-text" id="snText">第 2 步：填写问卷</p>
+      <div class="sn-actions">
+        <button type="button" class="sn-go" id="snPrev">上一步</button>
+        <button type="button" class="sn-go sn-go--primary" id="snNext">下一步</button>
+      </div>
+    </div>
+  </div>
+</div>

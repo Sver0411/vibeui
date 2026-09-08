@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "text-reveal",
+  slug: "text-reveal",
+  name: "文本揭示",
+  description: "标题文字从遮罩后错峰上滑入场，可点击重放。纯 CSS 动画加一个 --i 错峰变量。",
+  category: "animations",
+  subcategory: "Text",
+  type: "animation",
+  tags: ["文本", "揭示", "遮罩", "错峰", "入场"],
+  technologies: ["HTML", "CSS", "JavaScript", "React"],
+  styles: ["编辑排版", "极简"],
+  difficulty: "beginner",
+  featured: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-07-08",
+  updatedAt: "2026-08-16",
+  dir: "animations/text-reveal",
+};

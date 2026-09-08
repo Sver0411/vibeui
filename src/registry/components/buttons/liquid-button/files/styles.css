@@ -1,0 +1,77 @@
+.liquid-demo {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 20px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.liquid-button {
+  --liquid: #0f766e;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 14px 34px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--liquid);
+  cursor: pointer;
+  transition: color 0.45s ease, border-color 0.45s ease, transform 0.18s ease;
+}
+
+/* The rotating "liquid" blob that fills the button on hover */
+.liquid-button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 105%;
+  left: -25%;
+  width: 150%;
+  aspect-ratio: 1;
+  border-radius: 42%;
+  background: var(--liquid);
+  animation: liquid-spin 7s linear infinite;
+  transition: top 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.liquid-button:hover {
+  color: #ffffff;
+  border-color: var(--liquid);
+}
+
+.liquid-button:hover::before {
+  top: -25%;
+}
+
+.liquid-button:active {
+  transform: scale(0.97);
+}
+
+.liquid-button__label {
+  position: relative;
+}
+
+@keyframes liquid-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.liquid-demo__hint {
+  margin: 0;
+  font-size: 13px;
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-button::before {
+    animation: none;
+    transition: top 0.2s ease;
+  }
+}

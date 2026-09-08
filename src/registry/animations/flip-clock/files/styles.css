@@ -1,0 +1,137 @@
+.fc2-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 22px;
+  padding: 40px 24px;
+  background: #0c0c12;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.fc2 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.fc2-digit {
+  position: relative;
+  width: 44px;
+  height: 66px;
+  font-size: 34px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  color: #e8e8ef;
+  perspective: 220px;
+  user-select: none;
+}
+
+.fc2-half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  overflow: hidden;
+  background: linear-gradient(180deg, #23232e, #1b1b24);
+  text-align: center;
+}
+
+.fc2-half--top { top: 0; border-radius: 7px 7px 0 0; }
+.fc2-half--bottom { bottom: 0; border-radius: 0 0 7px 7px; }
+
+/* 半区内放完整字符，用行高与偏移裁切对齐 */
+.fc2-half span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 66px;
+  line-height: 66px;
+}
+
+.fc2-half--top span { top: 0; }
+.fc2-half--bottom span { top: -33px; }
+
+.fc2-half--top { border-bottom: 1px solid rgba(0, 0, 0, 0.55); }
+.fc2-half--bottom { border-top: 1px solid rgba(255, 255, 255, 0.06); }
+
+/* 动态翻页叶 */
+.fc2-leaf {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  overflow: hidden;
+  background: #20202a;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+.fc2-leaf span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 66px;
+  line-height: 66px;
+}
+
+.fc2-leaf--top {
+  top: 0;
+  border-radius: 7px 7px 0 0;
+  transform-origin: center bottom;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.55);
+}
+
+.fc2-leaf--top span { top: 0; }
+
+.fc2-leaf--bottom {
+  bottom: 0;
+  border-radius: 0 0 7px 7px;
+  transform-origin: center top;
+  transform: rotateX(90deg);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.fc2-leaf--bottom span { top: -33px; }
+
+.fc2-leaf--top.is-flipping {
+  transform: rotateX(90deg);
+  transition: transform 0.14s ease-in;
+  background: #16161e;
+}
+
+.fc2-leaf--bottom.is-flipping {
+  transform: rotateX(0deg);
+  transition: transform 0.14s ease-out;
+}
+
+/* 冒号 */
+.fc2-colon {
+  display: grid;
+  place-items: center;
+  height: 66px;
+  color: #3d3d4a;
+  font-size: 22px;
+  font-weight: 800;
+  animation: fc2-blink 1s steps(1) infinite;
+}
+
+.fc2-colon span { animation: none; }
+
+@keyframes fc2-blink {
+  50% { opacity: 0.25; }
+}
+
+.fc2-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #4a4a58;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fc2-leaf--top.is-flipping,
+  .fc2-leaf--bottom.is-flipping { transition: none; }
+  .fc2-colon { animation: none; }
+}

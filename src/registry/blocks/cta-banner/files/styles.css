@@ -1,0 +1,240 @@
+.ct-stage {
+  --ct-accent: #0f766e;
+  --ct-radius: 18px;
+  --ct-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  display: grid;
+  gap: 22px;
+  align-content: center;
+  min-height: 100vh;
+  padding: 44px 20px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---- 容器 ---- */
+.ct-banner {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--ct-radius);
+  padding: 46px 32px;
+  background: linear-gradient(120deg, #0f766e 0%, #115e59 45%, #3730a3 100%);
+  color: #ffffff;
+  text-align: center;
+  isolation: isolate;
+}
+
+/* 装饰光斑：两层 radial-gradient 叠加，缓慢漂移制造纵深 */
+.ct-bg {
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  background:
+    radial-gradient(38% 52% at 22% 28%, rgba(45, 212, 191, 0.55), transparent 70%),
+    radial-gradient(34% 48% at 80% 72%, rgba(129, 140, 248, 0.5), transparent 70%);
+  animation: ct-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes ct-drift {
+  from {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(4%, 3%, 0) scale(1.08);
+  }
+}
+
+.ct-content {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+/* ---- 文案 ---- */
+.ct-title {
+  margin: 0;
+  max-width: 20ch;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.ct-sub {
+  margin: 0;
+  max-width: 44ch;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.ct-note {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* ---- 按钮组 ---- */
+.ct-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.ct-actions--inline {
+  margin-top: 0;
+  align-items: center;
+  gap: 18px;
+}
+
+.ct-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s var(--ct-ease),
+    box-shadow 0.18s var(--ct-ease);
+}
+
+.ct-btn:active {
+  transform: scale(0.97);
+}
+
+.ct-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* 渐变底上的主按钮：用实色白，保证在光斑上也有足够对比度 */
+.ct-btn--primary {
+  background: #ffffff;
+  color: #115e59;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+}
+
+.ct-btn--primary:hover {
+  background: #f4f4f5;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ct-btn--ghost {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.ct-btn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* ---- 浅色变体：白底 + 描边，适合放在页面中部 ---- */
+.ct-banner--soft {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  box-shadow: 0 1px 2px rgba(24, 24, 27, 0.04);
+  text-align: left;
+  padding: 30px 32px;
+}
+
+.ct-banner--soft .ct-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ct-text {
+  display: grid;
+  gap: 6px;
+}
+
+.ct-title--dark {
+  max-width: 26ch;
+  font-size: clamp(19px, 2.6vw, 23px);
+  color: #18181b;
+}
+
+.ct-sub--dark {
+  color: #71717a;
+}
+
+.ct-btn--solid {
+  background: var(--ct-accent);
+  color: #ffffff;
+}
+
+.ct-btn--solid:hover {
+  background: #0d6a63;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.28);
+}
+
+.ct-btn--solid:focus-visible {
+  outline-color: var(--ct-accent);
+}
+
+.ct-link {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ct-accent);
+  text-decoration: none;
+  transition: opacity 0.18s ease;
+}
+
+.ct-link:hover {
+  opacity: 0.75;
+}
+
+.ct-link:focus-visible {
+  outline: 2px solid var(--ct-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-bg {
+    animation: none;
+  }
+  .ct-btn,
+  .ct-btn--primary:hover,
+  .ct-btn--solid:hover {
+    transform: none;
+    transition-duration: 0.01ms;
+  }
+}
+
+@media (max-width: 600px) {
+  .ct-banner {
+    padding: 34px 20px;
+  }
+  .ct-banner--soft {
+    padding: 24px 20px;
+  }
+  .ct-banner--soft .ct-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ct-actions--inline {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .ct-btn {
+    flex: 1 1 auto;
+  }
+}

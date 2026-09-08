@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "login-page",
+  slug: "login-page",
+  name: "极简登录页",
+  description: "居中登录界面：玻璃卡片、内联校验、密码可见性切换与柔和极光。完整响应式且键盘友好。",
+  category: "templates",
+  subcategory: "Auth",
+  type: "template",
+  tags: ["登录", "登录注册", "表单", "玻璃拟态", "校验"],
+  technologies: ["HTML", "CSS", "JavaScript", "React"],
+  styles: ["极简", "玻璃拟态", "浅色"],
+  difficulty: "intermediate",
+  featured: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-07-05",
+  updatedAt: "2026-08-20",
+  dir: "templates/login-page",
+};

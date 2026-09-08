@@ -1,0 +1,202 @@
+.sn-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 20px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.sn-case {
+  display: grid;
+  gap: 22px;
+  width: min(560px, 88vw);
+}
+
+.sn-caption {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+/* ---- 步骤条：横向排布，连接线画在每步右侧 ---- */
+.sn {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sn-step {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.sn-step:last-child {
+  flex: 0 0 auto;
+}
+.sn-step:last-child .sn-line {
+  display: none;
+}
+
+.sn-btn {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  z-index: 1;
+}
+.sn-btn:disabled {
+  cursor: not-allowed;
+}
+.sn-btn:focus-visible .sn-dot {
+  outline: 2px solid #0f766e;
+  outline-offset: 3px;
+}
+
+.sn-dot {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #d4d4d8;
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a1a1aa;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sn-check {
+  display: none;
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sn-name {
+  font-size: 12px;
+  color: #71717a;
+  transition: color 0.2s ease;
+}
+
+/* 已完成 */
+.sn-step.is-done .sn-dot {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: transparent;
+}
+.sn-step.is-done .sn-check {
+  display: block;
+}
+.sn-step.is-done .sn-name {
+  color: #0f766e;
+}
+
+/* 进行中：强调描边 + 光晕 */
+.sn-step.is-current .sn-dot {
+  border-color: #0f766e;
+  color: #0f766e;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.14);
+}
+.sn-step.is-current .sn-name {
+  color: #18181b;
+  font-weight: 600;
+}
+
+/* 连接线 */
+.sn-line {
+  position: absolute;
+  top: 17px; /* 与 dot 中心对齐 */
+  left: calc(50% + 22px);
+  right: calc(-50% + 22px);
+  height: 2px;
+  border-radius: 1px;
+  background: #e4e4e7;
+  transition: background-color 0.25s ease;
+}
+.sn-step.is-done .sn-line {
+  background: #0f766e;
+}
+
+/* ---- 内容与操作 ---- */
+.sn-body {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.sn-text {
+  margin: 0;
+  font-size: 14px;
+  color: #3f3f46;
+}
+
+.sn-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sn-go {
+  padding: 8px 18px;
+  border: 1px solid #d4d4d8;
+  border-radius: 9px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.sn-go:hover:not(:disabled) {
+  border-color: #0f766e;
+  color: #0f766e;
+}
+.sn-go:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.sn-go:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+.sn-go--primary {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: #ffffff;
+}
+.sn-go--primary:hover:not(:disabled) {
+  background: #115e59;
+  color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .sn-name {
+    font-size: 11px;
+  }
+  .sn-dot {
+    width: 28px;
+    height: 28px;
+  }
+  .sn-line {
+    top: 14px;
+  }
+}

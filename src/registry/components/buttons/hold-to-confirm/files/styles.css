@@ -1,0 +1,65 @@
+.hold-demo {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 18px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.hold-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #d4d4d8;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #b3261e;
+  padding: 12px 26px 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.hold-button:active {
+  background: #fef2f2;
+}
+
+.hold-button__ring {
+  width: 34px;
+  height: 34px;
+  transform: rotate(-90deg);
+}
+
+.hold-button__ring circle {
+  fill: none;
+  stroke-width: 3;
+}
+
+.hold-button__ring-track {
+  stroke: #f4f4f5;
+}
+
+.hold-button__ring-progress {
+  stroke: #b3261e;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.hold-demo__hint {
+  margin: 0;
+  font-size: 13px;
+  color: #71717a;
+}
+
+.hold-demo__hint[data-armed="true"] {
+  color: #b3261e;
+  font-weight: 600;
+}

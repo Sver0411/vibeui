@@ -1,0 +1,113 @@
+.tm-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.tm {
+  width: min(260px, 84vw);
+  padding: 10px;
+  border: 1px solid #e4e4e7;
+  border-radius: 13px;
+  background: #ffffff;
+}
+
+.tm-root,
+.tm-group {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tm-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border-radius: 8px;
+}
+
+.tm-row--group {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.tm-row--group:hover { background: #f4f4f5; }
+
+.tm-toggle {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #71717a;
+  cursor: pointer;
+}
+
+.tm-toggle:focus-visible { outline: 2px solid #6366f1; outline-offset: 1px; }
+
+.tm-arrow {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.2s ease;
+}
+
+.tm-toggle[aria-expanded="true"] .tm-arrow { transform: rotate(90deg); }
+
+.tm-group-name {
+  flex: 1;
+  padding: 5px 6px 5px 0;
+  font-size: 13.5px;
+  font-weight: 550;
+  color: #3f3f46;
+  user-select: none;
+}
+
+/* 展开收起：0fr→1fr 免量高 */
+.tm-branch {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.tm-branch.is-open { grid-template-rows: 1fr; }
+
+.tm-branch > .tm-group {
+  overflow: hidden;
+  min-height: 0;
+  margin-left: 21px;
+  padding-left: 9px;
+  border-left: 1px solid #e4e4e7;
+}
+
+.tm-item {
+  display: block;
+  padding: 5px 8px;
+  border-radius: 7px;
+  font-size: 13.5px;
+  color: #52525b;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tm-item:hover { background: #f4f4f5; color: #18181b; }
+.tm-item:focus-visible { outline: 2px solid #6366f1; outline-offset: 1px; }
+
+.tm-item.is-current {
+  background: #eef2ff;
+  color: #4338ca;
+  font-weight: 600;
+}
+
+/* 嵌套分组的行内缩进 */
+.tm-row--nested { margin-left: -2px; }
+.tm-row--nested .tm-group-name { font-size: 13px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tm-branch, .tm-arrow { transition: none; }
+}

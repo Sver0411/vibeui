@@ -1,0 +1,122 @@
+:root {
+  --dc-ink: #0f172a;
+  --dc-sub: #64748b;
+  --dc-line: #e2e8f0;
+  --dc-bg: #ffffff;
+  --dc-accent: #2563eb;
+}
+
+.dc-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 32px 20px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--dc-ink);
+  box-sizing: border-box;
+}
+
+.dc-card {
+  width: min(440px, 100%);
+  background: var(--dc-bg);
+  border: 1px solid var(--dc-line);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
+}
+
+.dc-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.dc-title { margin: 0; font-size: 15.5px; }
+.dc-total { font-size: 13px; color: var(--dc-sub); font-variant-numeric: tabular-nums; }
+
+.dc-body {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 环形图：每段用 stroke-dasharray 百分比分割 */
+.dc-ringwrap {
+  position: relative;
+  width: 148px;
+  height: 148px;
+  flex: none;
+}
+
+.dc-ring { width: 100%; height: 100%; transform: rotate(-90deg); }
+
+.dc-track { fill: none; stroke: #eef1f5; stroke-width: 14; }
+
+.dc-seg {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: butt;
+  stroke-dasharray: 0 100; /* pathLength=100，用百分比即可分段 */
+  transition: stroke-dasharray 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.15s ease, stroke-width 0.15s ease;
+  cursor: pointer;
+}
+
+.dc-ring.dim .dc-seg:not(.hot) { opacity: 0.32; }
+.dc-seg.hot { stroke-width: 17; }
+
+.dc-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  text-align: center;
+}
+
+.dc-center strong { font-size: 19px; font-variant-numeric: tabular-nums; }
+.dc-center span { font-size: 11.5px; color: var(--dc-sub); margin-top: 2px; }
+
+/* 图例 */
+.dc-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dc-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 8px;
+}
+
+.dc-item:hover, .dc-item.hot { background: #f1f5f9; }
+
+.dc-dot { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.dc-name { flex: 1; }
+.dc-val { color: var(--dc-sub); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+
+.dc-hint { font-size: 12.5px; color: var(--dc-sub); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dc-seg { transition: none; }
+}
+
+@media (max-width: 480px) {
+  .dc-body { flex-direction: column; gap: 14px; }
+  .dc-legend { width: 100%; }
+}

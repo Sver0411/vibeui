@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "analytics-dashboard",
+  slug: "analytics-dashboard",
+  name: "数据分析仪表盘",
+  description: "完整仪表盘：侧边栏、实时跳动的统计卡、SVG 折线图与活跃页面表格，数据全部本地生成。",
+  category: "templates",
+  subcategory: "Dashboard",
+  type: "template",
+  tags: ["仪表盘", "数据分析", "图表", "侧边栏", "表格"],
+  technologies: ["HTML", "CSS", "JavaScript", "React"],
+  styles: ["后台", "极简"],
+  difficulty: "advanced",
+  featured: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-07-18",
+  updatedAt: "2026-08-24",
+  dir: "templates/analytics-dashboard",
+};

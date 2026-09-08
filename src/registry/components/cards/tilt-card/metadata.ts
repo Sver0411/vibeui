@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "tilt-card",
+  slug: "tilt-card",
+  name: "3D 倾斜卡片",
+  description: "卡片跟随光标在 3D 空间倾斜并带动态眩光。指针计算用原生 JS 实现，触屏自动降级。",
+  category: "cards",
+  subcategory: "Cards",
+  type: "component",
+  tags: ["卡片", "3D", "倾斜", "透视", "光标"],
+  technologies: ["HTML", "CSS", "JavaScript", "React"],
+  styles: ["3D", "现代"],
+  difficulty: "intermediate",
+  featured: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-07-07",
+  updatedAt: "2026-08-20",
+  dir: "components/cards/tilt-card",
+};

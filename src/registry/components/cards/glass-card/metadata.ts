@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "glass-card",
+  slug: "glass-card",
+  name: "玻璃卡片",
+  description: "backdrop-blur 磨砂玻璃表面与分层描边，背后配柔和极光让模糊有内容可折射。",
+  category: "cards",
+  subcategory: "Cards",
+  type: "component",
+  tags: ["卡片", "玻璃拟态", "背景模糊", "极光", "纯 CSS"],
+  technologies: ["HTML", "CSS", "React"],
+  styles: ["玻璃拟态", "极光"],
+  difficulty: "intermediate",
+  featured: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 103+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-07-10",
+  updatedAt: "2026-08-18",
+  dir: "components/cards/glass-card",
+};

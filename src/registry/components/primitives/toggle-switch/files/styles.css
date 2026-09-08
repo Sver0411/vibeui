@@ -1,0 +1,123 @@
+.tg-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 18px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.tg-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.tg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tg input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.tg-track {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: #d4d4d8;
+  transition: background 0.25s ease;
+  flex-shrink: 0;
+}
+
+.tg-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tg input:checked + .tg-track {
+  background: #0f766e;
+}
+
+.tg input:checked + .tg-track .tg-thumb {
+  transform: translateX(20px);
+}
+
+.tg input:focus-visible + .tg-track {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* 图标变体：图标随滑块显隐 */
+.tg-track--icons .tg-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  line-height: 1;
+  color: #ffffff;
+  transition: opacity 0.2s ease;
+}
+
+.tg-track--icons .tg-icon--off { left: 7px; opacity: 1; }
+.tg-track--icons .tg-icon--on { right: 6px; opacity: 0; }
+
+.tg input:checked + .tg-track--icons .tg-icon--off { opacity: 0; }
+.tg input:checked + .tg-track--icons .tg-icon--on { opacity: 1; }
+
+/* 文字变体：ON/OFF 随滑块滑动 */
+.tg-thumb--text {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.tg-text-on, .tg-text-off { position: absolute; transition: opacity 0.2s ease; }
+.tg-text-on { color: #0f766e; opacity: 0; }
+.tg-text-off { color: #71717a; opacity: 1; }
+
+.tg input:checked + .tg-track .tg-text-on { opacity: 1; }
+.tg input:checked + .tg-track .tg-text-off { opacity: 0; }
+
+.tg-label {
+  font-size: 14px;
+  color: #18181b;
+}
+
+.tg-label--muted { color: #a1a1aa; }
+
+.tg input:disabled + .tg-track { opacity: 0.5; cursor: not-allowed; }
+.tg:has(input:disabled) { cursor: not-allowed; }
+
+.tg-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-track, .tg-thumb { transition-duration: 0.01ms; }
+}

@@ -1,0 +1,74 @@
+:root {
+  --gb-ink: #0f172a;
+  --gb-sub: #64748b;
+  --gb-glow: #8b5cf6;
+  --gb-radius: 18px;
+}
+
+.gb-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--gb-ink);
+  box-sizing: border-box;
+}
+
+/* 外层负责辉光背景，内层负责实心卡片，形成发光边框 */
+.gb-card {
+  --x: 50%;
+  --y: 50%;
+  position: relative;
+  width: min(320px, 100%);
+  border-radius: var(--gb-radius);
+  padding: 1.5px; /* 辉光透出的边框宽度 */
+  background: radial-gradient(
+    220px circle at var(--x) var(--y),
+    var(--gb-glow),
+    rgba(139, 92, 246, 0.12) 45%,
+    rgba(226, 232, 240, 0.9) 100%
+  );
+}
+
+.gb-inner {
+  position: relative;
+  border-radius: calc(var(--gb-radius) - 1.5px);
+  padding: 30px 28px;
+  background: #ffffff;
+}
+
+/* 内里辉光：跟随同一组坐标 */
+.gb-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    200px circle at var(--x) var(--y),
+    rgba(139, 92, 246, 0.12),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.gb-title { margin: 0 0 8px; font-size: 17px; position: relative; }
+.gb-sub { margin: 0; font-size: 13px; color: var(--gb-sub); line-height: 1.7; position: relative; }
+
+.gb-hint { font-size: 12.5px; color: var(--gb-sub); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* 无动画依赖，仅保留静态边框 */
+  .gb-card {
+    background: linear-gradient(140deg, rgba(139, 92, 246, 0.5), rgba(226, 232, 240, 0.9));
+  }
+  .gb-inner::before { display: none; }
+}
+
+@media (max-width: 480px) {
+  .gb-inner { padding: 24px 20px; }
+}

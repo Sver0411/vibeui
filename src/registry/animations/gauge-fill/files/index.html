@@ -1,0 +1,27 @@
+<div class="gf-stage">
+  <div class="gf" data-value="72">
+    <svg class="gf-svg" viewBox="0 0 200 118" aria-hidden="true">
+      <defs>
+        <linearGradient id="gf-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#6366f1"/>
+          <stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <!-- 底弧 -->
+      <path class="gf-track" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="#e9e9ec" stroke-width="9" stroke-linecap="round"/>
+      <!-- 值弧 -->
+      <path class="gf-value" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke="url(#gf-grad)" stroke-width="9" stroke-linecap="round"/>
+      <!-- 指针 -->
+      <g class="gf-needle-g">
+        <line class="gf-needle" x1="100" y1="100" x2="100" y2="36"/>
+      </g>
+      <circle class="gf-hub" cx="100" cy="100" r="5.5"/>
+      <!-- 刻度 -->
+      <text class="gf-tick" x="14" y="116">0</text>
+      <text class="gf-tick" x="50%" y="116" text-anchor="middle">50</text>
+      <text class="gf-tick" x="186" y="116">100</text>
+    </svg>
+    <p class="gf-value-text"><span id="gf-num">0</span><small>%</small></p>
+    <p class="gf-caption">健康评分 · 加载即扫动</p>
+  </div>
+</div>

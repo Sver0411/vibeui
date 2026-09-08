@@ -1,0 +1,24 @@
+<div class="cmd-stage">
+  <button class="cmd-open" id="cmd-open" type="button">
+    Search actions…
+    <kbd class="cmd-kbd">⌘K</kbd>
+  </button>
+  <p class="cmd-hint">Press <kbd class="cmd-kbd cmd-kbd--inline">⌘K</kbd> anywhere, or Esc to close.</p>
+
+  <div class="cmd-dialog" id="cmd-dialog" hidden>
+    <div class="cmd-scrim" data-cmd-close></div>
+    <div class="cmd-panel" role="dialog" aria-modal="true" aria-label="Command menu">
+      <div class="cmd-input-row">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m11 11 3 3"/></svg>
+        <input class="cmd-input" id="cmd-input" type="text" placeholder="Type a command or search…" aria-label="Search commands" />
+        <kbd class="cmd-kbd cmd-kbd--inline">Esc</kbd>
+      </div>
+      <div class="cmd-results" id="cmd-results" role="listbox" aria-label="Commands"></div>
+      <div class="cmd-footer">
+        <span><kbd class="cmd-kbd cmd-kbd--inline">↑</kbd><kbd class="cmd-kbd cmd-kbd--inline">↓</kbd> navigate</span>
+        <span><kbd class="cmd-kbd cmd-kbd--inline">↵</kbd> select</span>
+        <span><kbd class="cmd-kbd cmd-kbd--inline">Esc</kbd> close</span>
+      </div>
+    </div>
+  </div>
+</div>

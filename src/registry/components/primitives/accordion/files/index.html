@@ -1,0 +1,38 @@
+<div class="ac-stage">
+  <div class="ac-head">
+    <h3 class="ac-title">常见问题</h3>
+    <label class="ac-mode">
+      <input type="checkbox" id="ac-multi" role="switch" />
+      <span>允许多项同时展开</span>
+    </label>
+  </div>
+  <div class="ac-list" id="ac-list">
+    <div class="ac-item">
+      <button type="button" class="ac-trigger" aria-expanded="true" aria-controls="ac-p0" id="ac-t0">
+        支持哪些浏览器？
+        <svg class="ac-chev" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ac-panel" id="ac-p0" role="region" aria-labelledby="ac-t0">
+        <div class="ac-body">所有现代浏览器：Chrome 90+、Firefox 90+、Safari 15.4+ 与 Edge 90+。动画均带 prefers-reduced-motion 回退。</div>
+      </div>
+    </div>
+    <div class="ac-item">
+      <button type="button" class="ac-trigger" aria-expanded="false" aria-controls="ac-p1" id="ac-t1">
+        可以商用吗？
+        <svg class="ac-chev" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ac-panel" id="ac-p1" role="region" aria-labelledby="ac-t1">
+        <div class="ac-body">可以。所有资源零外部依赖，复制源码即可直接用于商业项目，无需署名。</div>
+      </div>
+    </div>
+    <div class="ac-item">
+      <button type="button" class="ac-trigger" aria-expanded="false" aria-controls="ac-p2" id="ac-t2">
+        如何自定义主题色？
+        <svg class="ac-chev" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="ac-panel" id="ac-p2" role="region" aria-labelledby="ac-t2">
+        <div class="ac-body">每个组件的颜色都收敛在顶部的 CSS 变量里，改一处变量即可全局生效，无需逐条规则排查。</div>
+      </div>
+    </div>
+  </div>
+</div>

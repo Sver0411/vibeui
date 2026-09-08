@@ -1,0 +1,160 @@
+.sg-stage {
+  --sg-accent: #0f766e;
+  --sg-surface: #ffffff;
+  --sg-track: #f4f4f5;
+  --sg-text: #52525b;
+  --sg-text-active: #18181b;
+  --sg-radius: 10px;
+  --sg-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 32px;
+  padding: 32px 20px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.sg-case {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.sg-case--wide {
+  width: min(100%, 380px);
+}
+
+.sg-caption {
+  margin: 0;
+  font-size: 12px;
+  color: #71717a;
+  text-align: center;
+}
+
+/* ---- 容器：relative 让滑块可以绝对定位 ---- */
+.sg {
+  position: relative;
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: var(--sg-radius);
+  background: var(--sg-track);
+  box-shadow: inset 0 1px 2px rgba(24, 24, 27, 0.06);
+}
+
+.sg--block {
+  display: flex;
+  width: 100%;
+}
+
+/* ---- 滑块：宽度与位移由 JS 按选中项实测后写入 ---- */
+.sg-thumb {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 0;
+  border-radius: calc(var(--sg-radius) - 4px);
+  background: var(--sg-surface);
+  box-shadow:
+    0 1px 2px rgba(24, 24, 27, 0.08),
+    0 2px 8px rgba(24, 24, 27, 0.06);
+  transition:
+    transform 0.32s var(--sg-ease),
+    width 0.32s var(--sg-ease);
+  pointer-events: none;
+}
+
+/* 首次测量前先隐藏，避免从 0 宽度闪一下 */
+.sg:not([data-ready]) .sg-thumb {
+  opacity: 0;
+}
+
+.sg-item {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.sg--block .sg-item {
+  flex: 1 1 0;
+}
+
+.sg-item input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.sg-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: calc(var(--sg-radius) - 4px);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+  color: var(--sg-text);
+  transition: color 0.2s ease;
+}
+
+.sg--block .sg-text {
+  justify-content: center;
+  padding-inline: 8px;
+}
+
+.sg-count {
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #e4e4e7;
+  font-size: 11px;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+  color: #52525b;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+/* ---- 选中态：靠 :checked 驱动文字，不依赖 JS ---- */
+.sg-item input:checked + .sg-text {
+  color: var(--sg-text-active);
+  font-weight: 600;
+}
+
+.sg-item input:checked + .sg-text .sg-count {
+  background: rgba(15, 118, 110, 0.14);
+  color: var(--sg-accent);
+}
+
+.sg-item:hover input:not(:checked) + .sg-text {
+  color: #27272a;
+}
+
+.sg-item input:focus-visible + .sg-text {
+  outline: 2px solid var(--sg-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sg-thumb {
+    transition-duration: 0.01ms;
+  }
+}
+
+@media (max-width: 480px) {
+  .sg-case--wide {
+    width: 100%;
+  }
+  .sg-text {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+}

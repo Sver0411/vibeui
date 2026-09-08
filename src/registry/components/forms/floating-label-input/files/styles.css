@@ -1,0 +1,72 @@
+.fl-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.fl-form {
+  display: grid;
+  gap: 22px;
+  width: min(320px, 88vw);
+}
+
+.fl-field {
+  position: relative;
+}
+
+.fl-input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 54px;
+  padding: 20px 14px 6px;
+  font-size: 14.5px;
+  color: #26262b;
+  background: #ffffff;
+  border: 1px solid #d4d4d8;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fl-input:hover {
+  border-color: #a1a1aa;
+}
+
+.fl-input:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+}
+
+.fl-label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #71717a;
+  pointer-events: none;
+  transition: top 0.16s ease, font-size 0.16s ease, color 0.16s ease;
+  background: transparent;
+  padding: 0 3px;
+}
+
+/* Float when focused OR when the field has content (placeholder=" " trick) */
+.fl-input:focus + .fl-label,
+.fl-input:not(:placeholder-shown) + .fl-label {
+  top: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.fl-input:focus + .fl-label {
+  color: #0f766e;
+}
+
+.fl-hint {
+  margin: 0;
+  font-size: 12.5px;
+  color: #71717a;
+}

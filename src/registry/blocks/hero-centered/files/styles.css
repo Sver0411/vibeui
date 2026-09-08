@@ -1,0 +1,88 @@
+.h1c-stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 20px;
+  background:
+    radial-gradient(600px 300px at 50% -10%, rgba(15, 118, 110, 0.08), transparent 70%),
+    #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.h1c-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.06);
+  color: #0f766e;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 5px 12px;
+}
+
+.h1c-title {
+  margin: 22px 0 0;
+  font-size: clamp(34px, 6vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #18181b;
+}
+
+.h1c-sub {
+  margin: 18px auto 0;
+  max-width: 560px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #52525b;
+}
+
+.h1c-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.h1c-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.h1c-btn--primary {
+  background: #0f766e;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(15, 118, 110, 0.3);
+}
+
+.h1c-btn--primary:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(15, 118, 110, 0.38); }
+
+.h1c-btn--ghost {
+  background: #ffffff;
+  color: #18181b;
+  border: 1px solid #e4e4e7;
+}
+
+.h1c-btn--ghost:hover { border-color: #d4d4d8; }
+
+.h1c-note {
+  margin: 22px 0 0;
+  font-size: 12.5px;
+  color: #a1a1aa;
+}
+
+@media (max-width: 480px) {
+  .h1c-actions { flex-direction: column; width: 100%; max-width: 280px; }
+}

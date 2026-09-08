@@ -1,0 +1,45 @@
+<div class="db-shell">
+  <aside class="db-sidebar">
+    <div class="db-brand"><span class="db-brand__mark" aria-hidden="true"></span><span class="db-brand__name">Pulse</span></div>
+    <nav class="db-nav" aria-label="Dashboard">
+      <a class="db-nav__item db-nav__item--active" href="#" onclick="return false">Overview</a>
+      <a class="db-nav__item" href="#" onclick="return false">Traffic</a>
+      <a class="db-nav__item" href="#" onclick="return false">Revenue</a>
+      <a class="db-nav__item" href="#" onclick="return false">Reports</a>
+      <a class="db-nav__item" href="#" onclick="return false">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="db-main">
+    <header class="db-header">
+      <div>
+        <h1 class="db-title">Overview</h1>
+        <p class="db-subtitle">Last 30 days</p>
+      </div>
+      <span class="db-badge" id="db-live"><span class="db-badge__dot" aria-hidden="true"></span>Live</span>
+    </header>
+
+    <section class="db-stats" aria-label="Key metrics">
+      <div class="db-stat"><span class="db-stat__label">Visitors</span><span class="db-stat__value" id="db-visitors">0</span><span class="db-stat__delta db-stat__delta--up" id="db-visitors-delta">▲ 12.4%</span></div>
+      <div class="db-stat"><span class="db-stat__label">Revenue</span><span class="db-stat__value" id="db-revenue">$0</span><span class="db-stat__delta db-stat__delta--up">▲ 8.1%</span></div>
+      <div class="db-stat"><span class="db-stat__label">Conversion</span><span class="db-stat__value" id="db-conversion">0%</span><span class="db-stat__delta db-stat__delta--down">▼ 0.6%</span></div>
+      <div class="db-stat"><span class="db-stat__label">Avg. session</span><span class="db-stat__value">4m 32s</span><span class="db-stat__delta db-stat__delta--up">▲ 3.0%</span></div>
+    </section>
+
+    <section class="db-panel" aria-label="Visitors over time">
+      <div class="db-panel__head">
+        <h2 class="db-panel__title">Visitors</h2>
+        <div class="db-legend" aria-hidden="true"><span class="db-legend__item"><i class="db-legend__swatch db-legend__swatch--a"></i>This period</span><span class="db-legend__item"><i class="db-legend__swatch db-legend__swatch--b"></i>Previous</span></div>
+      </div>
+      <svg class="db-chart" id="db-chart" viewBox="0 0 600 200" preserveAspectRatio="none" role="img" aria-label="Line chart comparing this period with the previous one"></svg>
+    </section>
+
+    <section class="db-panel" aria-label="Top pages">
+      <div class="db-panel__head"><h2 class="db-panel__title">Top pages</h2></div>
+      <table class="db-table">
+        <thead><tr><th>Page</th><th>Views</th><th>Change</th></tr></thead>
+        <tbody id="db-rows"></tbody>
+      </table>
+    </section>
+  </main>
+</div>

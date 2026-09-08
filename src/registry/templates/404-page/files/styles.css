@@ -1,0 +1,168 @@
+.nf-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  padding: 40px 24px;
+  background:
+    radial-gradient(600px 300px at 50% 0%, rgba(15, 118, 110, 0.07), transparent 70%),
+    #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+/* ---- 巨型 404：中间 0 悬浮呼吸 ---- */
+.nf-code {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 0;
+  font-size: clamp(88px, 22vw, 150px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #18181b;
+}
+.nf-code span {
+  display: inline-block;
+}
+.nf-code__zero {
+  color: #0f766e;
+  animation: nf-float 3.4s ease-in-out infinite;
+}
+
+@keyframes nf-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.nf-title {
+  margin: 14px 0 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.nf-text {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #71717a;
+}
+
+/* ---- 搜索框 ---- */
+.nf-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: min(320px, 84vw);
+  margin-bottom: 6px;
+}
+
+.nf-search__icon {
+  position: absolute;
+  left: 12px;
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: #a1a1aa;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.nf-search__input {
+  width: 100%;
+  padding: 11px 40px 11px 34px;
+  border: 1px solid #d4d4d8;
+  border-radius: 12px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 14px;
+  color: #18181b;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.nf-search__input::placeholder {
+  color: #a1a1aa;
+}
+.nf-search__input:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+}
+.nf-search__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.nf-kbd {
+  position: absolute;
+  right: 10px;
+  padding: 1px 7px;
+  border: 1px solid #d4d4d8;
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  background: #f4f4f5;
+  font-family: inherit;
+  font-size: 11px;
+  color: #71717a;
+  pointer-events: none;
+}
+
+.nf-hint {
+  min-height: 18px;
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #0f766e;
+}
+
+/* ---- 操作按钮 ---- */
+.nf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nf-btn {
+  padding: 10px 20px;
+  border: 1px solid #d4d4d8;
+  border-radius: 10px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 14px;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.nf-btn:hover {
+  border-color: #0f766e;
+  color: #0f766e;
+}
+.nf-btn:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+.nf-btn--primary {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: #ffffff;
+}
+.nf-btn--primary:hover {
+  border-color: #115e59;
+  background: #115e59;
+  color: #ffffff;
+}
+
+.nf-foot {
+  margin: 26px 0 0;
+  font-size: 12px;
+  color: #a1a1aa;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nf-code__zero {
+    animation: none;
+  }
+}

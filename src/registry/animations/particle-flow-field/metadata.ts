@@ -1,0 +1,30 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "particle-flow-field",
+  slug: "particle-flow-field",
+  name: "粒子丝线流场",
+  description:
+    "Canvas 粒子沿连续向量场生成丝线轨迹，指针施加局部涡旋，同时限制像素比和粒子预算。",
+  category: "animations",
+  subcategory: "Generative Flow Field",
+  type: "animation",
+  tags: ["Canvas", "粒子", "流场", "生成艺术", "涡旋"],
+  technologies: ["HTML", "CSS", "JavaScript", "Canvas 2D", "React"],
+  styles: ["生成艺术", "实验性", "高级"],
+  difficulty: "advanced",
+  featured: true,
+  isNew: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  engine: "Canvas 2D",
+  performanceTier: "medium",
+  reducedMotionFallback: "一次性绘制静态丝线场，不启动持续 requestAnimationFrame。",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-08-31",
+  updatedAt: "2026-08-31",
+  dir: "animations/particle-flow-field",
+};

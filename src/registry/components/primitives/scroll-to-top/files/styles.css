@@ -1,0 +1,127 @@
+.stop-stage {
+  min-height: 100vh;
+  padding: 40px 24px 80px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.stop-head {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 26px;
+}
+
+.stop-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.stop-sub {
+  margin: 0;
+  font-size: 13px;
+  color: #71717a;
+}
+
+.stop-body {
+  display: grid;
+  gap: 16px;
+  max-width: 560px;
+}
+
+.stop-body p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #52525b;
+}
+
+/* ---- 回到顶部按钮 ---- */
+.stop-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+  /* 出现动画 */
+  animation: stop-in 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.stop-fab[hidden] {
+  display: none;
+}
+.stop-fab:hover {
+  background: #f0fdfa;
+}
+.stop-fab:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 3px;
+}
+
+@keyframes stop-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 进度环 */
+.stop-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* 起点在顶部 */
+}
+
+.stop-ring__track {
+  fill: none;
+  stroke: #e4e4e7;
+  stroke-width: 3;
+}
+
+.stop-ring__bar {
+  fill: none;
+  stroke: #0f766e;
+  stroke-width: 3;
+  stroke-linecap: round;
+  /* 周长 = 2πr ≈ 125.66，dashoffset 由脚本按进度设置 */
+  stroke-dasharray: 125.66;
+  stroke-dashoffset: 125.66;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.stop-arrow {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #0f766e;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stop-stage {
+    scroll-behavior: auto;
+  }
+  .stop-fab {
+    animation: none;
+  }
+  .stop-ring__bar {
+    transition: none;
+  }
+}

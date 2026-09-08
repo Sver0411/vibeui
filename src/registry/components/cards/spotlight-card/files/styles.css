@@ -1,0 +1,99 @@
+.spot-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 24px;
+}
+
+.spot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(680px, 100%);
+}
+
+@media (max-width: 620px) {
+  .spot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spot-card {
+  /* Cursor position, updated from JS (defaults to center for no-JS) */
+  --spot-x: 50%;
+  --spot-y: 50%;
+  position: relative;
+  border-radius: 14px;
+  padding: 1px; /* room for the gradient border */
+  background: linear-gradient(
+      calc(135deg - var(--spot-x, 50%) * 0deg),
+      #d4d4d8,
+      #ececef 40%,
+      #e4e4e7
+    );
+  transition: background 0.2s ease;
+}
+
+.spot-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    240px circle at var(--spot-x) var(--spot-y),
+    rgba(15, 118, 110, 0.24),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.spot-card:hover::before {
+  opacity: 1;
+}
+
+.spot-card__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.spot-card__text {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #71717a;
+}
+
+.spot-card > * {
+  position: relative;
+}
+
+/* Inner surface sits above the border gradient */
+.spot-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 13px;
+  background: #ffffff;
+  z-index: 0;
+}
+
+.spot-card > h3,
+.spot-card > p {
+  z-index: 1;
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.spot-card > h3 {
+  margin-top: 18px;
+}
+
+.spot-card > p {
+  margin-bottom: 18px;
+}

@@ -1,0 +1,95 @@
+.at-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 20px;
+  width: min(480px, 92vw);
+  margin: 0 auto;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.at-tabs {
+  position: relative;
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 11px;
+  background: #ececef;
+  align-self: start;
+}
+
+.at-tab {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  background: transparent;
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #71717a;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: color 0.2s ease;
+}
+
+.at-tab[aria-selected="true"] {
+  color: #26262b;
+}
+
+.at-tab:hover {
+  color: #26262b;
+}
+
+.at-indicator {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.at-panel {
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 20px;
+  animation: at-panel-in 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.at-panel[hidden] {
+  display: none;
+}
+
+@keyframes at-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+}
+
+.at-panel__title {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #26262b;
+}
+
+.at-panel__text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .at-indicator,
+  .at-panel {
+    transition: none;
+    animation: none;
+  }
+}

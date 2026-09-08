@@ -1,0 +1,31 @@
+<div class="kpt-stage">
+  <section class="kpt-demo" aria-labelledby="kpt-title">
+    <header class="kpt-heading">
+      <div><p>Kinetic typography</p><h2 id="kpt-title">Momentum follows intent.</h2></div>
+      <span class="kpt-readout"><i></i> velocity</span>
+    </header>
+
+    <div class="kpt-canvas">
+      <svg viewBox="0 0 420 246" role="img" aria-labelledby="kpt-svg-title kpt-svg-desc">
+        <title id="kpt-svg-title">Three moving text ribbons</title>
+        <desc id="kpt-svg-desc">Repeated words follow curved paths and respond to pointer speed.</desc>
+        <defs>
+          <path id="kpt-path-a" d="M-90 72 C70 30 260 112 510 56" />
+          <path id="kpt-path-b" d="M-90 132 C80 184 270 72 510 142" />
+          <path id="kpt-path-c" d="M-90 194 C100 146 280 236 510 184" />
+        </defs>
+        <path class="kpt-guide kpt-guide--a" d="M-90 72 C70 30 260 112 510 56" />
+        <path class="kpt-guide kpt-guide--b" d="M-90 132 C80 184 270 72 510 142" />
+        <path class="kpt-guide kpt-guide--c" d="M-90 194 C100 146 280 236 510 184" />
+        <text class="kpt-text kpt-text--a"><textPath href="#kpt-path-a" startOffset="-120">FORM FOLLOWS MOTION · FORM FOLLOWS MOTION · FORM FOLLOWS MOTION · FORM FOLLOWS MOTION · </textPath></text>
+        <text class="kpt-text kpt-text--b"><textPath href="#kpt-path-b" startOffset="-250">CONTROL THE CURRENT · CONTROL THE CURRENT · CONTROL THE CURRENT · CONTROL THE CURRENT · </textPath></text>
+        <text class="kpt-text kpt-text--c"><textPath href="#kpt-path-c" startOffset="-60">TYPE WITH MOMENTUM · TYPE WITH MOMENTUM · TYPE WITH MOMENTUM · TYPE WITH MOMENTUM · </textPath></text>
+      </svg>
+    </div>
+
+    <footer class="kpt-footer">
+      <p>Move quickly to accelerate · move vertically to bend</p>
+      <button class="kpt-reverse" type="button">Reverse</button>
+    </footer>
+  </section>
+</div>

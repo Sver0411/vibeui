@@ -1,0 +1,149 @@
+.cs-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(2, minmax(0, 250px));
+  gap: 18px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@media (max-width: 620px) {
+  .cs-stage { grid-template-columns: minmax(0, 280px); }
+}
+
+.cs {
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cs:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(24, 24, 27, 0.1); }
+
+.cs-media {
+  position: relative;
+  height: 118px;
+  background: linear-gradient(135deg, var(--cs-g1), var(--cs-g2));
+  overflow: hidden;
+}
+
+.cs-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 11px;
+  font-weight: 600;
+  color: #27272a;
+}
+
+.cs-duration {
+  position: absolute;
+  right: 10px;
+  bottom: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.45);
+  font-size: 11px;
+  color: #ffffff;
+}
+
+.cs-duration svg { width: 11px; height: 11px; }
+
+.cs-mark {
+  position: absolute;
+  left: 14px;
+  bottom: 2px;
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: rgba(255, 255, 255, 0.22);
+  user-select: none;
+  line-height: 1.2;
+}
+
+.cs-body { padding: 13px 14px 14px; display: grid; gap: 9px; }
+
+.cs-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.45;
+  color: #18181b;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 40px;
+}
+
+.cs-teacher { display: flex; align-items: center; gap: 7px; }
+
+.cs-avatar {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--cs-av-bg, #71717a);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.cs-teacher-name { font-size: 12px; color: #52525b; }
+
+.cs-progress-row { display: flex; align-items: center; gap: 8px; }
+
+.cs-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: #f4f4f5;
+  overflow: hidden;
+}
+
+.cs-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cs-g2), var(--cs-g1));
+}
+
+.cs-percent {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: #71717a;
+}
+
+.cs-price-row { display: flex; align-items: center; gap: 7px; }
+
+.cs-price {
+  font-size: 17px;
+  font-weight: 800;
+  color: #c2410c;
+}
+
+.cs-origin {
+  font-size: 12px;
+  color: #a1a1aa;
+  text-decoration: line-through;
+}
+
+.cs-tag {
+  margin-left: auto;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #fff1e7;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #c2410c;
+}

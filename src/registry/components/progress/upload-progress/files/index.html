@@ -1,0 +1,28 @@
+<div class="up-demo">
+  <div class="up-card" id="up-card">
+    <div class="up-card__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M12 12v6"/><path d="m9.5 14.5 2.5-2.5 2.5 2.5"/></svg>
+    </div>
+    <div class="up-card__body">
+      <div class="up-card__row">
+        <span class="up-card__name">quarterly-report.pdf</span>
+        <span class="up-card__size" id="up-size">0.0 MB / 8.4 MB</span>
+      </div>
+      <div class="up-card__track"><div class="up-card__fill" id="up-fill"></div></div>
+      <div class="up-card__row up-card__row--meta">
+        <span id="up-meta">Uploading at 12.4 MB/s</span>
+        <span id="up-percent" class="up-card__percent">0%</span>
+      </div>
+    </div>
+    <div class="up-card__actions">
+      <button class="up-card__btn" id="up-toggle" type="button" aria-label="Pause upload">
+        <svg id="up-pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg id="up-resume-icon" viewBox="0 0 16 16" aria-hidden="true" style="display:none"><path d="m5 3 8 5-8 5V3Z" fill="currentColor"/></svg>
+      </button>
+      <button class="up-card__btn up-card__btn--danger" id="up-cancel" type="button" aria-label="Cancel upload">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <p class="up-demo__hint" id="up-hint">Simulated 8.4 MB upload — pause, resume or cancel it.</p>
+</div>

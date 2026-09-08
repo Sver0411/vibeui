@@ -1,0 +1,79 @@
+.fg-stage {
+  min-height: 100vh;
+  padding: 64px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.fg-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.fg-title {
+  margin: 0;
+  font-size: clamp(24px, 3.4vw, 32px);
+  letter-spacing: -0.02em;
+  color: #18181b;
+}
+
+.fg-sub {
+  margin: 10px 0 0;
+  font-size: 14.5px;
+  color: #71717a;
+}
+
+.fg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.fg-card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  padding: 24px 22px;
+  transition: transform 0.22s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+}
+
+.fg-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(15, 118, 110, 0.35);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+
+.fg-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+  font-size: 17px;
+}
+
+.fg-card h3 {
+  margin: 14px 0 0;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.fg-card p {
+  margin: 8px 0 0;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: #52525b;
+}
+
+@media (max-width: 860px) {
+  .fg-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .fg-grid { grid-template-columns: 1fr; }
+}

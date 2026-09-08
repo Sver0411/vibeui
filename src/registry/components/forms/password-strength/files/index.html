@@ -1,0 +1,21 @@
+<div class="ps-stage">
+  <div class="ps-field">
+    <label class="ps-label" for="ps-input">Create password</label>
+    <div class="ps-input-row">
+      <input class="ps-input" id="ps-input" type="password" placeholder="At least 12 characters" autocomplete="new-password" />
+      <button class="ps-toggle" id="ps-toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button>
+    </div>
+    <div class="ps-meter" role="status" aria-label="Password strength">
+      <div class="ps-meter__track">
+        <div class="ps-meter__fill" id="ps-fill"></div>
+      </div>
+      <span class="ps-meter__label" id="ps-label">Enter a password</span>
+    </div>
+    <ul class="ps-rules" id="ps-rules">
+      <li data-rule="length">12+ characters</li>
+      <li data-rule="case">Upper &amp; lowercase</li>
+      <li data-rule="number">A number</li>
+      <li data-rule="symbol">A symbol</li>
+    </ul>
+  </div>
+</div>

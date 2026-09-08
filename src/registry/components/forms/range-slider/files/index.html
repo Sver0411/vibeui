@@ -1,0 +1,29 @@
+<div class="rs-stage">
+  <div class="rs-case">
+    <p class="rs-caption">单值滑块 · 拖动或方向键调节</p>
+    <div class="rs-slider" id="rsSingle">
+      <div class="rs-track"><div class="rs-fill" id="rsSingleFill"></div></div>
+      <button type="button" class="rs-thumb" id="rsSingleThumb" role="slider" aria-label="音量" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" aria-valuetext="40"></button>
+    </div>
+    <p class="rs-value">当前值 <strong id="rsSingleValue">40</strong></p>
+  </div>
+
+  <div class="rs-case">
+    <p class="rs-caption">双端区间 · 两端均可拖 · 自动防交叉</p>
+    <div class="rs-slider" id="rsRange">
+      <div class="rs-track"><div class="rs-fill" id="rsRangeFill"></div></div>
+      <button type="button" class="rs-thumb" id="rsRangeMin" role="slider" aria-label="最低价格" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="120" aria-valuetext="120"></button>
+      <button type="button" class="rs-thumb" id="rsRangeMax" role="slider" aria-label="最高价格" aria-valuemin="0" aria-valuemax="1000" aria-valuenow="680" aria-valuetext="680"></button>
+    </div>
+    <p class="rs-value">价格区间 <strong id="rsRangeValue">¥120 – ¥680</strong></p>
+  </div>
+
+  <div class="rs-case">
+    <p class="rs-caption">步进刻度 · step = 25，吸附刻度</p>
+    <div class="rs-slider" id="rsTicks">
+      <div class="rs-track"><div class="rs-fill" id="rsTicksFill"></div></div>
+      <button type="button" class="rs-thumb" id="rsTicksThumb" role="slider" aria-label="进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50"></button>
+      <div class="rs-ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</div>

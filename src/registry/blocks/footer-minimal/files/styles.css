@@ -1,0 +1,169 @@
+.fw-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 20px;
+  padding: 48px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.fw-caption {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+/* ---- 页脚本体 ---- */
+.fw {
+  width: min(640px, 88vw);
+  border: 1px solid #e4e4e7;
+  border-radius: 18px;
+  background: #ffffff;
+  overflow: hidden;
+}
+.fw--dark {
+  border-color: #27272a;
+  background: #18181b;
+}
+
+.fw-main {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 28px;
+  padding: 26px 26px 20px;
+}
+
+/* 品牌列 */
+.fw-brand {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.fw-logo {
+  font-size: 16px;
+  font-weight: 700;
+  color: #18181b;
+}
+.fw--dark .fw-logo {
+  color: #f4f4f5;
+}
+
+.fw-desc {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #71717a;
+}
+.fw--dark .fw-desc {
+  color: #a1a1aa;
+}
+
+.fw-social {
+  display: flex;
+  gap: 6px;
+}
+
+.fw-ico {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #52525b;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.fw-ico:hover {
+  border-color: #0f766e;
+  color: #0f766e;
+}
+.fw-ico:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* 链接列 */
+.fw-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.fw-col {
+  display: grid;
+  gap: 7px;
+  align-content: start;
+}
+
+.fw-head {
+  margin: 0 0 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #18181b;
+}
+.fw--dark .fw-head {
+  color: #f4f4f5;
+}
+
+.fw-link {
+  font-size: 12px;
+  color: #71717a;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.fw-link:hover {
+  color: #0f766e;
+}
+.fw--dark .fw-link:hover {
+  color: #5eead4;
+}
+.fw-link:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* 底栏 */
+.fw-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 26px;
+  border-top: 1px solid #f4f4f5;
+  font-size: 11px;
+  color: #a1a1aa;
+}
+.fw--dark .fw-bar {
+  border-top-color: #27272a;
+  color: #71717a;
+}
+
+.fw-bar-links {
+  display: flex;
+  gap: 14px;
+}
+
+.fw-mini {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.fw-mini:hover {
+  color: #0f766e;
+}
+
+@media (max-width: 560px) {
+  .fw-main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .fw-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

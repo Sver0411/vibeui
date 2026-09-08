@@ -1,0 +1,205 @@
+.bl-stage {
+  min-height: 100vh;
+  display: grid;
+  align-content: start;
+  gap: 22px;
+  padding: 28px 24px 40px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---- 顶栏 ---- */
+.bl-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(720px, 88vw);
+  margin: 0 auto;
+}
+
+.bl-logo {
+  font-size: 16px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.bl-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.bl-navlink {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #52525b;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.bl-navlink:hover {
+  background: #f0fdfa;
+  color: #0f766e;
+}
+.bl-navlink:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* ---- 头条文章 ---- */
+.bl-feat {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  width: min(720px, 88vw);
+  margin: 0 auto;
+  border: 1px solid #e4e4e7;
+  border-radius: 18px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* 封面：CSS 渐变绘制的抽象图 */
+.bl-feat-cover {
+  position: relative;
+  min-height: 220px;
+  background: linear-gradient(140deg, #0f766e 0%, #0ea5e9 60%, #8b5cf6 100%);
+}
+.bl-feat-cover i {
+  position: absolute;
+  right: -30%;
+  bottom: -34%;
+  width: 80%;
+  height: 70%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.bl-feat-body {
+  display: grid;
+  gap: 10px;
+  align-content: center;
+  padding: 26px;
+}
+
+.bl-feat-title {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #18181b;
+}
+
+.bl-feat-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #71717a;
+}
+
+/* ---- 标签 ---- */
+.bl-tag {
+  justify-self: start;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #f4f4f5;
+  font-size: 11px;
+  font-weight: 600;
+  color: #52525b;
+}
+.bl-tag--teal {
+  background: #f0fdfa;
+  color: #0f766e;
+}
+
+.bl-meta {
+  font-size: 11px;
+  color: #a1a1aa;
+}
+
+/* ---- 文章网格 ---- */
+.bl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: min(720px, 88vw);
+  margin: 0 auto;
+}
+
+.bl-card {
+  display: grid;
+  align-content: start;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.bl-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.bl-cover {
+  height: 92px;
+}
+.bl-cover--a {
+  background: linear-gradient(130deg, #fbbf24, #f97316);
+}
+.bl-cover--b {
+  background: linear-gradient(130deg, #a78bfa, #6366f1);
+}
+.bl-cover--c {
+  background: linear-gradient(130deg, #5eead4, #0d9488);
+}
+
+.bl-card-body {
+  display: grid;
+  gap: 7px;
+  padding: 14px 16px 16px;
+}
+
+.bl-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #18181b;
+}
+
+/* ---- 底栏 ---- */
+.bl-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(720px, 88vw);
+  margin: 6px auto 0;
+  padding-top: 14px;
+  border-top: 1px solid #e4e4e7;
+  font-size: 11px;
+  color: #a1a1aa;
+}
+
+.bl-rss {
+  color: #0f766e;
+  text-decoration: none;
+}
+.bl-rss:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .bl-feat {
+    grid-template-columns: 1fr;
+  }
+  .bl-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bl-card {
+    transition: none;
+  }
+  .bl-card:hover {
+    transform: none;
+  }
+}

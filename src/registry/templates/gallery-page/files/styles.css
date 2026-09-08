@@ -1,0 +1,125 @@
+:root {
+  --gl-ink: #0f172a;
+  --gl-sub: #64748b;
+  --gl-line: #e2e8f0;
+  --gl-bg: #ffffff;
+}
+
+.gl-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  padding: 36px 24px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--gl-ink);
+  box-sizing: border-box;
+}
+
+.gl-head { max-width: 860px; margin: 0 auto 20px; }
+.gl-h1 { margin: 0 0 6px; font-size: 26px; letter-spacing: -0.02em; }
+.gl-sub { margin: 0; font-size: 13.5px; color: var(--gl-sub); }
+
+/* 瀑布式网格 */
+.gl-grid {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.gl-item {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: zoom-in;
+  border-radius: 14px;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+}
+
+.gl-item:nth-child(3n + 1) { grid-row: span 2; }
+
+.gl-thumb {
+  width: 100%;
+  height: 100%;
+  min-height: 96px;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.gl-item:hover .gl-thumb { transform: scale(1.05); }
+.gl-item:focus-visible { outline: 3px solid #6366f1; outline-offset: 2px; }
+
+/* 灯箱 */
+.gl-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(2, 6, 23, 0.86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  animation: gl-in 0.2s ease;
+}
+
+@keyframes gl-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gl-figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: min(560px, 80vw); }
+
+.gl-art {
+  width: min(520px, 74vw);
+  height: min(380px, 56vh);
+  border-radius: 18px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+.gl-caption { color: #cbd5e1; font-size: 13px; }
+
+.gl-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.gl-close:hover { background: rgba(255, 255, 255, 0.22); }
+
+.gl-nav {
+  width: 42px;
+  height: 42px;
+  flex: none;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.gl-nav:hover { background: rgba(255, 255, 255, 0.24); }
+.gl-close:focus-visible, .gl-nav:focus-visible { outline: 2px solid #a5b4fc; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-lightbox { animation: none; }
+  .gl-thumb { transition: none; }
+}
+
+@media (max-width: 640px) {
+  .gl-grid { grid-template-columns: repeat(2, 1fr); }
+  .gl-nav { display: none; }
+  .gl-stage { padding: 24px 14px; }
+}

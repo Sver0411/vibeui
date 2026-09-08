@@ -1,0 +1,242 @@
+.pr-page {
+  min-height: 100vh;
+  background: #fafafa;
+  color: #26262b;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 48px 20px 60px;
+  box-sizing: border-box;
+}
+
+.pr-head {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.pr-title {
+  margin: 0;
+  font-size: clamp(26px, 4.6vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.pr-subtitle {
+  margin: 8px 0 0;
+  font-size: 14.5px;
+  color: #71717a;
+}
+
+.pr-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #71717a;
+}
+
+.pr-toggle__label[data-period="annual"],
+.pr-toggle__label[data-period="monthly"] {
+  transition: color 0.2s ease;
+}
+
+.pr-save {
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f766e;
+  background: rgba(15, 118, 110, 0.1);
+  padding: 2px 7px;
+  border-radius: 999px;
+  margin-left: 2px;
+}
+
+.pr-switch {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  border: 0;
+  border-radius: 999px;
+  background: #d4d4d8;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pr-switch[aria-checked="true"] {
+  background: #26262b;
+}
+
+.pr-switch__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pr-switch[aria-checked="true"] .pr-switch__thumb {
+  transform: translateX(18px);
+}
+
+.pr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  max-width: 880px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.pr-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px;
+  border: 1px solid #e9e9ec;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.pr-plan--featured {
+  border-color: #0f766e;
+  box-shadow: 0 18px 44px rgba(15, 118, 110, 0.14);
+}
+
+.pr-plan__flag {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background: #0f766e;
+  padding: 4px 11px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pr-plan__name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.pr-plan__price {
+  margin: 12px 0 0;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.pr-plan__amount {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.pr-plan__period {
+  font-size: 12.5px;
+  color: #71717a;
+}
+
+.pr-plan__desc {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #71717a;
+}
+
+.pr-plan__list {
+  list-style: none;
+  margin: 16px 0 20px;
+  padding: 14px 0 0;
+  border-top: 1px solid #f0f0f2;
+  display: grid;
+  gap: 9px;
+  flex: 1;
+}
+
+.pr-plan__list li {
+  font-size: 13px;
+  color: #52525b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pr-plan__list li::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3 7.5 6 10.5 11 4' fill='none' stroke='%230f766e' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.pr-plan__cta {
+  border: 1px solid #d4d4d8;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #26262b;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 11px 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.pr-plan__cta:hover {
+  background: #f4f4f5;
+}
+
+.pr-plan__cta--primary {
+  background: #0f766e;
+  border-color: #0f766e;
+  color: #ffffff;
+}
+
+.pr-plan__cta--primary:hover {
+  background: #0d5f59;
+}
+
+.pr-faq {
+  max-width: 620px;
+  margin: 46px auto 0;
+}
+
+.pr-faq__title {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+}
+
+.pr-faq__item {
+  border: 1px solid #e9e9ec;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 14px 18px;
+  margin-bottom: 8px;
+}
+
+.pr-faq__item summary {
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pr-faq__item p {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #71717a;
+}

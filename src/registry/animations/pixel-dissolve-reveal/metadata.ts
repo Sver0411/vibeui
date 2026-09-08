@@ -1,0 +1,30 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "pixel-dissolve-reveal",
+  slug: "pixel-dissolve-reveal",
+  name: "像素溶解揭示",
+  description:
+    "基于有序噪声阈值的 Canvas 像素溶解：指针移动改变揭示中心，边缘形成可控的离散颗粒带。",
+  category: "animations",
+  subcategory: "Canvas Reveal",
+  type: "animation",
+  tags: ["Canvas", "像素", "溶解", "噪声", "指针交互"],
+  technologies: ["HTML", "CSS", "JavaScript", "Canvas 2D", "React"],
+  styles: ["数字感", "实验性", "高级"],
+  difficulty: "advanced",
+  featured: true,
+  isNew: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  engine: "Canvas 2D",
+  performanceTier: "medium",
+  reducedMotionFallback: "显示固定的半揭示像素构图，指针移动仅更新静态局部状态。",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-08-31",
+  updatedAt: "2026-08-31",
+  dir: "animations/pixel-dissolve-reveal",
+};

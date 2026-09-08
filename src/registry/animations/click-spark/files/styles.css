@@ -1,0 +1,56 @@
+.cs-stage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  cursor: crosshair;
+  overflow: hidden;
+  position: relative;
+}
+
+.cs-hint-area { text-align: center; pointer-events: none; }
+
+.cs-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.cs-hint {
+  margin: 8px 0 0;
+  font-size: 13.5px;
+  color: #71717a;
+}
+
+/* 火花容器：定位到点击坐标 */
+.cs-spark {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 每条火花：一条短亮线向外飞散 */
+.cs-particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5px;
+  height: 10px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #0f766e, #5eead4);
+  transform-origin: 50% 0;
+  animation: cs-fly 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes cs-fly {
+  0% {
+    transform: rotate(var(--angle)) translateY(0) scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateY(var(--distance)) scaleY(0.4);
+    opacity: 0;
+  }
+}

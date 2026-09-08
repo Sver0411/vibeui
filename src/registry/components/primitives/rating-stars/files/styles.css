@@ -1,0 +1,196 @@
+.rt-stage {
+  --rt-star: 26px;
+  --rt-gap: 6px;
+  --rt-color: #f59e0b;
+  --rt-muted: #d4d4d8;
+  --rt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 30px;
+  padding: 32px 20px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.rt-case {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.rt-caption {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+.rt-value {
+  margin: 0;
+  font-size: 13px;
+  color: #52525b;
+}
+.rt-value strong {
+  font-variant-numeric: tabular-nums;
+  color: #18181b;
+}
+
+/* ---- 五角星形状：clip-path 绘制，无需字体或 SVG ---- */
+.rt-live i,
+.rt-static i {
+  flex: 0 0 var(--rt-star);
+  width: var(--rt-star);
+  height: var(--rt-star);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background: currentColor;
+}
+
+/* ---- 可交互评分 ---- */
+.rt-live {
+  position: relative;
+  display: inline-flex;
+  color: var(--rt-muted);
+}
+
+.rt-live__track,
+.rt-live__fill {
+  display: flex;
+  gap: var(--rt-gap);
+  pointer-events: none;
+}
+
+.rt-live__fill {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 0;
+  overflow: hidden;
+  color: var(--rt-color);
+  transition: width 0.18s var(--rt-ease);
+}
+/* 填充层内的星条保持完整宽度，才能被容器按比例裁切 */
+.rt-live__fill > i {
+  flex: 0 0 var(--rt-star);
+}
+
+.rt-live__hit {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap: var(--rt-gap);
+}
+
+.rt-hit {
+  flex: 1 1 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.rt-hit:focus-visible {
+  outline: 2px solid var(--rt-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* 悬停时星星整体轻微放大，给出"可点"的暗示 */
+.rt-live:hover .rt-live__track,
+.rt-live:focus-within .rt-live__track {
+  color: #e4e4e7;
+}
+
+@media (hover: hover) {
+  .rt-live:hover i {
+    transform: scale(1.04);
+  }
+  .rt-live i {
+    transition: transform 0.18s var(--rt-ease);
+  }
+}
+
+/* ---- 只读评分 ---- */
+.rt-readonly {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rt-static {
+  position: relative;
+  display: inline-flex;
+  color: var(--rt-muted);
+}
+
+.rt-static__track,
+.rt-static__fill {
+  display: flex;
+  gap: var(--rt-gap);
+}
+
+.rt-static__fill {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: var(--pct, 0%);
+  overflow: hidden;
+  color: var(--rt-color);
+}
+
+.rt-score {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: #52525b;
+}
+
+/* ---- 变体 ---- */
+.rt-variants {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.rt-static--sm {
+  --rt-star: 16px;
+  --rt-gap: 3px;
+}
+
+.rt-static--brand {
+  --rt-star: 22px;
+  --rt-color: #0f766e;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rt-live__fill,
+  .rt-live i {
+    transition-duration: 0.01ms;
+  }
+  .rt-live:hover i {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .rt-stage {
+    --rt-star: 22px;
+    gap: 24px;
+  }
+  .rt-variants {
+    gap: 16px;
+  }
+}

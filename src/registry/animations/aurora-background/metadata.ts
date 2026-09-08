@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "aurora-background",
+  slug: "aurora-background",
+  name: "极光背景",
+  description: "缓慢漂移的模糊色块构成极光。纯 CSS、GPU 友好的 transform，并内置减少动态回退。",
+  category: "animations",
+  subcategory: "Background",
+  type: "animation",
+  tags: ["背景", "极光", "渐变", "色块", "氛围", "纯 CSS"],
+  technologies: ["HTML", "CSS", "React"],
+  styles: ["极光", "氛围", "现代"],
+  difficulty: "beginner",
+  featured: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-08-01",
+  updatedAt: "2026-08-22",
+  dir: "animations/aurora-background",
+};

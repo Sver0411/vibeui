@@ -1,0 +1,65 @@
+.sp-demo {
+  height: 100vh;
+  overflow-y: auto;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #26262b;
+}
+
+.sp-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 4px;
+  background: #e4e4e7;
+}
+
+.sp-bar__fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0f766e, #14b8a6);
+  border-radius: 0 999px 999px 0;
+}
+
+.sp-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 26px 26px 12px;
+}
+
+.sp-title {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.sp-percent {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: #71717a;
+}
+
+.sp-article {
+  padding: 0 26px 40px;
+  display: grid;
+  gap: 16px;
+}
+
+.sp-article p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #52525b;
+  max-width: 60ch;
+}
+
+.sp-article code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  background: #e4e4e7;
+  padding: 1.5px 5px;
+  border-radius: 5px;
+  color: #26262b;
+}

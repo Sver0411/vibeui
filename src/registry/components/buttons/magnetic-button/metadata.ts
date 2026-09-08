@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "magnetic-button",
+  slug: "magnetic-button",
+  name: "磁性按钮",
+  description: "按钮向光标方向轻微吸附，离开后平滑回位。原生 JS 与 React 双实现。",
+  category: "buttons",
+  subcategory: "Buttons",
+  type: "component",
+  tags: ["按钮", "磁性", "光标", "微交互"],
+  technologies: ["HTML", "CSS", "JavaScript", "React"],
+  styles: ["活泼", "极简"],
+  difficulty: "intermediate",
+  featured: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-07-05",
+  updatedAt: "2026-08-14",
+  dir: "components/buttons/magnetic-button",
+};

@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "hero-split",
+  slug: "hero-split",
+  name: "分栏 Hero",
+  description: "左文右图的首屏布局：眉题、标题、卖点清单、双按钮，右侧用纯 CSS 叠层卡片示意产品界面。",
+  category: "blocks",
+  subcategory: "Hero",
+  type: "layout",
+  tags: ["Hero", "分栏", "首屏", "营销", "纯 CSS"],
+  technologies: ["HTML", "CSS"],
+  styles: ["极简", "现代"],
+  difficulty: "intermediate",
+  isNew: true,
+  featured: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-08-31",
+  updatedAt: "2026-08-31",
+  dir: "blocks/hero-split",
+};

@@ -1,0 +1,96 @@
+.tw-stage {
+  min-height: 100vh;
+  padding: 64px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.tw-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tw-title {
+  margin: 0;
+  font-size: clamp(24px, 3.4vw, 32px);
+  letter-spacing: -0.02em;
+  color: #18181b;
+}
+
+.tw-sub {
+  margin: 10px 0 0;
+  font-size: 14.5px;
+  color: #71717a;
+}
+
+/* 瀑布流：列数自适应，卡片按列排布 */
+.tw-masonry {
+  columns: 3;
+  column-gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tw-quote {
+  break-inside: avoid;
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  padding: 22px;
+  margin: 0 0 18px;
+  transition: transform 0.22s ease, box-shadow 0.25s ease;
+}
+
+.tw-quote:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+.tw-quote blockquote {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #3f3f46;
+}
+
+.tw-quote--lg blockquote { font-size: 15px; }
+
+.tw-quote figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tw-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background: hsl(var(--avatar-hue) 60% 55%);
+  flex-shrink: 0;
+}
+
+.tw-quote figcaption strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.tw-quote figcaption small {
+  font-size: 12px;
+  color: #a1a1aa;
+}
+
+@media (max-width: 860px) {
+  .tw-masonry { columns: 2; }
+}
+
+@media (max-width: 560px) {
+  .tw-masonry { columns: 1; }
+}

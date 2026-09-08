@@ -1,0 +1,17 @@
+<div class="ss2-stage">
+  <div class="ss2-outer">
+    <div class="ss2-fade ss2-fade--top" aria-hidden="true"></div>
+    <div class="ss2-fade ss2-fade--bottom is-on" aria-hidden="true"></div>
+    <div class="ss2-scroll" id="ss2-scroll" tabindex="0" aria-label="可滚动内容，上下边缘有渐隐提示">
+      <p>下拉菜单、抽屉、评论区、通知面板——凡是内容可能超出固定高度的容器，都需要一个「下面还有」的视觉暗示，否则用户根本不知道该滚。</p>
+      <p>最轻量的暗示就是边缘渐隐阴影：内容贴着边被裁切的地方，叠一层从容器背景色渐变到透明的遮罩。</p>
+      <p>判定条件只有两个：scrollTop 大于 0 说明上方被裁切；scrollTop 小于 scrollHeight 减去 clientHeight 说明下方被裁切。</p>
+      <p>两个条件互相独立，所以上下遮罩要分开控制，可能出现「只有顶部有阴影」的中间态。</p>
+      <p>性能上必须 rAF 节流：滚动事件每秒触发几十次，但一帧只需要写一次 opacity。</p>
+      <p>深色主题下遮罩渐变要用容器的实际背景色，写死白色会在暗色界面留下一块亮斑。</p>
+      <p>继续往下滚，观察底部阴影在触底时的淡出——这就是完整的效果闭环。</p>
+      <p>最后一行：滚到这里，上下阴影应该全部消失。</p>
+    </div>
+  </div>
+  <p class="ss2-hint">上下滚动试试 · 阴影指示被裁切的方向</p>
+</div>

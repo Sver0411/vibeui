@@ -1,0 +1,77 @@
+<div class="tr-stage">
+  <div class="tr-case">
+    <p class="tr-caption">可交互 · 父子勾选联动 · 半选态 · 展开/收起</p>
+    <div class="tr" id="trTree">
+      <ul class="tr-list">
+        <li class="tr-node">
+          <div class="tr-row">
+            <button type="button" class="tr-toggle" aria-expanded="true" aria-label="收起 组件库">
+              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5" /></svg>
+            </button>
+            <label class="tr-label"><input type="checkbox" class="tr-check"><span>组件库</span></label>
+          </div>
+          <ul class="tr-list tr-children">
+            <li class="tr-node is-leaf">
+              <div class="tr-row">
+                <label class="tr-label"><input type="checkbox" class="tr-check"><span>按钮</span><em class="tr-count">6</em></label>
+              </div>
+            </li>
+            <li class="tr-node is-leaf">
+              <div class="tr-row">
+                <label class="tr-label"><input type="checkbox" class="tr-check"><span>导航</span><em class="tr-count">9</em></label>
+              </div>
+            </li>
+            <li class="tr-node is-leaf">
+              <div class="tr-row">
+                <label class="tr-label"><input type="checkbox" class="tr-check"><span>卡片</span><em class="tr-count">9</em></label>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="tr-node">
+          <div class="tr-row">
+            <button type="button" class="tr-toggle" aria-expanded="false" aria-label="展开 动效集">
+              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5" /></svg>
+            </button>
+            <label class="tr-label"><input type="checkbox" class="tr-check"><span>动效集</span></label>
+          </div>
+          <ul class="tr-list tr-children" hidden>
+            <li class="tr-node is-leaf">
+              <div class="tr-row">
+                <label class="tr-label"><input type="checkbox" class="tr-check"><span>文字动效</span><em class="tr-count">5</em></label>
+              </div>
+            </li>
+            <li class="tr-node is-leaf">
+              <div class="tr-row">
+                <label class="tr-label"><input type="checkbox" class="tr-check"><span>背景特效</span><em class="tr-count">4</em></label>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="tr-node">
+          <div class="tr-row">
+            <button type="button" class="tr-toggle" aria-expanded="false" aria-label="展开 页面与区块">
+              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5" /></svg>
+            </button>
+            <label class="tr-label"><input type="checkbox" class="tr-check"><span>页面与区块</span></label>
+          </div>
+          <ul class="tr-list tr-children" hidden>
+            <li class="tr-node is-leaf">
+              <div class="tr-row">
+                <label class="tr-label"><input type="checkbox" class="tr-check"><span>页面区块</span><em class="tr-count">10</em></label>
+              </div>
+            </li>
+            <li class="tr-node is-leaf">
+              <div class="tr-row">
+                <label class="tr-label"><input type="checkbox" class="tr-check"><span>页面模板</span><em class="tr-count">11</em></label>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <p class="tr-summary" id="trSummary">已选 0 / 9 项</p>
+  </div>
+</div>

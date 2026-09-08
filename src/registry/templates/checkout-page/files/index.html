@@ -1,0 +1,43 @@
+<div class="ck-stage">
+  <div class="ck-wrap">
+    <section class="ck-form" aria-label="结算信息">
+      <h2 class="ck-h2">结算</h2>
+
+      <fieldset class="ck-fieldset">
+        <legend class="ck-legend">收货地址</legend>
+        <div class="ck-row">
+          <input class="ck-input" id="ck-name" placeholder="收货人" aria-label="收货人" />
+          <input class="ck-input" id="ck-phone" placeholder="手机号" aria-label="手机号" inputmode="tel" />
+        </div>
+        <input class="ck-input" id="ck-addr" placeholder="详细地址" aria-label="详细地址" />
+      </fieldset>
+
+      <fieldset class="ck-fieldset">
+        <legend class="ck-legend">支付方式</legend>
+        <label class="ck-pay">
+          <input type="radio" name="ck-pay" value="wechat" checked />
+          <span class="ck-pay-box">💬 微信支付</span>
+        </label>
+        <label class="ck-pay">
+          <input type="radio" name="ck-pay" value="alipay" />
+          <span class="ck-pay-box">🅰️ 支付宝</span>
+        </label>
+        <label class="ck-pay">
+          <input type="radio" name="ck-pay" value="card" />
+          <span class="ck-pay-box">💳 银行卡</span>
+        </label>
+      </fieldset>
+
+      <button type="button" class="ck-submit" id="ck-submit">提交订单</button>
+      <p class="ck-done" id="ck-done" hidden role="status">✓ 订单已提交（演示）</p>
+    </section>
+
+    <aside class="ck-summary" aria-label="订单摘要">
+      <h3 class="ck-h3">订单摘要</h3>
+      <ul class="ck-items" id="ck-items"></ul>
+      <div class="ck-line"><span>小计</span><span id="ck-subtotal"></span></div>
+      <div class="ck-line"><span>运费</span><span id="ck-shipping"></span></div>
+      <div class="ck-line ck-total"><span>合计</span><span id="ck-total"></span></div>
+    </aside>
+  </div>
+</div>

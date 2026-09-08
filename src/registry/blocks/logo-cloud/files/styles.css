@@ -1,0 +1,127 @@
+.lc-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 44px;
+  padding: 48px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.lc-case {
+  display: grid;
+  gap: 20px;
+  width: min(560px, 88vw);
+}
+
+.lc-heading {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #71717a;
+}
+
+/* ---- 静态网格 ---- */
+.lc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.lc-logo {
+  display: grid;
+  place-items: center;
+  padding: 18px 10px;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  background: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #52525b;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.lc-logo:hover {
+  color: #18181b;
+  border-color: #a1a1aa;
+  transform: translateY(-2px);
+}
+
+/* ---- 无缝滚动行 ---- */
+.lc-marquee {
+  position: relative;
+  overflow: hidden;
+  /* 两侧渐隐 */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.lc-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  padding-block: 6px;
+  animation: lc-scroll 24s linear infinite;
+}
+/* 悬停暂停，方便点击 logo */
+.lc-marquee:hover .lc-track {
+  animation-play-state: paused;
+}
+
+@keyframes lc-scroll {
+  from { transform: translateX(0); }
+  /* 平移恰好一份副本的宽度（6 个 logo + 6 个 gap） */
+  to { transform: translateX(calc(-50% - 20px)); }
+}
+
+/* 冗余的边缘渐隐元素（mask 已覆盖，保留以兼容不支持 mask 的旧内核） */
+.lc-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  pointer-events: none;
+}
+.lc-fade--l {
+  left: 0;
+  background: linear-gradient(90deg, #fafafa, transparent);
+}
+.lc-fade--r {
+  right: 0;
+  background: linear-gradient(-90deg, #fafafa, transparent);
+}
+
+.lc-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .lc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lc-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
+  .lc-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .lc-fade {
+    display: none;
+  }
+}

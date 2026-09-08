@@ -1,0 +1,49 @@
+<div class="rt-stage">
+  <div class="rt-case">
+    <p class="rt-caption">可交互 · 悬停预览半星 · 方向键微调</p>
+    <div class="rt-live" id="rtLive">
+      <div class="rt-live__track"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="rt-live__fill" id="rtFill"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="rt-live__hit" role="radiogroup" aria-label="评分，使用左右方向键调整">
+        <button type="button" class="rt-hit" role="radio" aria-checked="false" data-index="0" aria-label="1 星"></button>
+        <button type="button" class="rt-hit" role="radio" aria-checked="false" data-index="1" aria-label="2 星"></button>
+        <button type="button" class="rt-hit" role="radio" aria-checked="false" data-index="2" aria-label="3 星"></button>
+        <button type="button" class="rt-hit" role="radio" aria-checked="false" data-index="3" aria-label="4 星"></button>
+        <button type="button" class="rt-hit" role="radio" aria-checked="false" data-index="4" aria-label="5 星"></button>
+      </div>
+    </div>
+    <p class="rt-value">当前评分 <strong id="rtValue">0</strong> / 5</p>
+  </div>
+
+  <div class="rt-case">
+    <p class="rt-caption">只读展示 · 支持任意小数</p>
+    <div class="rt-readonly">
+      <div class="rt-static" style="--pct: 90%">
+        <div class="rt-static__track"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="rt-static__fill"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <span class="rt-score">4.5</span>
+    </div>
+    <div class="rt-readonly">
+      <div class="rt-static" style="--pct: 66%">
+        <div class="rt-static__track"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="rt-static__fill"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <span class="rt-score">3.3</span>
+    </div>
+  </div>
+
+  <div class="rt-case">
+    <p class="rt-caption">尺寸与配色变体</p>
+    <div class="rt-variants">
+      <div class="rt-static rt-static--sm" style="--pct: 80%">
+        <div class="rt-static__track"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="rt-static__fill"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="rt-static rt-static--brand" style="--pct: 60%">
+        <div class="rt-static__track"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="rt-static__fill"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
+</div>

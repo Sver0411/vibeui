@@ -1,0 +1,140 @@
+.up-demo {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  width: min(430px, 92vw);
+  margin: 0 auto;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.up-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.up-card[data-state="done"] {
+  border-color: rgba(21, 128, 61, 0.4);
+}
+
+.up-card[data-state="cancelled"] {
+  opacity: 0.55;
+}
+
+.up-card__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+  flex-shrink: 0;
+}
+
+.up-card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.up-card__body {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.up-card__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  color: #71717a;
+}
+
+.up-card__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #26262b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.up-card__size {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.up-card__track {
+  height: 5px;
+  border-radius: 999px;
+  background: #e4e4e7;
+  overflow: hidden;
+}
+
+.up-card__fill {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: #0f766e;
+  transition: width 0.18s linear;
+}
+
+.up-card[data-state="paused"] .up-card__fill {
+  background: #b45309;
+}
+
+.up-card__row--meta {
+  font-variant-numeric: tabular-nums;
+}
+
+.up-card__percent {
+  font-weight: 600;
+  color: #26262b;
+}
+
+.up-card__actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.up-card__btn {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 8px;
+  background: #f4f4f5;
+  color: #52525b;
+  cursor: pointer;
+}
+
+.up-card__btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.up-card__btn:hover {
+  background: #e4e4e7;
+}
+
+.up-card__btn--danger:hover {
+  background: rgba(179, 38, 30, 0.12);
+  color: #b3261e;
+}
+
+.up-demo__hint {
+  margin: 0;
+  font-size: 13px;
+  color: #71717a;
+}

@@ -1,0 +1,27 @@
+<div class="ss-layout">
+  <nav class="ss-nav" aria-label="页面目录">
+    <a class="ss-link is-active" href="#ss-s1">概述</a>
+    <a class="ss-link" href="#ss-s2">安装</a>
+    <a class="ss-link" href="#ss-s3">快速上手</a>
+    <a class="ss-link" href="#ss-s4">进阶配置</a>
+  </nav>
+
+  <div class="ss-content">
+    <section class="ss-section" id="ss-s1">
+      <h2 class="ss-h2">概述</h2>
+      <p>滚动监听导航是文档站与帮助中心的标配：读者永远知道自己在哪一节。核心是「当前节」的判定——本例用 IntersectionObserver 把判定线放在视口上方 20% 处。</p>
+    </section>
+    <section class="ss-section" id="ss-s2">
+      <h2 class="ss-h2">安装</h2>
+      <p>安装只需一条命令。相比滚动事件里逐节测量 getBoundingClientRect，观察器方案在长文档下依然稳定，因为它只在可见性变化的帧里回调。</p>
+    </section>
+    <section class="ss-section" id="ss-s3">
+      <h2 class="ss-h2">快速上手</h2>
+      <p>三行代码接入：渲染导航、渲染小节、调用初始化函数。点击导航项会平滑滚动到对应小节，滚动过程中高亮会自动跟随，落到最后一节时强制点亮末项。</p>
+    </section>
+    <section class="ss-section" id="ss-s4">
+      <h2 class="ss-h2">进阶配置</h2>
+      <p>支持自定义判定线位置、粘性偏移与嵌套两级目录。页面很长时导航会内部滚动，始终保证当前项可见。继续滚动到页面底部试试末项的强制高亮。</p>
+    </section>
+  </div>
+</div>

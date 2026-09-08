@@ -1,0 +1,33 @@
+<div class="lg-page">
+  <div class="lg-aurora" aria-hidden="true"><div class="lg-blob lg-blob--a"></div><div class="lg-blob lg-blob--b"></div></div>
+
+  <main class="lg-card">
+    <h1 class="lg-title">Welcome back</h1>
+    <p class="lg-subtitle">Sign in to your workspace</p>
+
+    <form class="lg-form" id="lg-form" novalidate>
+      <div class="lg-field">
+        <label for="lg-email">Email</label>
+        <input id="lg-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+        <p class="lg-error" data-error="email"></p>
+      </div>
+      <div class="lg-field">
+        <div class="lg-label-row">
+          <label for="lg-password">Password</label>
+          <a href="#" onclick="return false" class="lg-forgot">Forgot?</a>
+        </div>
+        <div class="lg-password">
+          <input id="lg-password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required minlength="8" />
+          <button type="button" class="lg-eye" id="lg-eye" aria-label="Show password" aria-pressed="false">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10s3-5.5 8-5.5S18 10 18 10s-3 5.5-8 5.5S2 10 2 10Z"/><circle cx="10" cy="10" r="2.6"/></svg>
+          </button>
+        </div>
+        <p class="lg-error" data-error="password"></p>
+      </div>
+      <button class="lg-submit" id="lg-submit" type="submit">Sign in</button>
+      <p class="lg-error lg-error--form" data-error="form" role="alert"></p>
+    </form>
+
+    <p class="lg-footer">No account? <a href="#" onclick="return false">Request access</a></p>
+  </main>
+</div>

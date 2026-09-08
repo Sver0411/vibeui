@@ -1,0 +1,140 @@
+:root {
+  --sp-ink: #0f172a;
+  --sp-sub: #64748b;
+  --sp-line: #e2e8f0;
+  --sp-bg: #ffffff;
+  --sp-up: #dc2626;
+  --sp-down: #16a34a;
+  --sp-accent: #2563eb;
+}
+
+.sp-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--sp-ink);
+  box-sizing: border-box;
+}
+
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: min(720px, 100%);
+}
+
+.sp-card {
+  background: var(--sp-bg);
+  border: 1px solid var(--sp-line);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.05);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.sp-card:hover {
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1);
+  transform: translateY(-2px);
+}
+
+.sp-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sp-label { font-size: 12.5px; color: var(--sp-sub); }
+
+.sp-delta {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+}
+
+.sp-delta.up { color: var(--sp-up); background: rgba(220, 38, 38, 0.08); }
+.sp-delta.down { color: var(--sp-down); background: rgba(22, 163, 74, 0.08); }
+
+.sp-value { font-size: 22px; font-weight: 700; margin-top: 4px; letter-spacing: -0.02em; }
+.sp-value small { font-size: 13px; font-weight: 500; color: var(--sp-sub); margin-left: 2px; }
+
+/* 图表容器 */
+.sp-chart { position: relative; margin-top: 12px; }
+.sp-chart svg { display: block; width: 100%; height: 64px; }
+
+.sp-line {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: sp-draw 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes sp-draw { to { stroke-dashoffset: 0; } }
+
+.sp-area { opacity: 0.12; }
+
+.sp-dot {
+  fill: var(--sp-bg);
+  stroke-width: 2.5;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.sp-dot.show { opacity: 1; }
+
+.sp-tip {
+  position: absolute;
+  background: var(--sp-ink);
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  transform: translate(-50%, -130%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+  font-variant-numeric: tabular-nums;
+}
+
+.sp-tip.show { opacity: 1; }
+
+/* 迷你柱状 */
+.sp-bars { display: flex; align-items: flex-end; gap: 5px; height: 64px; }
+
+.sp-bar {
+  flex: 1;
+  border-radius: 4px 4px 2px 2px;
+  background: var(--sp-accent);
+  opacity: 0.35;
+  transform-origin: bottom;
+  animation: sp-grow 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  transition: opacity 0.12s ease;
+}
+
+.sp-bar.hot { opacity: 1; }
+
+@keyframes sp-grow { from { transform: scaleY(0); } }
+
+.sp-hint { font-size: 12.5px; color: var(--sp-sub); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-line { animation: none; stroke-dashoffset: 0; }
+  .sp-bar { animation: none; }
+  .sp-card { transition: none; }
+}
+
+@media (max-width: 640px) {
+  .sp-grid { grid-template-columns: 1fr; }
+}

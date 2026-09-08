@@ -1,0 +1,56 @@
+<div class="st-page">
+  <div class="st-layout">
+    <aside class="st-nav" aria-label="Settings sections">
+      <p class="st-nav__title">Settings</p>
+      <a class="st-nav__item st-nav__item--active" href="#st-profile" onclick="return false">Profile</a>
+      <a class="st-nav__item" href="#st-profile" onclick="return false">Notifications</a>
+      <a class="st-nav__item" href="#st-profile" onclick="return false">Billing</a>
+      <a class="st-nav__item st-nav__item--danger" href="#st-danger" onclick="return false">Danger zone</a>
+    </aside>
+
+    <main class="st-main">
+      <section class="st-section" id="st-profile">
+        <h1 class="st-title">Profile</h1>
+        <p class="st-desc">This information is visible to your teammates.</p>
+
+        <div class="st-row">
+          <label class="st-row__label" for="st-name">Display name</label>
+          <input class="st-input" id="st-name" type="text" value="Ada Lovelace" />
+        </div>
+        <div class="st-row">
+          <label class="st-row__label" for="st-handle">Handle</label>
+          <input class="st-input" id="st-handle" type="text" value="@ada" />
+          <p class="st-row__hint">Letters, numbers and dashes. Changing it breaks old links.</p>
+        </div>
+        <div class="st-row">
+          <span class="st-row__label" id="st-email-label">Email digest</span>
+          <div class="st-row__control">
+            <button class="st-switch" id="st-digest" type="button" role="switch" aria-checked="true" aria-labelledby="st-email-label">
+              <span class="st-switch__thumb"></span>
+            </button>
+            <span class="st-row__value" id="st-digest-value">Weekly summary on Mondays</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="st-section st-section--danger" id="st-danger">
+        <h2 class="st-title st-title--sm">Danger zone</h2>
+        <div class="st-danger">
+          <div>
+            <p class="st-danger__title">Delete workspace</p>
+            <p class="st-danger__desc">Permanently removes all projects and members. This cannot be undone.</p>
+          </div>
+          <button class="st-danger__btn" id="st-delete" type="button">Delete…</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="st-savebar" id="st-savebar" hidden>
+    <span>You have unsaved changes</span>
+    <div class="st-savebar__actions">
+      <button class="st-btn" id="st-discard" type="button">Discard</button>
+      <button class="st-btn st-btn--primary" id="st-save" type="button">Save changes</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="gm-stage">
+  <svg class="gm-defs" aria-hidden="true">
+    <defs>
+      <filter id="gm-goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10"
+          result="goo"
+        />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="gm-demo">
+    <p class="gm-kicker">Workspace shortcuts</p>
+    <div class="gm-shell" data-open="false">
+      <div class="gm-liquid" aria-hidden="true">
+        <span class="gm-liquid__trigger"></span>
+        <span class="gm-liquid__panel"></span>
+        <span class="gm-liquid__bead gm-liquid__bead--one"></span>
+        <span class="gm-liquid__bead gm-liquid__bead--two"></span>
+        <span class="gm-liquid__bead gm-liquid__bead--three"></span>
+      </div>
+
+      <button
+        class="gm-trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="gm-actions"
+      >
+        <span class="gm-trigger__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="gm-trigger__copy">
+          <strong>Quick create</strong>
+          <small>Choose an action</small>
+        </span>
+        <span class="gm-trigger__chevron" aria-hidden="true"></span>
+      </button>
+
+      <div class="gm-menu" id="gm-actions" role="menu" aria-hidden="true">
+        <button class="gm-option" type="button" role="menuitem" data-action="New canvas">
+          <span class="gm-option__icon gm-option__icon--mint" aria-hidden="true">＋</span>
+          <span><strong>New canvas</strong><small>Start from a blank frame</small></span>
+          <kbd>N</kbd>
+        </button>
+        <button class="gm-option" type="button" role="menuitem" data-action="Import brief">
+          <span class="gm-option__icon gm-option__icon--violet" aria-hidden="true">↗</span>
+          <span><strong>Import brief</strong><small>Turn notes into a structure</small></span>
+          <kbd>I</kbd>
+        </button>
+        <button class="gm-option" type="button" role="menuitem" data-action="Open library">
+          <span class="gm-option__icon gm-option__icon--amber" aria-hidden="true">◇</span>
+          <span><strong>Open library</strong><small>Reuse a saved pattern</small></span>
+          <kbd>L</kbd>
+        </button>
+      </div>
+    </div>
+    <p class="gm-status" aria-live="polite">Click the pill or press Arrow Down.</p>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+.tm-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 48px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.tm-case {
+  display: grid;
+  gap: 10px;
+  width: min(640px, 88vw);
+  margin: 0 auto;
+}
+
+.tm-heading {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0f766e;
+  text-align: center;
+}
+
+.tm-title {
+  margin: 0;
+  font-size: clamp(22px, 4.5vw, 32px);
+  font-weight: 700;
+  color: #18181b;
+  text-align: center;
+}
+
+.tm-text {
+  max-width: 440px;
+  margin: 0 auto 18px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #71717a;
+  text-align: center;
+}
+
+/* ---- 成员卡网格 ---- */
+.tm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.tm-card {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  padding: 22px 12px 18px;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  background: #ffffff;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.tm-card:hover {
+  transform: translateY(-3px);
+  border-color: #99f6e4;
+  box-shadow: 0 10px 26px rgba(15, 118, 110, 0.1);
+}
+
+/* 头像：渐变底 + 单字 */
+.tm-avatar {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.tm-avatar--teal {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+}
+.tm-avatar--amber {
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+}
+.tm-avatar--violet {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+}
+.tm-avatar--rose {
+  background: linear-gradient(135deg, #fb7185, #e11d48);
+}
+
+.tm-name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.tm-role {
+  margin: 0;
+  font-size: 12px;
+  color: #71717a;
+}
+
+.tm-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tm-link {
+  padding: 3px 10px;
+  border: 1px solid #e4e4e7;
+  border-radius: 999px;
+  font-size: 11px;
+  color: #52525b;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.tm-link:hover {
+  border-color: #0f766e;
+  color: #0f766e;
+}
+.tm-link:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .tm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tm-card {
+    transition: none;
+  }
+  .tm-card:hover {
+    transform: none;
+  }
+}

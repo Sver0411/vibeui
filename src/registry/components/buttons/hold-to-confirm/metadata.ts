@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "hold-to-confirm",
+  slug: "hold-to-confirm",
+  name: "长按确认按钮",
+  description: "长按一秒武装危险操作——环形进度充满后触发，提前松开即安全取消。",
+  category: "buttons",
+  subcategory: "Buttons",
+  type: "component",
+  tags: ["按钮", "长按", "确认", "危险操作", "SVG"],
+  technologies: ["HTML", "CSS", "JavaScript", "React"],
+  styles: ["极简", "防误触"],
+  difficulty: "advanced",
+  featured: true,
+  isNew: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-08-06",
+  updatedAt: "2026-08-26",
+  dir: "components/buttons/hold-to-confirm",
+};

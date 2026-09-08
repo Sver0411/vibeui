@@ -1,0 +1,16 @@
+<div class="otp-stage">
+  <form class="otp" id="otp-form" onsubmit="return false">
+    <p class="otp__title">Enter verification code</p>
+    <p class="otp__subtitle">We sent a 6-digit code to your email.</p>
+    <div class="otp__boxes" id="otp-boxes">
+      <input class="otp__box" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="1" aria-label="Digit 1" />
+      <input class="otp__box" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2" />
+      <input class="otp__box" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3" />
+      <span class="otp__dash" aria-hidden="true"></span>
+      <input class="otp__box" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4" />
+      <input class="otp__box" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5" />
+      <input class="otp__box" type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6" />
+    </div>
+    <p class="otp__status" id="otp-status" role="status" aria-live="polite"></p>
+  </form>
+</div>

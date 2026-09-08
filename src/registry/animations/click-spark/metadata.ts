@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "click-spark",
+  slug: "click-spark",
+  name: "点击火花",
+  description: "点击或按压时在指针位置迸出一圈放射火花，粒子动画结束即销毁，零残留。",
+  category: "animations",
+  subcategory: "Feedback",
+  type: "animation",
+  tags: ["点击", "火花", "粒子", "反馈", "微交互"],
+  technologies: ["HTML", "CSS", "JavaScript"],
+  styles: ["活泼"],
+  difficulty: "intermediate",
+  isNew: true,
+  featured: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-08-31",
+  updatedAt: "2026-08-31",
+  dir: "animations/click-spark",
+};

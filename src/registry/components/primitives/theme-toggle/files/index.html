@@ -1,0 +1,39 @@
+<div class="tt-stage">
+  <div class="tt-case">
+    <p class="tt-caption">可交互 · 日夜图标交叉淡变 · 轨道随主题变色</p>
+    <button type="button" class="tt" id="ttMain" role="switch" aria-checked="false" aria-label="切换深色模式">
+      <span class="tt-knob">
+        <svg class="tt-sun" viewBox="0 0 16 16" aria-hidden="true">
+          <circle cx="8" cy="8" r="3.2" />
+          <g class="tt-rays">
+            <path d="M8 1.2v1.8M8 13v1.8M1.2 8H3M13 8h1.8M3.2 3.2l1.3 1.3M11.5 11.5l1.3 1.3M12.8 3.2l-1.3 1.3M4.5 11.5l-1.3 1.3" />
+          </g>
+        </svg>
+        <svg class="tt-moon" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M13.6 9.6A6 6 0 116.4 2.4a4.8 4.8 0 107.2 7.2z" />
+        </svg>
+      </span>
+    </button>
+    <p class="tt-state">当前：<strong id="ttState">浅色</strong>模式</p>
+  </div>
+
+  <div class="tt-case">
+    <p class="tt-caption">嵌在深色卡片上 · 小尺寸</p>
+    <div class="tt-dark-card">
+      <span class="tt-dark-label">深色模式</span>
+      <button type="button" class="tt tt--sm is-on" role="switch" aria-checked="true" aria-label="切换深色模式">
+        <span class="tt-knob">
+          <svg class="tt-sun" viewBox="0 0 16 16" aria-hidden="true">
+            <circle cx="8" cy="8" r="3.2" />
+            <g class="tt-rays">
+              <path d="M8 1.2v1.8M8 13v1.8M1.2 8H3M13 8h1.8M3.2 3.2l1.3 1.3M11.5 11.5l1.3 1.3M12.8 3.2l-1.3 1.3M4.5 11.5l-1.3 1.3" />
+            </g>
+          </svg>
+          <svg class="tt-moon" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M13.6 9.6A6 6 0 116.4 2.4a4.8 4.8 0 107.2 7.2z" />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,178 @@
+.bs-stage {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  padding: 32px 20px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.bs-caption {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #71717a;
+}
+
+.bs-open {
+  justify-self: center;
+  padding: 10px 22px;
+  border: 0;
+  border-radius: 10px;
+  background: #0f766e;
+  font: inherit;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.bs-open:hover {
+  background: #115e59;
+}
+.bs-open:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* ---- 弹层 ---- */
+.bs-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+.bs-layer[hidden] {
+  display: none;
+}
+
+.bs-mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 24, 27, 0.4);
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+.bs-layer.is-open .bs-mask {
+  opacity: 1;
+}
+
+.bs-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 18px calc(18px + env(safe-area-inset-bottom, 0px));
+  border-radius: 20px 20px 0 0;
+  background: #ffffff;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.14);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.bs-layer.is-open .bs-sheet {
+  transform: translateY(0);
+}
+/* 拖拽跟手时关闭过渡 */
+.bs-sheet.is-dragging {
+  transition: none;
+}
+
+/* ---- 把手：可拖拽区域 ---- */
+.bs-grip {
+  display: grid;
+  place-items: center;
+  padding: 8px 0 12px;
+  cursor: grab;
+  touch-action: none; /* 拖拽期间阻止页面滚动 */
+}
+.bs-grip:active {
+  cursor: grabbing;
+}
+.bs-grip i {
+  width: 40px;
+  height: 5px;
+  border-radius: 999px;
+  background: #d4d4d8;
+}
+
+.bs-title {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+/* ---- 操作宫格 ---- */
+.bs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.bs-item {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  padding: 10px 4px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  color: #52525b;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.bs-item:hover {
+  background: #f4f4f5;
+}
+.bs-item:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: -2px;
+}
+
+.bs-ico {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.bs-ico--teal { background: #0f766e; }
+.bs-ico--green { background: #16a34a; }
+.bs-ico--rose { background: #e11d48; }
+.bs-ico--amber { background: #d97706; }
+
+.bs-cancel {
+  padding: 12px;
+  border: 0;
+  border-radius: 12px;
+  background: #f4f4f5;
+  font: inherit;
+  font-size: 14px;
+  color: #52525b;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.bs-cancel:hover {
+  background: #e4e4e7;
+}
+.bs-cancel:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bs-sheet,
+  .bs-mask {
+    transition-duration: 0.01ms;
+  }
+}

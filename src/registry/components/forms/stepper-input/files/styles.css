@@ -1,0 +1,116 @@
+.st-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 32px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.st-case {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.st-caption {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+.st-hint {
+  margin: 0;
+  font-size: 12px;
+  color: #71717a;
+}
+.st-hint.is-warn {
+  color: #b45309;
+}
+
+/* ---- 步进器 ---- */
+.stepper {
+  --st-accent: #0f766e;
+  --st-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 10px;
+  background: #f4f4f5;
+}
+
+.stepper--boxed {
+  background: #ffffff;
+  border: 1px solid #d4d4d8;
+}
+
+.stepper__btn {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.12s var(--st-ease);
+}
+.stepper__btn svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+.stepper__btn:hover:not(:disabled) {
+  background: #e4e4e7;
+  color: var(--st-accent);
+}
+.stepper__btn:active:not(:disabled) {
+  transform: scale(0.92);
+}
+.stepper__btn:focus-visible {
+  outline: 2px solid var(--st-accent);
+  outline-offset: 1px;
+}
+.stepper__btn:disabled {
+  color: #d4d4d8;
+  cursor: not-allowed;
+}
+
+.stepper__value {
+  min-width: 44px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #18181b;
+}
+/* 数值变化时轻微弹动 */
+.stepper__value.is-bump {
+  animation: st-bump 0.18s var(--st-ease);
+}
+
+@keyframes st-bump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); color: var(--st-accent); }
+  100% { transform: scale(1); }
+}
+
+.stepper.is-disabled {
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stepper__btn,
+  .stepper__value.is-bump {
+    transition-duration: 0.01ms;
+    animation: none;
+  }
+}

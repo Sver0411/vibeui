@@ -1,0 +1,22 @@
+<div class="ms-stage">
+  <div class="ms-field" id="ms-field">
+    <span class="ms-label" id="ms-label">指派成员</span>
+    <button type="button" class="ms-box" id="ms-box" aria-haspopup="listbox" aria-expanded="false">
+      <span class="ms-placeholder" id="ms-placeholder">选择成员…</span>
+      <span class="ms-chips" id="ms-chips" hidden></span>
+      <svg class="ms-caret" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="ms-panel" id="ms-panel" hidden>
+      <div class="ms-searchwrap">
+        <input class="ms-search" id="ms-search" type="text" placeholder="搜索成员…" aria-label="搜索成员" />
+      </div>
+      <div class="ms-actions">
+        <button type="button" class="ms-action" id="ms-all">全选</button>
+        <span class="ms-count" id="ms-count">已选 0 人</span>
+        <button type="button" class="ms-action" id="ms-none">清空</button>
+      </div>
+      <ul class="ms-list" id="ms-list" role="listbox" aria-multiselectable="true" aria-label="成员列表"></ul>
+    </div>
+  </div>
+  <p class="ms-hint">选择后 chips 会回显在触发框里，点击 chip 上的 × 可直接移除。</p>
+</div>

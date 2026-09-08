@@ -1,0 +1,107 @@
+.ie-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 26px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.ie-demo { display: grid; gap: 7px; }
+
+.ie-label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 550;
+  letter-spacing: 0.04em;
+  color: #71717a;
+}
+
+.ie {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+}
+
+.ie-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #18181b;
+  border-bottom: 1px dashed #d4d4d8;
+  cursor: text;
+  transition: border-color 0.15s ease;
+}
+
+.ie:hover .ie-text { border-bottom-color: #a1a1aa; }
+
+.ie-pencil {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #a1a1aa;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.ie:hover .ie-pencil,
+.ie-pencil:focus-visible { opacity: 1; }
+
+.ie-pencil:hover { background: #e4e4e7; color: #3f3f46; }
+.ie-pencil:focus-visible { outline: 2px solid #2563eb; outline-offset: 1px; }
+.ie-pencil svg { width: 14px; height: 14px; }
+
+.ie-input {
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: #18181b;
+  padding: 2px 8px;
+  min-width: 0;
+  border: 1.5px solid #2563eb;
+  border-radius: 8px;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.ie-input::selection { background: #bfdbfe; }
+
+/* 保存成功闪动 */
+.ie-text.is-flash {
+  animation: ie-flash 0.6s ease;
+  border-bottom-color: transparent;
+}
+
+@keyframes ie-flash {
+  0% { background: #dcfce7; }
+  100% { background: transparent; }
+}
+
+/* 空值抖动 */
+.ie-input.is-shake { animation: ie-shake 0.3s ease; }
+
+@keyframes ie-shake {
+  0%, 100% { transform: translateX(0); }
+  30% { transform: translateX(-4px); }
+  60% { transform: translateX(4px); }
+}
+
+.ie-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 12.5px;
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ie-text.is-flash,
+  .ie-input.is-shake { animation: none; }
+}

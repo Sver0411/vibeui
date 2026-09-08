@@ -1,0 +1,22 @@
+<div class="sp-progress" aria-hidden="true">
+  <div class="sp-fill" id="sp-fill"></div>
+</div>
+
+<div class="sp-stage">
+  <header class="sp-head">
+    <p class="sp-kicker">DEMO ARTICLE</p>
+    <h1 class="sp-title">往下滚动，看进度条走起来</h1>
+    <p class="sp-meta">约 2 屏篇幅 · 越过 60% 后进度条变为靛蓝渐变</p>
+  </header>
+
+  <div class="sp-body">
+    <p>阅读进度条是长文页面的标配：它告诉读者「还有多远」，也在心理上把长内容切成可消化的两段。实现它只需要一行算式和一点滚动监听的纪律。</p>
+    <p>进度等于已滚距离除以可滚总距离。分母是 scrollHeight 减去视口高度——漏掉视口高度会让进度永远差一截，这是最常见的实现错误。</p>
+    <p>性能的关键在于节流策略：scroll 事件每秒能触发几十次，如果每次都写 DOM 宽度，就会和浏览器布局形成互相等待的抖动。正确做法是事件里只立一个「脏标记」，真正的高度计算交给 rAF。</p>
+    <p>视觉上，越过某个阈值后把灰条渐变成强调色，是一个几乎零成本的「快读完了」暗示——用户会不自觉地加快最后一屏的阅读。</p>
+    <h2>边界情况</h2>
+    <p>内容异步加载时，初始 scrollHeight 是不准的；用 ResizeObserver 监听内容高度变化比监听 resize 更可靠。另外移动端的弹性回弹会让 scrollY 短暂越界，clamp 到 [0,1] 是必要防护。</p>
+    <p>继续滚动到最底部，进度条会停满整条——试试看。</p>
+    <div class="sp-end">— 完 —</div>
+  </div>
+</div>

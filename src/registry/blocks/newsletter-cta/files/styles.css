@@ -1,0 +1,148 @@
+.nl-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---- 区块卡片：左侧文案 + 下方表单 ---- */
+.nl {
+  width: min(480px, 88vw);
+  padding: 30px 28px;
+  border: 1px solid #e4e4e7;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.nl-copy {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.nl-badge {
+  justify-self: start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f0fdfa;
+  color: #0f766e;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.nl-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #18181b;
+}
+
+.nl-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #71717a;
+}
+
+/* ---- 表单 ---- */
+.nl-form {
+  display: grid;
+  gap: 8px;
+}
+
+.nl-field {
+  display: flex;
+  gap: 8px;
+}
+
+.nl-input {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 14px;
+  border: 1px solid #d4d4d8;
+  border-radius: 11px;
+  background: #fafafa;
+  font: inherit;
+  font-size: 14px;
+  color: #18181b;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.nl-input::placeholder {
+  color: #a1a1aa;
+}
+.nl-input:focus {
+  border-color: #0f766e;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+}
+.nl-input.is-error {
+  border-color: #f43f5e;
+}
+.nl-input.is-error:focus {
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.12);
+}
+
+.nl-btn {
+  flex: 0 0 auto;
+  padding: 11px 22px;
+  border: 0;
+  border-radius: 11px;
+  background: #0f766e;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.12s ease;
+}
+.nl-btn:hover {
+  background: #115e59;
+}
+.nl-btn:active {
+  transform: scale(0.96);
+}
+.nl-btn:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+.nl-hint {
+  min-height: 18px;
+  margin: 0;
+  font-size: 12px;
+  color: #be123c;
+}
+.nl-hint.is-ok {
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.nl-note {
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: #a1a1aa;
+  text-align: center;
+}
+
+/* 成功态：表单淡出收起 */
+.nl-form.is-done {
+  animation: nl-settle 0.35s ease;
+}
+
+@keyframes nl-settle {
+  0% { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nl-form.is-done {
+    animation: none;
+  }
+  .nl-btn:active {
+    transform: none;
+  }
+}

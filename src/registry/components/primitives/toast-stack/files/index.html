@@ -1,0 +1,15 @@
+<div class="ts-stage">
+  <div class="ts-panel">
+    <p class="ts-title">通知提示 Toast</p>
+    <p class="ts-desc">右上角堆叠 · 悬停暂停倒计时 · 点击关闭可手动消失</p>
+    <div class="ts-controls">
+      <button type="button" class="ts-btn" data-toast="success">成功</button>
+      <button type="button" class="ts-btn" data-toast="info">信息</button>
+      <button type="button" class="ts-btn" data-toast="warning">警告</button>
+      <button type="button" class="ts-btn" data-toast="error">错误</button>
+    </div>
+  </div>
+
+  <!-- 通知容器：role/aria-live 让屏幕阅读器自动播报 -->
+  <div class="ts-stack" id="tsStack" role="region" aria-label="通知"></div>
+</div>

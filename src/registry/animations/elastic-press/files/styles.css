@@ -1,0 +1,40 @@
+.ep-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 22px;
+  justify-items: center;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.ep-btn {
+  position: relative;
+  border: 0;
+  border-radius: 14px;
+  padding: 16px 44px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.35);
+  transform-origin: 50% 50%;
+  will-change: transform;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.ep-btn:focus-visible {
+  outline: 3px solid #5eead4;
+  outline-offset: 3px;
+}
+
+.ep-hint {
+  margin: 0;
+  max-width: 380px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #71717a;
+}

@@ -1,0 +1,94 @@
+.ab-stage {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.ab-aurora {
+  position: absolute;
+  inset: -30%;
+  filter: blur(70px) saturate(1.25);
+  opacity: 0.55;
+}
+
+.ab-blob {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.ab-blob--a {
+  width: 46vmax;
+  height: 46vmax;
+  left: 6%;
+  top: 8%;
+  background: radial-gradient(circle at 30% 30%, rgba(20, 184, 166, 0.32), rgba(20, 184, 166, 0.08) 70%);
+  animation: ab-drift-a 24s ease-in-out infinite alternate;
+}
+
+.ab-blob--b {
+  width: 40vmax;
+  height: 40vmax;
+  right: 2%;
+  top: 26%;
+  background: radial-gradient(circle at 60% 40%, rgba(129, 140, 248, 0.28), rgba(129, 140, 248, 0.07) 70%);
+  animation: ab-drift-b 30s ease-in-out infinite alternate;
+}
+
+.ab-blob--c {
+  width: 34vmax;
+  height: 34vmax;
+  left: 30%;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(244, 114, 182, 0.22), rgba(244, 114, 182, 0.05) 70%);
+  animation: ab-drift-c 36s ease-in-out infinite alternate;
+}
+
+@keyframes ab-drift-a {
+  to {
+    transform: translate(10vmax, 7vmax) scale(1.15);
+  }
+}
+
+@keyframes ab-drift-b {
+  to {
+    transform: translate(-9vmax, -6vmax) scale(0.9);
+  }
+}
+
+@keyframes ab-drift-c {
+  to {
+    transform: translate(7vmax, -8vmax) scale(1.1);
+  }
+}
+
+.ab-content {
+  position: relative;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.ab-title {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 6vw, 46px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #18181b;
+}
+
+.ab-text {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #52525b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ab-blob {
+    animation: none;
+  }
+}

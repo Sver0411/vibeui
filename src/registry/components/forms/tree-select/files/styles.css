@@ -1,0 +1,152 @@
+.tr-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.tr-case {
+  display: grid;
+  gap: 12px;
+  width: min(320px, 84vw);
+}
+
+.tr-caption {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+/* ---- 树容器 ---- */
+.tr {
+  padding: 12px;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.tr-list {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 子级缩进 */
+.tr-children {
+  position: relative;
+  margin-top: 2px;
+  padding-left: 22px;
+}
+/* 缩进参考线 */
+.tr-children::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 8px;
+  width: 1px;
+  background: #e4e4e7;
+}
+
+.tr-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  transition: background-color 0.12s ease;
+}
+.tr-row:hover {
+  background: #f4f4f5;
+}
+
+.tr-toggle {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.tr-toggle:hover {
+  color: #3f3f46;
+}
+.tr-toggle:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 1px;
+}
+.tr-toggle svg {
+  width: 10px;
+  height: 10px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tr-toggle[aria-expanded="true"] svg {
+  transform: rotate(90deg);
+}
+
+.tr-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #3f3f46;
+  cursor: pointer;
+  user-select: none;
+}
+.is-leaf .tr-label {
+  padding-left: 24px; /* 叶子节点没有展开按钮，用缩进对齐 */
+}
+
+.tr-check {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  flex: 0 0 auto;
+  accent-color: #0f766e;
+  cursor: pointer;
+}
+
+.tr-count {
+  margin-left: auto;
+  font-style: normal;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: #a1a1aa;
+  background: #f4f4f5;
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+
+.tr-summary {
+  margin: 0;
+  font-size: 13px;
+  color: #71717a;
+}
+.tr-summary strong {
+  font-variant-numeric: tabular-nums;
+  color: #0f766e;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tr-toggle svg {
+    transition: none;
+  }
+}

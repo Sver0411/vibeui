@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "spotlight-card",
+  slug: "spotlight-card",
+  name: "聚光卡片",
+  description: "Linear 风格的边框辉光跟随光标移动——一个覆盖层加两个 CSS 变量即可实现。",
+  category: "cards",
+  subcategory: "Cards",
+  type: "component",
+  tags: ["卡片", "聚光", "辉光", "光标", "悬停"],
+  technologies: ["HTML", "CSS", "JavaScript", "React"],
+  styles: ["现代", "辉光"],
+  difficulty: "intermediate",
+  isNew: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-08-04",
+  updatedAt: "2026-08-24",
+  dir: "components/cards/spotlight-card",
+};

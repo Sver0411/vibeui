@@ -1,0 +1,41 @@
+<div class="dm-stage">
+  <div class="dm-case">
+    <p class="dm-caption">可交互 · 方向键选择 · ESC / 点击外部关闭</p>
+    <div class="dm" id="dmBasic">
+      <button type="button" class="dm-trigger" aria-haspopup="menu" aria-expanded="false">
+        操作
+        <svg class="dm-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" /></svg>
+      </button>
+      <div class="dm-menu" role="menu" aria-label="操作菜单" hidden>
+        <button type="button" class="dm-item" role="menuitem">重命名</button>
+        <button type="button" class="dm-item" role="menuitem">复制链接</button>
+        <button type="button" class="dm-item" role="menuitem">移动到…</button>
+        <hr class="dm-sep" />
+        <button type="button" class="dm-item dm-item--danger" role="menuitem">删除</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dm-case">
+    <p class="dm-caption">带图标与快捷键 · 右对齐面板</p>
+    <div class="dm dm--end" id="dmRich">
+      <button type="button" class="dm-trigger" aria-haspopup="menu" aria-expanded="false">
+        视图选项
+        <svg class="dm-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" /></svg>
+      </button>
+      <div class="dm-menu dm-menu--wide" role="menu" aria-label="视图选项" hidden>
+        <button type="button" class="dm-item" role="menuitem">
+          <span>紧凑模式</span><kbd class="dm-kbd">⌘1</kbd>
+        </button>
+        <button type="button" class="dm-item" role="menuitem">
+          <span>列表视图</span><kbd class="dm-kbd">⌘2</kbd>
+        </button>
+        <button type="button" class="dm-item" role="menuitem" aria-checked="true">
+          <span>显示边栏</span><kbd class="dm-kbd">⌘B</kbd>
+        </button>
+        <hr class="dm-sep" />
+        <button type="button" class="dm-item" role="menuitem"><span>刷新数据</span><kbd class="dm-kbd">R</kbd></button>
+      </div>
+    </div>
+  </div>
+</div>

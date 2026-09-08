@@ -1,0 +1,22 @@
+# dependencies & build
+node_modules/
+.next/
+.next-*/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+npm-debug.log*
+
+# local safety backups (kept on disk, out of repo)
+.deleted-generative-backup*/
+.deleted-resources-backup/
+
+# local working data
+.workbuddy/
+.DS_Store
+
+# unreadable at storage level (Errno 60) — needs manual recovery, see 2026-09-05 notes
+scripts/generate-production-components.mjs
+scripts/production-components.catalog.mjs
+scripts/production-components.behaviors.mjs

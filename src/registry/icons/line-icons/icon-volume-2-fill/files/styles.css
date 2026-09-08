@@ -1,0 +1,59 @@
+.ic-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 20px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.ic-frame {
+  display: grid;
+  place-items: center;
+  width: 170px;
+  height: 170px;
+  border: 1px solid #e4e4e7;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.ic-art {
+  --ic-size: 24px;
+  display: inline-flex;
+  color: #18181b;
+}
+
+.ic-art svg { width: var(--ic-size); height: var(--ic-size); display: block; }
+
+.ic-sizes { display: flex; gap: 6px; }
+
+.ic-size {
+  padding: 5px 13px;
+  border: 1px solid #d4d4d8;
+  border-radius: 999px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 12px;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.ic-size:hover { border-color: #a1a1aa; }
+
+.ic-size.is-active {
+  border-color: #6366f1;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.ic-size:focus-visible { outline: 2px solid #6366f1; outline-offset: 1px; }
+
+.ic-caption {
+  margin: 0;
+  font-size: 12px;
+  color: #a1a1aa;
+}

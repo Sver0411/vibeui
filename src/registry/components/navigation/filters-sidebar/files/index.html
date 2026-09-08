@@ -1,0 +1,38 @@
+<div class="fs-stage">
+  <button type="button" class="fs-toggle" id="fs-toggle" aria-expanded="false">筛选</button>
+  <div class="fs-layout" id="fs-layout">
+    <aside class="fs-side" id="fs-side" aria-label="商品筛选">
+      <input class="fs-search" id="fs-search" type="search" placeholder="搜索商品…" aria-label="搜索商品" />
+
+      <fieldset class="fs-group">
+        <legend>分类</legend>
+        <label class="fs-check"><input type="checkbox" data-fs="cat" value="数码" checked /> 数码</label>
+        <label class="fs-check"><input type="checkbox" data-fs="cat" value="家居" checked /> 家居</label>
+        <label class="fs-check"><input type="checkbox" data-fs="cat" value="配件" checked /> 配件</label>
+      </fieldset>
+
+      <fieldset class="fs-group">
+        <legend>价格上限 <output id="fs-price-out">¥2000</output></legend>
+        <input class="fs-range" id="fs-price" type="range" min="100" max="2000" step="50" value="2000" aria-label="价格上限" />
+      </fieldset>
+
+      <label class="fs-switch-row">
+        <span>仅看有货</span>
+        <span class="fs-switch">
+          <input type="checkbox" id="fs-stock" role="switch" />
+          <span class="fs-knob" aria-hidden="true"></span>
+        </span>
+      </label>
+
+      <button type="button" class="fs-clear" id="fs-clear">清除全部条件</button>
+    </aside>
+
+    <section class="fs-results" aria-live="polite">
+      <div class="fs-bar">
+        <span class="fs-count" id="fs-count">8 件商品</span>
+        <div class="fs-chips" id="fs-chips"></div>
+      </div>
+      <ul class="fs-list" id="fs-list"></ul>
+    </section>
+  </div>
+</div>

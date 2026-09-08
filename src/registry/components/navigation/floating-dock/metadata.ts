@@ -1,0 +1,25 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "floating-dock",
+  slug: "floating-dock",
+  name: "悬浮 Dock",
+  description: "macOS 风格 Dock：图标随光标距离放大，悬浮 tooltip，活动应用带指示圆点。",
+  category: "navigation",
+  subcategory: "Dock",
+  type: "component",
+  tags: ["Dock", "放大", "光标", "macOS", "图标"],
+  technologies: ["HTML", "CSS", "JavaScript", "React"],
+  styles: ["现代", "活泼"],
+  difficulty: "advanced",
+  featured: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-07-19",
+  updatedAt: "2026-08-22",
+  dir: "components/navigation/floating-dock",
+};

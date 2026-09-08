@@ -1,0 +1,107 @@
+:root {
+  --cs-ink: #e2e8f0;
+  --cs-sub: #94a3b8;
+  --cs-line: #1e293b;
+  --cs-bg: #0f172a;
+  --cs-accent: #38bdf8;
+  --cs-ok: #4ade80;
+}
+
+.cs-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 32px 20px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  box-sizing: border-box;
+}
+
+.cs-card {
+  width: min(480px, 100%);
+  background: var(--cs-bg);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.28);
+}
+
+.cs-tabs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 10px 0;
+  background: var(--cs-line);
+}
+
+.cs-tab {
+  border: none;
+  background: none;
+  color: var(--cs-sub);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 13px;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  transition: color 0.12s ease, background 0.12s ease;
+}
+
+.cs-tab:hover { color: var(--cs-ink); }
+
+.cs-tab.active {
+  color: var(--cs-accent);
+  background: var(--cs-bg);
+}
+
+.cs-tab:focus-visible { outline: 2px solid var(--cs-accent); outline-offset: -2px; }
+
+.cs-copy {
+  margin-left: auto;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: none;
+  color: var(--cs-ink);
+  font: inherit;
+  font-size: 11.5px;
+  padding: 4px 11px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: border-color 0.12s ease, color 0.12s ease;
+}
+
+.cs-copy:hover { border-color: var(--cs-accent); color: var(--cs-accent); }
+.cs-copy:focus-visible { outline: 2px solid var(--cs-accent); outline-offset: 2px; }
+.cs-copy.ok { color: var(--cs-ok); border-color: var(--cs-ok); }
+
+.cs-code {
+  margin: 0;
+  padding: 16px 18px;
+  overflow-x: auto;
+  min-height: 148px;
+}
+
+.cs-code code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--cs-ink);
+  white-space: pre;
+}
+
+/* 极简关键字着色（演示用） */
+.cs-code .kw { color: #c084fc; }
+.cs-code .str { color: #4ade80; }
+.cs-code .fn { color: #38bdf8; }
+.cs-code .cm { color: #64748b; font-style: italic; }
+
+.cs-hint { font-size: 12.5px; color: var(--cs-sub); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-tab, .cs-copy { transition: none; }
+}
+
+@media (max-width: 480px) {
+  .cs-code { min-height: 120px; font-size: 11.5px; }
+}

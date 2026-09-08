@@ -1,0 +1,18 @@
+<div class="sp-demo" id="sp-demo">
+  <div class="sp-bar" aria-hidden="true"><div class="sp-bar__fill" id="sp-fill"></div></div>
+  <header class="sp-header">
+    <h1 class="sp-title">Reading progress</h1>
+    <span class="sp-percent" id="sp-percent">0%</span>
+  </header>
+  <div class="sp-article">
+    <p>Scroll this box. The bar at the top fills according to how far through the content you are — exactly how reading-progress indicators work on blogs and documentation sites.</p>
+    <p>The component listens to scroll events on the scroll container, computes <code>scrollTop / (scrollHeight - clientHeight)</code> and updates a CSS width. Passive listeners and requestAnimationFrame throttling keep it at 60fps.</p>
+    <p>Progress indicators like this one give users a sense of place and remaining effort, which measurably improves completion rates on long-form content.</p>
+    <p>Because the bar is driven by scroll position rather than a timer, it is fully deterministic: scroll back up and the bar empties again.</p>
+    <p>Styling is one div with a gradient or solid fill. The rounded ends and subtle shadow keep it visible without shouting.</p>
+    <p>Accessibility note: mark it <code>aria-hidden</code> — it is purely decorative, since the scroll position itself is already exposed to assistive technology.</p>
+    <p>Keep scrolling to reach the end…</p>
+    <p>Nearly there — the last few pixels.</p>
+    <p>Done. The bar reads 100%.</p>
+  </div>
+</div>

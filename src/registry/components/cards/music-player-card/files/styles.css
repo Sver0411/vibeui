@@ -1,0 +1,158 @@
+:root {
+  --mp-ink: #0f172a;
+  --mp-sub: #64748b;
+  --mp-line: #e2e8f0;
+  --mp-bg: #ffffff;
+  --mp-accent: #7c3aed;
+  --mp-accent-soft: rgba(124, 58, 237, 0.12);
+}
+
+.mp-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 32px 20px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--mp-ink);
+  box-sizing: border-box;
+}
+
+.mp-card {
+  width: min(340px, 100%);
+  background: var(--mp-bg);
+  border: 1px solid var(--mp-line);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.08);
+}
+
+/* 专辑封面：渐变 + 黑胶唱片 */
+.mp-art {
+  position: relative;
+  height: 200px;
+  border-radius: 14px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(251, 191, 36, 0.85), transparent 42%),
+    radial-gradient(circle at 15% 85%, rgba(13, 148, 136, 0.7), transparent 48%),
+    linear-gradient(135deg, #1e1b4b 0%, #4c1d95 55%, #7c3aed 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mp-vinyl {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle, #18181b 0 2px, #27272a 2px 4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  animation: mp-spin 6s linear infinite;
+  animation-play-state: paused;
+}
+
+.mp-vinyl i {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #db2777);
+  border: 5px solid #18181b;
+}
+
+.playing .mp-vinyl { animation-play-state: running; }
+
+@keyframes mp-spin { to { transform: rotate(360deg); } }
+
+.mp-info { margin-top: 14px; }
+.mp-title { margin: 0; font-size: 16.5px; }
+.mp-artist { margin: 3px 0 0; font-size: 12.5px; color: var(--mp-sub); }
+
+/* 进度条：整条可拖拽 */
+.mp-progress { position: relative; margin-top: 14px; padding-top: 6px; cursor: pointer; touch-action: none; }
+
+.mp-rail {
+  height: 5px;
+  border-radius: 3px;
+  background: #eef1f5;
+  overflow: hidden;
+}
+
+.mp-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #7c3aed, #db2777);
+}
+
+.mp-progress:focus-visible { outline: 2px solid var(--mp-accent); outline-offset: 4px; border-radius: 6px; }
+
+.mp-time {
+  position: absolute;
+  top: 14px;
+  font-size: 10.5px;
+  color: var(--mp-sub);
+  font-variant-numeric: tabular-nums;
+}
+
+.mp-time-cur { left: 0; }
+.mp-time-total { right: 0; }
+
+/* 控制按钮 */
+.mp-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.mp-play {
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: var(--mp-accent);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.mp-play:hover { transform: scale(1.05); }
+.mp-play:active { transform: scale(0.96); }
+.mp-play:focus-visible { outline: 3px solid var(--mp-accent-soft); outline-offset: 2px; }
+
+.mp-skip, .mp-like {
+  border: none;
+  background: none;
+  color: var(--mp-sub);
+  font-size: 17px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.mp-skip:hover, .mp-like:hover { color: var(--mp-ink); background: #f1f5f9; }
+
+.mp-like.liked { color: #db2777; }
+
+.mp-hint { font-size: 12.5px; color: var(--mp-sub); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-vinyl { animation: none; }
+  .mp-play { transition: none; }
+}
+
+@media (max-width: 480px) {
+  .mp-stage { padding: 24px 14px; }
+  .mp-art { height: 170px; }
+}

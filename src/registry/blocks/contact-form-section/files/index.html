@@ -1,0 +1,42 @@
+<section class="ct-stage">
+  <div class="ct-wrap">
+    <div class="ct-intro">
+      <h2 class="ct-title">聊聊你的项目</h2>
+      <p class="ct-sub">
+        有想法或需求？留下信息，我们会在 1 个工作日内回复。
+        也可以直接写信到 <a class="ct-mail" href="mailto:hello@vibeui.dev">hello@vibeui.dev</a>。
+      </p>
+      <ul class="ct-points">
+        <li>✦ 免费评估可行性与工作量</li>
+        <li>✦ 支持远程协作与结对开发</li>
+      </ul>
+    </div>
+
+    <form class="ct-form" id="ct-form" novalidate>
+      <div class="ct-row">
+        <div class="ct-field">
+          <label class="ct-label" for="ct-name">称呼</label>
+          <input class="ct-input" id="ct-name" name="name" type="text" placeholder="怎么称呼你" />
+          <p class="ct-err" data-err-for="ct-name" hidden></p>
+        </div>
+        <div class="ct-field">
+          <label class="ct-label" for="ct-email">邮箱</label>
+          <input class="ct-input" id="ct-email" name="email" type="email" placeholder="you@example.com" />
+          <p class="ct-err" data-err-for="ct-email" hidden></p>
+        </div>
+      </div>
+      <div class="ct-field">
+        <label class="ct-label" for="ct-msg">项目描述</label>
+        <textarea class="ct-input ct-area" id="ct-msg" name="message" rows="4" placeholder="简单说说你的目标、预算与时间…"></textarea>
+        <p class="ct-err" data-err-for="ct-msg" hidden></p>
+      </div>
+      <button type="submit" class="ct-submit">发送</button>
+    </form>
+
+    <div class="ct-done" id="ct-done" hidden>
+      <span class="ct-done-icon">✓</span>
+      <h3>已收到你的消息</h3>
+      <p>我们会在 1 个工作日内回复到你的邮箱。<button type="button" class="ct-again" id="ct-again">再发一条</button></p>
+    </div>
+  </div>
+</section>

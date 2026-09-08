@@ -1,0 +1,50 @@
+<div class="msf-stage">
+  <form class="msf" id="msf" novalidate>
+    <div class="msf__progress" aria-hidden="true">
+      <span class="msf__progress-fill" id="msf-progress"></span>
+    </div>
+    <p class="msf__step-label" id="msf-step-label" role="status">Step 1 of 3 — Account</p>
+
+    <section class="msf__panel" data-step="1">
+      <div class="msf__field">
+        <label for="msf-name">Full name</label>
+        <input id="msf-name" name="name" type="text" required minlength="2" placeholder="Ada Lovelace" />
+        <p class="msf__error" data-error-for="name"></p>
+      </div>
+      <div class="msf__field">
+        <label for="msf-email">Work email</label>
+        <input id="msf-email" name="email" type="email" required placeholder="ada@company.com" />
+        <p class="msf__error" data-error-for="email"></p>
+      </div>
+    </section>
+
+    <section class="msf__panel" data-step="2" hidden>
+      <div class="msf__field">
+        <label for="msf-company">Company</label>
+        <input id="msf-company" name="company" type="text" required minlength="2" placeholder="Acme Inc." />
+        <p class="msf__error" data-error-for="company"></p>
+      </div>
+      <div class="msf__field">
+        <label for="msf-size">Team size</label>
+        <select id="msf-size" name="size" required>
+          <option value="">Select…</option>
+          <option value="1-10">1–10</option>
+          <option value="11-50">11–50</option>
+          <option value="51-200">51–200</option>
+          <option value="200+">200+</option>
+        </select>
+        <p class="msf__error" data-error-for="size"></p>
+      </div>
+    </section>
+
+    <section class="msf__panel" data-step="3" hidden>
+      <p class="msf__review-title">Review your details</p>
+      <dl class="msf__review" id="msf-review"></dl>
+    </section>
+
+    <div class="msf__actions">
+      <button class="msf__btn" id="msf-back" type="button" hidden>Back</button>
+      <button class="msf__btn msf__btn--primary" id="msf-next" type="button">Continue</button>
+    </div>
+  </form>
+</div>

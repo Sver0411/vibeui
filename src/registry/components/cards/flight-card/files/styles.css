@@ -1,0 +1,160 @@
+.ft-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.ft {
+  width: min(430px, 88vw);
+  padding: 19px 20px 16px;
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: #ffffff;
+  transition: box-shadow 0.2s ease;
+}
+
+.ft:hover { box-shadow: 0 10px 30px rgba(24, 24, 27, 0.09); }
+
+.ft-route {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.ft-endpoint { display: grid; gap: 2px; }
+.ft-endpoint--to { text-align: right; }
+
+.ft-code {
+  font-size: 26px;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  color: #18181b;
+  font-variant-numeric: tabular-nums;
+}
+
+.ft-city { font-size: 12px; color: #71717a; }
+
+.ft-time {
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #3f3f46;
+  font-variant-numeric: tabular-nums;
+}
+
+.ft-path { display: grid; justify-items: center; gap: 4px; min-width: 120px; }
+
+.ft-duration {
+  font-size: 11px;
+  font-weight: 600;
+  color: #71717a;
+  font-variant-numeric: tabular-nums;
+}
+
+.ft-line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ft-line::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 50%;
+  border-top: 2px dashed #c4c4cc;
+}
+
+.ft-dot {
+  position: relative;
+  z-index: 1;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #6366f1;
+}
+
+.ft-dot--to { background: #6366f1; }
+
+.ft-plane {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  color: #6366f1;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 1.5px;
+  box-shadow: 0 0 0 3px #ffffff;
+}
+
+.ft-meta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 13px 0 0;
+  font-size: 12px;
+  color: #71717a;
+}
+
+.ft-flight-no { font-weight: 600; color: #52525b; }
+.ft-sep { color: #d4d4d8; }
+
+.ft-ontime { color: #16a34a; font-weight: 600; }
+
+.ft-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 13px;
+  border-top: 1px dashed #e4e4e7;
+}
+
+.ft-cabin {
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: #f4f4f5;
+  font-size: 11.5px;
+  color: #52525b;
+}
+
+.ft-price {
+  margin-left: auto;
+  font-size: 19px;
+  font-weight: 750;
+  color: #c2410c;
+  font-variant-numeric: tabular-nums;
+}
+
+.ft-price small {
+  font-size: 11px;
+  font-weight: 500;
+  color: #a1a1aa;
+}
+
+.ft-book {
+  padding: 8px 22px;
+  border: 0;
+  border-radius: 9px;
+  background: #4f46e5;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.ft-book:hover { background: #4338ca; }
+.ft-book:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }

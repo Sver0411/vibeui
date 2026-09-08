@@ -1,0 +1,171 @@
+:root {
+  --ot-ink: #0f172a;
+  --ot-sub: #64748b;
+  --ot-line: #e2e8f0;
+  --ot-bg: #ffffff;
+  --ot-ok: #16a34a;
+  --ot-active: #2563eb;
+}
+
+.ot-stage {
+  background: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 32px 20px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--ot-ink);
+  box-sizing: border-box;
+}
+
+.ot-card {
+  width: min(460px, 100%);
+  background: var(--ot-bg);
+  border: 1px solid var(--ot-line);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
+}
+
+.ot-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ot-title { margin: 0; font-size: 15.5px; }
+.ot-sub { margin: 4px 0 0; font-size: 12px; color: var(--ot-sub); font-variant-numeric: tabular-nums; }
+
+.ot-status {
+  flex: none;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ot-active);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* 状态步条 */
+.ot-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 18px;
+  padding: 0 6px;
+}
+
+/* 贯穿线：浅色底轨 */
+.ot-steps::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: calc(12.5% + 14px);
+  right: calc(12.5% + 14px);
+  height: 2px;
+  background: var(--ot-line);
+}
+
+.ot-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 25%;
+  z-index: 1;
+}
+
+.ot-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ot-bg);
+  border: 2px solid var(--ot-line);
+  box-sizing: border-box;
+}
+
+.ot-step.done .ot-dot {
+  background: var(--ot-ok);
+  border-color: var(--ot-ok);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.7 9.5 3.8' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ot-step.current .ot-dot {
+  border-color: var(--ot-active);
+  background: var(--ot-active);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  animation: ot-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes ot-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18); }
+  50% { box-shadow: 0 0 0 7px rgba(37, 99, 235, 0.08); }
+}
+
+.ot-label { font-size: 11.5px; font-weight: 600; }
+.ot-step.done .ot-label { color: var(--ot-ok); }
+.ot-step.current .ot-label { color: var(--ot-active); }
+.ot-time { font-size: 10px; color: var(--ot-sub); font-variant-numeric: tabular-nums; }
+
+/* 节点日志 */
+.ot-log {
+  list-style: none;
+  margin: 0;
+  padding: 14px 4px 0;
+  border-top: 1px solid var(--ot-line);
+  max-height: 148px;
+  overflow-y: auto;
+}
+
+.ot-log li {
+  position: relative;
+  padding: 0 0 14px 20px;
+  font-size: 12.5px;
+}
+
+.ot-log li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+.ot-log li::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 14px;
+  bottom: -2px;
+  width: 1px;
+  background: var(--ot-line);
+}
+
+.ot-log li:last-child::after { display: none; }
+.ot-log li.hot::before { background: var(--ot-active); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+.ot-log li.hot b { color: var(--ot-active); }
+
+.ot-log .ot-t { color: var(--ot-sub); font-size: 11px; margin-left: 8px; font-variant-numeric: tabular-nums; }
+.ot-log b { font-weight: 600; }
+
+.ot-hint { font-size: 12.5px; color: var(--ot-sub); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ot-step.current .ot-dot { animation: none; }
+}
+
+@media (max-width: 480px) {
+  .ot-time { display: none; }
+}

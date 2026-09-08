@@ -1,0 +1,47 @@
+<div class="dw-stage" id="dwStage">
+  <header class="dw-bar">
+    <button type="button" class="dw-open" data-drawer="dwLeft" data-edge="left">左侧抽屉</button>
+    <button type="button" class="dw-open" data-drawer="dwRight" data-edge="right">右侧抽屉</button>
+  </header>
+  <p class="dw-caption">ESC 或点击遮罩关闭 · 打开时焦点移入抽屉</p>
+
+  <!-- 左侧抽屉 -->
+  <div class="dw-layer" id="dwLeft" hidden>
+    <div class="dw-mask" data-close></div>
+    <aside class="dw-panel dw-panel--left" role="dialog" aria-modal="true" aria-label="左侧抽屉">
+      <header class="dw-head">
+        <h2 class="dw-title">导航菜单</h2>
+        <button type="button" class="dw-close" data-close aria-label="关闭抽屉">
+          <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" /></svg>
+        </button>
+      </header>
+      <nav class="dw-nav">
+        <a href="#" class="dw-link">首页</a>
+        <a href="#" class="dw-link">组件库</a>
+        <a href="#" class="dw-link">动效集</a>
+        <a href="#" class="dw-link">页面模板</a>
+        <a href="#" class="dw-link">关于</a>
+      </nav>
+      <footer class="dw-foot">VibeUI · 本地优先的 UI 资源库</footer>
+    </aside>
+  </div>
+
+  <!-- 右侧抽屉 -->
+  <div class="dw-layer" id="dwRight" hidden>
+    <div class="dw-mask" data-close></div>
+    <aside class="dw-panel dw-panel--right" role="dialog" aria-modal="true" aria-label="右侧抽屉">
+      <header class="dw-head">
+        <h2 class="dw-title">购物车</h2>
+        <button type="button" class="dw-close" data-close aria-label="关闭抽屉">
+          <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" /></svg>
+        </button>
+      </header>
+      <div class="dw-body">
+        <p class="dw-row"><span>极简卡片 × 2</span><strong>¥ 198</strong></p>
+        <p class="dw-row"><span>动效合集 × 1</span><strong>¥ 99</strong></p>
+        <p class="dw-row dw-row--total"><span>合计</span><strong>¥ 297</strong></p>
+      </div>
+      <footer class="dw-foot"><button type="button" class="dw-cta">去结算</button></footer>
+    </aside>
+  </div>
+</div>

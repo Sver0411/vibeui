@@ -1,0 +1,36 @@
+<div class="ic-stage">
+  <div class="ic-case">
+    <p class="ic-caption">可交互 · 拖拽分割线或方向键微调</p>
+    <figure class="ic" id="icBox">
+      <!-- 底层：夜景 -->
+      <div class="ic-layer ic-layer--after" aria-hidden="true">
+        <div class="ic-scene ic-scene--night">
+          <i class="ic-star" style="--x: 12%; --y: 18%"></i>
+          <i class="ic-star" style="--x: 30%; --y: 42%"></i>
+          <i class="ic-star" style="--x: 52%; --y: 14%"></i>
+          <i class="ic-star" style="--x: 68%; --y: 38%"></i>
+          <i class="ic-star" style="--x: 84%; --y: 22%"></i>
+          <i class="ic-moon"></i>
+          <i class="ic-hill ic-hill--n1"></i>
+          <i class="ic-hill ic-hill--n2"></i>
+        </div>
+      </div>
+      <!-- 上层：日景，按滑块宽度裁切 -->
+      <div class="ic-layer ic-layer--before" id="icBefore" aria-hidden="true">
+        <div class="ic-scene ic-scene--day">
+          <i class="ic-sun"></i>
+          <i class="ic-hill ic-hill--d1"></i>
+          <i class="ic-hill ic-hill--d2"></i>
+        </div>
+      </div>
+      <!-- 分割线与手柄 -->
+      <div class="ic-divider" id="icDivider"></div>
+      <div class="ic-handle" id="icHandle" role="slider" tabindex="0" aria-label="对比滑块" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L2 6l2.5 3.5M7.5 2.5L10 6l-2.5 3.5" /></svg>
+      </div>
+      <span class="ic-tag ic-tag--l" id="icTagBefore">白天</span>
+      <span class="ic-tag ic-tag--r">夜晚</span>
+      <figcaption class="ic-sr">左右拖动滑块对比白天与夜晚两种场景</figcaption>
+    </figure>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+.at-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 34px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.at-case {
+  display: grid;
+  gap: 8px;
+  width: min(380px, 84vw);
+}
+
+.at-caption {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+/* ---- 外框：计数角标悬浮在右下 ---- */
+.at-wrap {
+  position: relative;
+  border: 1px solid #d4d4d8;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.at-wrap:focus-within {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+}
+.at-wrap--error,
+.at-wrap--error:focus-within {
+  border-color: #f43f5e;
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.12);
+}
+
+.at-area {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px 28px;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #18181b;
+  resize: none; /* 尺寸完全交给脚本 */
+  outline: none;
+  overflow: hidden; /* 未达上限时隐藏滚动，由脚本控高 */
+}
+.at-area.is-overflow {
+  overflow-y: auto; /* 达到 max-height 后内部滚动 */
+}
+.at-area::placeholder {
+  color: #a1a1aa;
+}
+
+.at-count {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: #a1a1aa;
+  pointer-events: none;
+}
+.at-wrap--error .at-count {
+  color: #e11d48;
+  font-weight: 600;
+}
+
+.at-hint {
+  margin: 0;
+  min-height: 16px;
+  font-size: 12px;
+  color: #be123c;
+}

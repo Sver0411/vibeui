@@ -1,0 +1,78 @@
+<div class="hc-page">
+  <header class="hc-hero">
+    <h1 class="hc-title">你好，需要什么帮助？</h1>
+    <div class="hc-search">
+      <svg class="hc-search-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clip-rule="evenodd"/></svg>
+      <input id="hc-input" class="hc-input" type="search" placeholder="搜索问题，例如「导出」「退款」…" aria-label="搜索帮助文章" autocomplete="off" />
+    </div>
+    <div class="hc-hot" aria-label="热门搜索">
+      <span class="hc-hot-label">热门：</span>
+      <button class="hc-hot-tag" type="button">导出</button>
+      <button class="hc-hot-tag" type="button">退款</button>
+      <button class="hc-hot-tag" type="button">协作</button>
+    </div>
+  </header>
+
+  <section class="hc-cats" aria-label="帮助分类">
+    <a class="hc-cat" href="#hc-g-start" onclick="return false">
+      <svg class="hc-cat-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.25 2.75 3.5 6.5l6.75 3.75L17 6.5l-6.75-3.75ZM3.5 13.5l6.75 3.75 6.75-3.75M3.5 10l6.75 3.75L17 10"/></svg>
+      <span class="hc-cat-name">快速上手</span>
+      <span class="hc-cat-count">8 篇</span>
+    </a>
+    <a class="hc-cat" href="#hc-g-account" onclick="return false">
+      <svg class="hc-cat-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 16.5a5.25 5.25 0 0 1 10.5 0"/></svg>
+      <span class="hc-cat-name">账号与团队</span>
+      <span class="hc-cat-count">12 篇</span>
+    </a>
+    <a class="hc-cat" href="#hc-g-billing" onclick="return false">
+      <svg class="hc-cat-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 5.75c0-.69.56-1.25 1.25-1.25h12.5c.69 0 1.25.56 1.25 1.25v8.5c0 .69-.56 1.25-1.25 1.25H3.75c-.69 0-1.25-.56-1.25-1.25v-8.5ZM3 7l6.32 4.21a1.25 1.25 0 0 0 1.36 0L17 7"/></svg>
+      <span class="hc-cat-name">订阅与账单</span>
+      <span class="hc-cat-count">6 篇</span>
+    </a>
+    <a class="hc-cat" href="#hc-g-trouble" onclick="return false">
+      <svg class="hc-cat-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5A3.75 3.75 0 0 1 15 8.25m-3.75-3.75a3.75 3.75 0 0 0-3.75 3.75m7.5 0a3.75 3.75 0 0 1-.9 2.44l-1.6 1.86a2 2 0 0 0-.5 1.32v.13h-3v-.13a2 2 0 0 0-.5-1.32l-1.6-1.86A3.75 3.75 0 0 1 7.5 8.25m2.5 9.25h.01M10 2.5a6.5 6.5 0 0 1 6.5 6.5c0 1.4-.44 2.7-1.2 3.76"/></svg>
+      <span class="hc-cat-name">常见问题</span>
+      <span class="hc-cat-count">15 篇</span>
+    </a>
+  </section>
+
+  <section class="hc-groups" aria-label="常见文章">
+    <div class="hc-group" data-group>
+      <h2 class="hc-group-title">快速上手</h2>
+      <a class="hc-article" href="#" data-keywords="注册 创建 项目 新手 start" onclick="return false">如何创建第一个项目</a>
+      <a class="hc-article" href="#" data-keywords="导入 迁移 数据 备份 import" onclick="return false">从其他工具导入数据</a>
+      <a class="hc-article" href="#" data-keywords="快捷键 效率 键盘 shortcut" onclick="return false">必会的 12 个快捷键</a>
+    </div>
+    <div class="hc-group" data-group>
+      <h2 class="hc-group-title">账号与团队</h2>
+      <a class="hc-article" href="#" data-keywords="邀请 成员 协作 团队 权限 team" onclick="return false">如何邀请团队成员协作</a>
+      <a class="hc-article" href="#" data-keywords="权限 角色 管理 permission" onclick="return false">角色与权限说明</a>
+      <a class="hc-article" href="#" data-keywords="注销 删除 账号 delete" onclick="return false">如何注销账号</a>
+    </div>
+    <div class="hc-group" data-group>
+      <h2 class="hc-group-title">订阅与账单</h2>
+      <a class="hc-article" href="#" data-keywords="退款 退钱 refund 发票" onclick="return false">退款政策与流程</a>
+      <a class="hc-article" href="#" data-keywords="发票 报销 invoice" onclick="return false">如何开具发票</a>
+      <a class="hc-article" href="#" data-keywords="升级 套餐 改配 plan upgrade" onclick="return false">升级或更换套餐</a>
+    </div>
+    <div class="hc-group" data-group>
+      <h2 class="hc-group-title">常见问题</h2>
+      <a class="hc-article" href="#" data-keywords="导出 下载 export 数据" onclick="return false">如何导出我的数据</a>
+      <a class="hc-article" href="#" data-keywords="离线 断网 同步 offline sync" onclick="return false">离线时会发生什么</a>
+    </div>
+
+    <div class="hc-empty" id="hc-empty" hidden>
+      <p class="hc-empty-title">没有找到相关文章</p>
+      <p class="hc-empty-text">换个关键词试试，或者直接联系我们。</p>
+      <button class="hc-empty-btn" id="hc-clear" type="button">清空搜索</button>
+    </div>
+  </section>
+
+  <footer class="hc-footer">
+    <p class="hc-footer-text">没找到答案？</p>
+    <button class="hc-contact" type="button">
+      <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M2 5.75C2 4.784 2.784 4 3.75 4h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 16.25 16h-5.083l-3.272 2.454a.75.75 0 0 1-1.145-.894L7.5 16H3.75A1.75 1.75 0 0 1 2 14.25v-8.5Z" clip-rule="evenodd"/></svg>
+      联系支持
+    </button>
+  </footer>
+</div>

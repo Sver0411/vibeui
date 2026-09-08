@@ -1,0 +1,154 @@
+.sh-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 40px;
+  padding: 48px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.sh-case {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.sh-caption {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+/* ---- 扫光核心：::after 斜向光带，hover 时从左上滑到右下 ---- */
+.sh-card {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  width: min(280px, 84vw);
+  padding: 20px 22px;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  background: #ffffff;
+  overflow: hidden; /* 光带裁切在卡片内 */
+  cursor: pointer;
+}
+.sh-card--hover {
+  font: inherit;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sh-card__title {
+  font-size: 16px;
+  color: #18181b;
+}
+.sh-card__text {
+  font-size: 13px;
+  color: #71717a;
+}
+
+/* 光带本体：倾斜的白色渐变条 */
+.sh-card::after,
+.sh-chip::after,
+.sh-photo::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  bottom: -60%;
+  left: -80%;
+  width: 45%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.sh-card--hover::after {
+  transition: left 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sh-card--hover:hover {
+  border-color: #99f6e4;
+  box-shadow: 0 8px 26px rgba(15, 118, 110, 0.12);
+}
+.sh-card--hover:hover::after {
+  left: 130%; /* 光带滑到右侧之外 */
+}
+
+/* ---- 自动循环变体 ---- */
+.sh-card--auto::after {
+  animation: sh-sweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes sh-sweep {
+  0% {
+    left: -80%;
+  }
+  45% {
+    left: 130%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
+/* ---- 徽章扫光 ---- */
+.sh-chiprow {
+  display: flex;
+  gap: 10px;
+}
+
+.sh-chip {
+  position: relative;
+  padding: 5px 14px;
+  border: 1px solid #e4e4e7;
+  border-radius: 999px;
+  background: #f4f4f5;
+  font-size: 12px;
+  font-weight: 600;
+  color: #52525b;
+  overflow: hidden;
+}
+.sh-chip--auto {
+  border-color: rgba(15, 118, 110, 0.35);
+  background: #f0fdfa;
+  color: #0f766e;
+}
+.sh-chip--auto::after {
+  animation: sh-sweep 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ---- 深色图片占位 ---- */
+.sh-photo {
+  position: relative;
+  width: min(280px, 84vw);
+  height: 150px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #27272a, #18181b);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.sh-photo--auto::after {
+  animation: sh-sweep 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.sh-photo__label {
+  font-size: 12px;
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sh-card--auto::after,
+  .sh-chip--auto::after,
+  .sh-photo--auto::after {
+    animation: none;
+  }
+  .sh-card--hover::after {
+    transition: none;
+  }
+}

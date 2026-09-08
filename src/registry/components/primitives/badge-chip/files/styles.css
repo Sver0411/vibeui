@@ -1,0 +1,108 @@
+.bg-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 22px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.bg-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  border: 1px solid transparent;
+}
+
+.chip--active  { background: rgba(15, 118, 110, 0.1);  color: #0f766e; border-color: rgba(15, 118, 110, 0.2); }
+.chip--success { background: rgba(21, 128, 61, 0.1);  color: #15803d; border-color: rgba(21, 128, 61, 0.2); }
+.chip--warning { background: rgba(180, 83, 9, 0.1);   color: #b45309; border-color: rgba(180, 83, 9, 0.2); }
+.chip--danger  { background: rgba(185, 28, 28, 0.08); color: #b91c1c; border-color: rgba(185, 28, 28, 0.2); }
+.chip--neutral { background: #f4f4f5; color: #52525b; border-color: #e4e4e7; }
+
+/* 可移除标签 */
+.chip--removable {
+  background: #ffffff;
+  border-color: #e4e4e7;
+  color: #3f3f46;
+  padding-right: 6px;
+}
+
+.chip--removable input {
+  border: 0;
+  background: #f4f4f5;
+  color: #71717a;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  padding: 0;
+}
+
+.chip--removable input:hover { background: #fecaca; color: #b91c1c; transform: scale(1.08); }
+
+/* 移除动画 */
+.chip--removable.is-leaving {
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+/* 状态圆点 */
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  animation: dot-pulse 2s ease-out infinite;
+}
+
+.dot--success { background: #22c55e; }
+.dot--success::after { box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.35); }
+.dot--warning { background: #f59e0b; }
+.dot--warning::after { box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.35); animation-delay: 0.6s; }
+.dot--danger { background: #ef4444; }
+.dot--danger::after { box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.35); animation-delay: 1.2s; }
+
+@keyframes dot-pulse {
+  0% { opacity: 0.8; transform: scale(0.6); }
+  70%, 100% { opacity: 0; transform: scale(1.4); }
+}
+
+.dot-label { font-size: 13px; color: #52525b; }
+
+.bg-hint {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  color: #71717a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot::after { animation: none; opacity: 0; }
+}

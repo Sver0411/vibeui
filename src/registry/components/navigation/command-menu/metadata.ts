@@ -1,0 +1,26 @@
+import type { UIResourceMeta } from "@/types/resource";
+
+export const meta: UIResourceMeta = {
+  id: "command-menu",
+  slug: "command-menu",
+  name: "命令面板",
+  description: "⌘K 命令面板：模糊搜索、分组结果、键盘导航与可扩展的动作注册表。",
+  category: "navigation",
+  subcategory: "Command",
+  type: "component",
+  tags: ["命令", "面板", "搜索", "键盘"],
+  technologies: ["HTML", "CSS", "JavaScript", "React"],
+  styles: ["现代", "键盘优先"],
+  difficulty: "advanced",
+  featured: true,
+  isNew: true,
+  popular: true,
+  responsive: true,
+  previewBackground: "light",
+  compatibility: ["Chrome 90+", "Firefox 90+", "Safari 15+", "Edge 90+"],
+  author: "VibeUI Team",
+  version: "1.0.0",
+  createdAt: "2026-08-08",
+  updatedAt: "2026-08-26",
+  dir: "components/navigation/command-menu",
+};

@@ -1,0 +1,151 @@
+.iv-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.iv {
+  width: min(430px, 88vw);
+  border: 1px solid #e4e4e7;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.iv-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 15px 16px 13px;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.iv-head:focus-visible { outline: 2px solid #6366f1; outline-offset: -2px; }
+
+.iv-info { display: flex; align-items: center; gap: 9px; min-width: 0; }
+
+.iv-no {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  color: #18181b;
+}
+
+.iv-badge {
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  font-weight: 650;
+  color: #ffffff;
+}
+
+.iv-badge--paid { background: #16a34a; }
+.iv-badge--pending { background: #d97706; }
+.iv-badge--overdue { background: #dc2626; animation: iv-pulse 1.8s ease-in-out infinite; }
+
+@keyframes iv-pulse {
+  50% { opacity: 0.75; }
+}
+
+.iv-right { display: flex; align-items: center; gap: 8px; }
+
+.iv-amount {
+  font-size: 18px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  color: #18181b;
+}
+
+.iv.is-overdue .iv-amount { color: #dc2626; }
+
+.iv-chevron {
+  width: 14px;
+  height: 14px;
+  color: #a1a1aa;
+  transition: transform 0.22s ease;
+}
+
+.iv-head[aria-expanded="true"] .iv-chevron { transform: rotate(180deg); }
+
+/* 明细展开：0fr→1fr 免量高 */
+.iv-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.26s ease;
+}
+
+.iv-detail.is-open { grid-template-rows: 1fr; }
+
+.iv-detail-inner {
+  overflow: hidden;
+  min-height: 0;
+  margin: 0 16px;
+  border-top: 1px dashed #e4e4e7;
+}
+
+.iv-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 12.5px;
+  color: #52525b;
+  font-variant-numeric: tabular-nums;
+}
+
+.iv-line--total {
+  border-top: 1px solid #f0f0f2;
+  font-weight: 650;
+  color: #18181b;
+}
+
+.iv-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 16px 14px;
+}
+
+.iv-date { font-size: 11.5px; color: #a1a1aa; }
+
+.iv-btn {
+  padding: 6px 15px;
+  border: 1px solid #d4d4d8;
+  border-radius: 8px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: #3f3f46;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.iv-btn:hover { border-color: #6366f1; color: #4f46e5; }
+.iv-btn:focus-visible { outline: 2px solid #6366f1; outline-offset: 1px; }
+
+.iv-btn--danger {
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.iv-btn--danger:hover { border-color: #dc2626; background: #fef2f2; color: #dc2626; }
+
+@media (prefers-reduced-motion: reduce) {
+  .iv-badge--overdue { animation: none; }
+  .iv-detail, .iv-chevron { transition: none; }
+}

@@ -1,0 +1,211 @@
+.pf2-page {
+  min-height: 100vh;
+  background: #fafafa;
+  color: #1c1c1f;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.pf2-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 22px 22px;
+}
+
+.pf2-logo {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.pf2-nav__links {
+  display: flex;
+  gap: 20px;
+}
+
+.pf2-nav__links a {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #71717a;
+  text-decoration: none;
+}
+
+.pf2-nav__links a:hover {
+  color: #1c1c1f;
+}
+
+.pf2-hero {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 60px 22px 40px;
+}
+
+.pf2-hero__name {
+  margin: 0;
+  font-size: clamp(48px, 10vw, 96px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.pf2-hero__role {
+  margin: 18px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f766e;
+}
+
+.pf2-hero__text {
+  margin: 10px 0 0;
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #71717a;
+}
+
+.pf2-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a1a1aa;
+  margin: 0 0 18px;
+}
+
+.pf2-work,
+.pf2-about {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 30px 22px;
+}
+
+.pf2-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.pf2-project {
+  display: grid;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.pf2-project__visual {
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+
+.pf2-project:hover .pf2-project__visual {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* CSS-only project artwork */
+.pf2-project__visual i {
+  display: block;
+  border-radius: 12px;
+}
+
+.pf2-project__visual--pulse {
+  background: linear-gradient(150deg, #10231f, #1d4038);
+}
+.pf2-project__visual--pulse i {
+  width: 58%;
+  height: 12%;
+  background: linear-gradient(90deg, #5eead4, #99f6e4);
+  border-radius: 999px;
+}
+
+.pf2-project__visual--terra {
+  background: linear-gradient(150deg, #efe7e2, #ddd0c8);
+}
+.pf2-project__visual--terra i {
+  width: 26%;
+  height: 44%;
+  background: linear-gradient(180deg, #d9a08c, #b97b62);
+  border-radius: 10px 10px 22px 22px;
+}
+
+.pf2-project__visual--orbit {
+  background: linear-gradient(150deg, #e8ecf4, #d3dbe8);
+}
+.pf2-project__visual--orbit i {
+  width: 34%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 10px solid #93a5c4;
+  background: transparent;
+}
+
+.pf2-project__visual--linea {
+  background: linear-gradient(150deg, #1c1c1f, #3a3a41);
+}
+.pf2-project__visual--linea i {
+  width: 60%;
+  height: 20%;
+  background: repeating-linear-gradient(90deg, #fafafa 0 8px, transparent 8px 14px);
+  border-radius: 4px;
+}
+
+.pf2-project__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.pf2-project__meta strong {
+  font-weight: 600;
+}
+
+.pf2-project__meta span {
+  color: #a1a1aa;
+  font-variant-numeric: tabular-nums;
+}
+
+.pf2-about p {
+  margin: 0;
+  max-width: 56ch;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #52525b;
+}
+
+.pf2-footer {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 22px 60px;
+  border-top: 1px solid #ececef;
+}
+
+.pf2-footer__cta {
+  margin: 0;
+  font-size: 13px;
+  color: #71717a;
+}
+
+.pf2-footer__mail {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1c1c1f;
+  text-decoration: none;
+  border-bottom: 2px solid #0f766e;
+}
+
+.pf2-footer__meta {
+  margin: 26px 0 0;
+  font-size: 12px;
+  color: #a1a1aa;
+}

@@ -1,0 +1,209 @@
+.ic-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.ic-case {
+  display: grid;
+  gap: 12px;
+}
+
+.ic-caption {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+/* ---- 对比容器 ---- */
+.ic {
+  position: relative;
+  width: min(420px, 84vw);
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.14);
+  touch-action: none; /* 拖拽期间阻止页面滚动 */
+}
+
+.ic-layer {
+  position: absolute;
+  inset: 0;
+}
+/* 上层（白天）按滑块位置裁切 */
+.ic-layer--before {
+  clip-path: inset(0 50% 0 0);
+}
+
+/* ---- 纯 CSS 场景绘制（无外部图片，离线可运行） ---- */
+.ic-scene {
+  position: absolute;
+  inset: 0;
+}
+
+.ic-scene--day {
+  background: linear-gradient(180deg, #7dd3fc 0%, #bae6fd 55%, #fef3c7 100%);
+}
+.ic-scene--night {
+  background: linear-gradient(180deg, #1e1b4b 0%, #312e81 55%, #4c1d95 100%);
+}
+
+.ic-sun {
+  position: absolute;
+  top: 14%;
+  left: 30%;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fde047 55%, #fbbf24);
+  box-shadow: 0 0 34px rgba(253, 224, 71, 0.85);
+}
+
+.ic-moon {
+  position: absolute;
+  top: 16%;
+  left: 26%;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  box-shadow: inset -12px 0 0 rgba(148, 163, 184, 0.6), 0 0 26px rgba(226, 232, 240, 0.5);
+}
+
+.ic-star {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #f8fafc;
+  opacity: 0.9;
+  animation: ic-twinkle 2.4s ease-in-out infinite;
+  animation-delay: calc(var(--x) / 100% * 2s);
+}
+
+@keyframes ic-twinkle {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+
+/* 山丘：椭圆叠加 */
+.ic-hill {
+  position: absolute;
+  border-radius: 50%;
+}
+.ic-hill--d1 {
+  bottom: -34%;
+  left: -18%;
+  width: 90%;
+  height: 52%;
+  background: #4ade80;
+}
+.ic-hill--d2 {
+  bottom: -44%;
+  right: -22%;
+  width: 96%;
+  height: 56%;
+  background: #22c55e;
+}
+.ic-hill--n1 {
+  bottom: -34%;
+  left: -18%;
+  width: 90%;
+  height: 52%;
+  background: #1e3a5f;
+}
+.ic-hill--n2 {
+  bottom: -44%;
+  right: -22%;
+  width: 96%;
+  height: 56%;
+  background: #172554;
+}
+
+/* ---- 分割线与手柄 ---- */
+.ic-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+}
+
+.ic-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  cursor: ew-resize;
+  transition: transform 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ic-handle:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.ic-handle:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+.ic-handle svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: #18181b;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---- 角标 ---- */
+.ic-tag {
+  position: absolute;
+  top: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(24, 24, 27, 0.55);
+  color: #ffffff;
+  font-size: 11px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+.ic-tag--l {
+  left: 12px;
+}
+.ic-tag--r {
+  right: 12px;
+}
+
+.ic-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ic-star {
+    animation: none;
+  }
+  .ic-handle {
+    transition: none;
+  }
+}

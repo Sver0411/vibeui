@@ -1,0 +1,76 @@
+.tw-stage {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 40px;
+  padding: 40px 24px;
+  background: #fafafa;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.tw-case {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.tw-caption {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: #71717a;
+}
+
+.tw-line {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin: 0;
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #18181b;
+}
+
+.tw-prefix {
+  color: #0f766e;
+}
+
+.tw-text {
+  white-space: nowrap;
+  min-height: 1em; /* 空文本时也占据一行，避免布局跳动 */
+}
+
+.tw-text::after {
+  content: attr(data-rest);
+}
+
+.tw-line--muted {
+  font-size: 16px;
+  font-weight: 400;
+  color: #52525b;
+}
+
+/* ---- 光标：方块闪烁 ---- */
+.tw-caret {
+  align-self: center;
+  width: 2px;
+  height: 1.15em;
+  background: #0f766e;
+  animation: tw-blink 0.9s steps(1) infinite;
+}
+
+.tw-caret--static {
+  animation-duration: 1.4s;
+}
+
+@keyframes tw-blink {
+  0%, 55% { opacity: 1; }
+  56%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-caret {
+    animation: none;
+  }
+}
