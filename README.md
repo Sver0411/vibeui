@@ -1,26 +1,33 @@
 <div align="center">
 
-# VibeUI
+# ✨ VibeUI
 
 **A local-first UI resource library for vibe coding.**
 
-[![resources](https://img.shields.io/badge/resources-794-534AB7)](#what-you-get)
-[![Next.js 14](https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white)](#commands--tech-stack)
-[![React 18](https://img.shields.io/badge/React-18-149ECA?logo=react&logoColor=white)](#commands--tech-stack)
-[![TypeScript 5](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](#commands--tech-stack)
-[![Tailwind CSS 3](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)](#commands--tech-stack)
+*Live previews 👀 · Copyable source 📋 · AI prompts included 🤖*
+
+[![resources](https://img.shields.io/badge/resources-794-534AB7)](#-what-you-get)
+[![components](https://img.shields.io/badge/components-101-378ADD)](#-what-you-get)
+[![animations](https://img.shields.io/badge/animations-34-0055FF)](#-what-you-get)
+[![icons](https://img.shields.io/badge/icons-620-639922)](#-what-you-get)
+[![blocks](https://img.shields.io/badge/blocks-20-BA7517)](#-what-you-get)
+[![templates](https://img.shields.io/badge/templates-19-D4537E)](#-what-you-get)
+
+[![Next.js 14](https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white)](#-commands--tech-stack)
+[![React 18](https://img.shields.io/badge/React-18-149ECA?logo=react&logoColor=white)](#-commands--tech-stack)
+[![TypeScript 5](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](#-commands--tech-stack)
+[![Tailwind CSS 3](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)](#-commands--tech-stack)
 [![简体中文](https://img.shields.io/badge/docs-简体中文-888780)](./README.zh-CN.md)
 
-**Live previews. Copyable source. AI prompts that describe what you mean.**
-No accounts, no cloud — everything runs and stays in your browser.
+🏠 No accounts · No cloud · Everything runs and stays in your browser
 
-*The app interface is Chinese; this README documents the project in English.*
+*App interface is Chinese; resource metadata is bilingual (中/EN).*
 
 </div>
 
 ---
 
-## 30-second start
+## 🚀 30-second start
 
 ```bash
 git clone https://github.com/Sver0411/vibeui.git
@@ -29,62 +36,69 @@ npm install
 npm run dev          # → http://localhost:3000
 ```
 
-```text
-explore/          Browse 794 resources with URL-synced filters
-item/[slug]/      Live preview → inspect & edit source → copy → export ZIP
-playground/       HTML/CSS/JS editor with console, share links, ZIP export
-favorites/        Local folders, bulk organize, JSON / ZIP export
-```
+A quick tour once it's running 👇
+
+| Step | Where | What you can do |
+|---|---|---|
+| 1️⃣ Browse | `explore/` | Search 794 resources; filter by tech / style / difficulty — filters sync to the URL |
+| 2️⃣ Inspect | `item/[slug]/` | Sandbox live preview → view & edit source → copy → export ZIP |
+| 3️⃣ Tinker | `playground/` | Edit HTML/CSS/JS online, watch the console, share via compressed link |
+| 4️⃣ Keep | `favorites/` | Local folders, bulk organize, JSON / ZIP import & export |
+
+<details>
+<summary><b>🧰 Commands</b></summary>
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Development server (http://localhost:3000) |
+| `npm run build` | Production build (type checks + static generation) |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript only |
+
+</details>
 
 <br>
 
-## What you get
+## 📦 What you get
 
-**794 resources** in five kinds — every one ships with live preview, editable source, and AI guidance:
+**794 resources** in five kinds — every one ships with live preview 👀, editable source 📝 and AI guidance 🤖:
 
 | Kind | Count | What you can do |
 |---|---|---|
-| UI Components | 101 | Buttons, forms, navigation, cards — copy the code, tune the variants |
-| Animations | 34 | Interactive effects with tunable intensity |
-| Icons | 620 | SVG library, searchable by style |
-| Page Blocks | 20 | Hero, pricing, FAQ, testimonials — ready-made page sections |
-| Templates | 19 | Complete starting points for whole pages |
+| 🧩 UI Components | 101 | Buttons, forms, navigation, cards — copy and tune |
+| 🎬 Animations | 34 | Interactive effects with tunable intensity |
+| 🖼️ Icons | 620 | SVG library, searchable by style |
+| 🧱 Page Blocks | 20 | Hero, pricing, FAQ, testimonials — ready page sections |
+| 📄 Templates | 19 | Whole-page starting points |
 
-<br>
+## 🧭 Feature highlights
 
-## How it works for you
+| Module | Highlights |
+| --- | --- |
+| 🔍 Explore | Search + type/category/tech/style/difficulty/feature filters, **URL-synced**, 6 sort modes, mobile drawer |
+| 🤖 AI prompt library | A market of terms & prompts organized by effect: bilingual terms, aliases, 3 detail levels, native/React/Vue variants, tunable parameters, pitfalls |
+| 🛠️ Playground | Online HTML/CSS/JS editing, auto/manual run, console output, compressed share links, ZIP export |
+| ⭐ Favorites & collections | Local folders, search, bulk organize, JSON lists, multi-resource ZIP downloads |
+| 🎨 Personalization | Theme, accent color, density, radius, motion intensity, editor settings, local data import/export |
+| ⌨️ Navigation & sharing | Command search, keyboard shortcuts, embeddable previews, sitemap, page metadata |
 
-| You want to… | Do this |
-|---|---|
-| Find a component by tech / style / difficulty | `explore` filters, synchronized with the URL |
-| Grab the code | One-click copy, or export as ZIP / standalone HTML / React+Vite project / CodePen |
-| Tweak before you take | Edit source in-place; the preview updates live |
-| Let AI rebuild it your way | Copy a ready-made prompt — 3 detail levels, native / React / Vue variants |
-| Test an idea quickly | Playground: run code, watch the console, share via compressed link |
-| Keep a personal library | Local favorites & collections with JSON import/export |
-
-Every resource also carries **AI guidance**: bilingual terminology, aliases,
-implementation principles, adjustable parameters, and common pitfalls — so the
-prompt you paste produces what the preview showed.
-
-<br>
-
-## Design principles
+## 🚦 Three design principles
 
 | | Principle | What it means |
 |---|---|---|
-| 🏠 | **Local-first** | No sign-in, no tracking, no cloud. Favorites and drafts live in your browser; import/export whenever you like |
+| 🏠 | **Local-first** | No sign-in, no tracking, no cloud. Favorites and drafts live in your browser; import/export any time |
 | 👀 | **Preview is truth** | What you copy is exactly what the preview rendered. Source is inspectable and editable, never obfuscated |
 | 🤖 | **AI-friendly by design** | Resources ship with structured prompts and terminology, not just raw code |
 
-> Previews run in sandboxed iframes (no `allow-same-origin`); console output and
+> 🔒 Previews run in sandboxed iframes (no `allow-same-origin`); console output and
 > runtime errors come back over `postMessage`. The sandbox is not execution-thread
 > isolation — don't run untrusted code.
 
 <br>
 
 <details>
-<summary><b>Keyboard shortcuts</b></summary>
+<summary><b>⌨️ Keyboard shortcuts</b></summary>
 
 | Shortcut | Action |
 | --- | --- |
@@ -98,15 +112,7 @@ prompt you paste produces what the preview showed.
 </details>
 
 <details>
-<summary><b>Commands & tech stack</b></summary>
-
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Development server |
-| `npm run build` | Production build: type checks + static generation |
-| `npm run start` | Serve the production build |
-| `npm run lint` | ESLint |
-| `npm run typecheck` | TypeScript, no emit |
+<summary><b>🧰 Commands & tech stack</b></summary>
 
 Next.js 14 (App Router) · React 18 · strict TypeScript · Tailwind CSS ·
 Zustand (state) · Framer Motion (motion) · CodeMirror 6 (editing) ·
@@ -115,7 +121,21 @@ JSZip / lz-string / Prettier / Lucide.
 </details>
 
 <details>
-<summary><b>Project structure</b></summary>
+<summary><b>📤 Export options</b></summary>
+
+1. **Standalone HTML** — styles and scripts embedded in a single file
+2. **HTML project ZIP** — HTML + CSS + JS + a generated README
+3. **React + Vite project ZIP** — scaffold with TypeScript configuration
+4. **CodePen** — prefill a new Pen via form submission
+
+Export settings cover documentation, demo pages, dependency info, comment
+retention and conservative compression; favorites reuse the same builders for
+multi-resource downloads.
+
+</details>
+
+<details>
+<summary><b>📁 Project structure & adding a resource</b></summary>
 
 ```text
 src/
@@ -139,14 +159,7 @@ src/
 └── hooks/ store/ types/ config/
 ```
 
-The registry powers discovery, search, detail pages, and embedded previews.
-Source files load by convention from `files/`, so previews, code panels,
-playground prefills, and exports always share one implementation.
-
-</details>
-
-<details>
-<summary><b>Adding a resource</b></summary>
+**➕ Adding a resource (4 steps):**
 
 1. Create a directory under the matching registry category, following a
    neighboring resource's `metadata.ts` and the `UIResourceMeta` type in
@@ -170,9 +183,10 @@ playground prefills, and exports always share one implementation.
    `ai-terms.ts`. Resources without custom guidance use the `buildResourceAI`
    fallback.
 
-Client components read `registry/client.ts` (lightweight metadata + search
-terms) instead of the full registry; `registry/server/loader.ts` reads source
-files per resource with module-level caching.
+> Architecture note: client components read `registry/client.ts` (lightweight
+> metadata + search terms) instead of the full registry; `registry/server/loader.ts`
+> reads source files per resource with module-level caching. Previews, code panels,
+> playground prefills and exports always share one implementation.
 
 </details>
 
@@ -180,6 +194,6 @@ files per resource with module-level caching.
 
 <div align="center">
 
-**VibeUI · copy what you see, prompt what you mean**
+**✨ VibeUI · copy what you see, prompt what you mean ✨**
 
 </div>
