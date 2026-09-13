@@ -1,21 +1,20 @@
 <div align="center">
 
-# ✨ VibeUI
+[简体中文](./README.zh-CN.md) | **English**
+
+<img src="docs/assets/banner-en.svg" alt="VibeUI — a local-first UI resource library" width="100%"/>
+
+</div>
+
+# VibeUI
 
 **A local-first UI resource library for vibe coding.**
 
-[![resources](https://img.shields.io/badge/resources-794-534AB7)](#-feature-overview)
-[![Next.js 14](https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white)](#-commands--tech-stack)
-[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](#-commands--tech-stack)
-[![简体中文](https://img.shields.io/badge/docs-简体中文-888780)](./README.zh-CN.md)
+VibeUI ships **794 real, runnable** frontend resources: UI components, animations, icons, page blocks and page templates. Every resource comes with a sandboxed live preview, directly copyable HTML / CSS / JavaScript / React source, in-place editing, one-click copy and multiple export formats — plus an **AI prompt layer**: terminology, three prompt levels, tunable parameters and common pitfalls, so what you describe to your AI matches what the preview rendered.
 
-[Components 101](#-what-you-get) · [Animations 34](#-what-you-get) · [Icons 620](#-what-you-get) · [Blocks 20](#-what-you-get) · [Templates 19](#-what-you-get)
-
-Live previews 👀 · Copyable source 📋 · AI prompts included 🤖 · No accounts · No cloud 🏠
+🏠 No accounts · No cloud · Favorites and drafts stay in your browser
 
 *App interface is Chinese; resource metadata is bilingual (中/EN).*
-
-</div>
 
 ---
 
@@ -30,7 +29,23 @@ npm run dev          # → http://localhost:3000
 
 Suggested first tour: **🔍 filter in explore → 📋 preview / edit / copy on a detail page → 🛠️ try ideas in the playground → ⭐ save what you like**.
 
-<br>
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Development server (http://localhost:3000) |
+| `npm run build` | Production build (type checks + static generation) |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript only |
+
+---
+
+## 🖼️ How it works
+
+<img src="docs/assets/flow-en.svg" alt="VibeUI workflow: explore → preview → edit & take → AI prompt" width="100%"/>
+
+Four steps from inspiration to code in hand — and the chain never breaks: previews, code panels, playground prefills and exports always share **the same source implementation**. What you see in the preview is exactly what you copy.
+
+---
 
 ## 📦 What you get
 
@@ -40,11 +55,11 @@ Suggested first tour: **🔍 filter in explore → 📋 preview / edit / copy on
 |---|---|---|
 | 🧩 UI Components | 101 | Buttons, forms, navigation, cards — copy and tune |
 | 🎬 Animations | 34 | Interactive effects with tunable intensity |
-| 🖼️ Icons | 620 | SVG library, searchable by style |
-| 🧱 Page Blocks | 20 | Hero, pricing, FAQ, testimonials — ready page sections |
+| 🖼️ Icons | 620 | SVG library, searchable by style, recolorable online |
+| 🧱 Page Blocks | 20 | Two Heros, feature grids, stats bar, pricing, testimonial wall, FAQ, CTA banners |
 | 📄 Templates | 19 | Whole-page starting points |
 
-<br>
+---
 
 ## 🧭 Feature overview
 
@@ -52,32 +67,34 @@ Suggested first tour: **🔍 filter in explore → 📋 preview / edit / copy on
 | --- | --- |
 | 🏠 Home | Hero search, trending keywords, featured / latest / hot animations / prompt library / templates / categories / collections |
 | 🔍 Explore | Search + type/category/tech/style/difficulty/feature filters, **URL-synced**, 6 sort modes, grid density, mobile drawer |
-| 🧩 Components & primitives | Buttons, forms, navigation, cards; toggles, ratings, badges, toasts — the everyday staples |
+| 🧩 Components & primitives | Buttons, forms, navigation, cards; toggles, checkboxes, segmented controls, ratings, avatar groups, badges, tooltips, loaders, toasts |
 | 🎬 Animations | Interactive effects with tunable intensity, honoring reduced-motion |
 | 🖼️ Icons | 620 SVG icons, searchable by style, recolorable online |
-| 🧱 Page Blocks | Ready page sections: two Heros, feature grids, stats bar, pricing, testimonial wall, FAQ, CTA banners |
+| 🧱 Page Blocks | Ready page sections, in the spirit of Aceternity's section layer |
 | 🤖 AI prompt library | A market of terms & prompts organized by effect: search terms / aliases / prompt body, one-click copy |
-| 📋 Resource pages | Sandbox live preview (device sizes / zoom / backgrounds / fullscreen); HTML/CSS/JS/React source editing; AI tab (terminology cards + 3 prompt levels + framework variants + parameters + pitfalls) |
+| 📋 Resource pages | Sandbox live preview (device sizes / zoom / backgrounds / refresh / fullscreen); HTML/CSS/JS/React source editing; AI prompt tab (terminology cards + 3 prompt levels + framework variants + parameters + pitfalls) |
 | 🛠️ Playground | Online HTML/CSS/JS editing, auto/manual run, console output, responsive preview, compressed share links, ZIP export |
 | ⭐ Favorites & collections | Local folders, search, bulk organize, JSON lists, multi-resource ZIP downloads |
 | 🎨 Personalization | Theme, accent color, density, radius, motion intensity, editor settings, local data import/export |
 | ⌨️ Navigation & sharing | Command search, keyboard shortcuts, embeddable previews, sitemap, page metadata |
 
-<br>
+---
 
-## 🚦 Three design principles
+## 🤖 The AI prompt layer
 
-| | Principle | What it means |
-|---|---|---|
-| 🏠 | **Local-first** | No sign-in, no tracking, no cloud. Favorites and drafts live in your browser; import/export any time |
-| 👀 | **Preview is truth** | What you copy is exactly what the preview rendered. Source is inspectable and editable, never obfuscated |
-| 🤖 | **AI-friendly by design** | Resources ship with structured prompts and terminology, not just raw code |
+This is what sets VibeUI apart from a plain component library: every resource is not just raw code but a **complete brief an AI can reproduce**.
 
-> 🔒 Previews run in sandboxed iframes (no `allow-same-origin`); console output and
-> runtime errors come back over `postMessage`; animations pause when previews scroll
-> offscreen. The sandbox is not execution-thread isolation — don't run untrusted code.
+| Part | Content |
+| --- | --- |
+| 📖 Terminology cards | Bilingual terms + aliases + design patterns + implementation principles |
+| 🎚️ Three prompt levels | One-liner (quick) / Standard (balanced) / Refined (controlled) |
+| 🏗️ Framework variants | Native HTML / React / Vue |
+| 🎛️ Tunable parameters | Size, color, radius, motion intensity — the prompt updates as you tweak |
+| ⚠️ Pitfalls | Where this effect usually breaks, and what to watch for |
 
-<br>
+Usage: open the **AI prompt tab** on a resource page, pick a level and framework, copy, and paste into any AI. The effect the prompt describes is the effect the preview shows.
+
+---
 
 ## 💡 I want to… → do this
 
@@ -90,10 +107,21 @@ Suggested first tour: **🔍 filter in explore → 📋 preview / edit / copy on
 | Test an idea quickly | 🛠️ Playground: run code, watch the console, share via compressed link |
 | Keep a personal library | ⭐ Local favorites & collections with JSON import/export |
 
-<br>
+---
 
-<details>
-<summary><b>⌨️ Keyboard shortcuts</b></summary>
+## 🚦 Three design principles
+
+| | Principle | What it means |
+|---|---|---|
+| 🏠 | **Local-first** | No sign-in, no tracking, no cloud. Favorites and drafts live in your browser; import/export any time |
+| 👀 | **Preview is truth** | What you copy is exactly what the preview rendered. Source is inspectable and editable, never obfuscated |
+| 🤖 | **AI-friendly by design** | Resources ship with structured prompts and terminology, not just raw code |
+
+> 🔒 **Preview isolation**: previews run in sandboxed iframes (no `allow-same-origin`) and cannot touch the parent page's DOM or storage; console output and runtime errors come back over `postMessage`, with pause/resume controls. Offscreen previews pause CSS animations via IntersectionObserver, so browsing many previews stays fast. The sandbox is not execution-thread isolation — don't run untrusted code.
+
+---
+
+## ⌨️ Keyboard shortcuts
 
 | Shortcut | Action |
 | --- | --- |
@@ -104,41 +132,26 @@ Suggested first tour: **🔍 filter in explore → 📋 preview / edit / copy on
 | `⌘/Ctrl + Shift + E` | Open export on a resource page |
 | `Esc` | Close a dialog / leave fullscreen |
 
-</details>
+---
 
-<details>
-<summary><b>🧰 Commands & tech stack</b></summary>
-
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Development server (http://localhost:3000) |
-| `npm run build` | Production build (type checks + static generation) |
-| `npm run start` | Serve the production build |
-| `npm run lint` | ESLint |
-| `npm run typecheck` | TypeScript only |
-
-Stack: Next.js 14 (App Router) · React 18 · strict TypeScript · Tailwind CSS ·
-Zustand (state) · Framer Motion (motion) · CodeMirror 6 (editing) ·
-JSZip / lz-string / Prettier / Lucide.
-
-</details>
-
-<details>
-<summary><b>📤 Export options</b></summary>
+## 📤 Export options
 
 1. **Standalone HTML** — styles and scripts embedded in a single file
 2. **HTML project ZIP** — HTML + CSS + JS + a generated README
 3. **React + Vite project ZIP** — scaffold with TypeScript configuration
 4. **CodePen** — prefill a new Pen via form submission
 
-Export settings cover documentation, demo pages, dependency info, comment
-retention and conservative compression; favorites reuse the same builders for
-multi-resource downloads.
+Export settings cover documentation, demo pages, dependency info, comment retention and conservative compression; favorites reuse the same builders for multi-resource downloads.
 
-</details>
+---
 
-<details>
-<summary><b>📁 Project structure & adding a resource</b></summary>
+## 🧰 Tech stack
+
+Next.js 14 (App Router) · React 18 · TypeScript (strict) · Tailwind CSS · CSS Variables · Zustand (state) · Framer Motion (motion) · CodeMirror 6 (editing) · JSZip / lz-string / Prettier / Lucide.
+
+---
+
+## 📁 Project structure & adding a resource
 
 ```text
 src/
@@ -157,46 +170,40 @@ src/
 │   ├── components/ animations/ icons/ blocks/ templates/
 │   ├── metas.ts            Shared lightweight resource metadata
 │   ├── client.ts           Client-safe metadata + search terms
-│   └── index.ts            Full server-side registry with AI guidance
+│   ├── index.ts            Full server-side registry with AI guidance
+│   ├── ai-data.ts          Resource AI content aggregation
+│   └── server/loader.ts    Server-side source loading
 ├── lib/                    Storage, search, sandbox, export, utilities
 └── hooks/ store/ types/ config/
 ```
 
 **➕ Adding a resource (4 steps):**
 
-1. Create a directory under the matching registry category, following a
-   neighboring resource's `metadata.ts` and the `UIResourceMeta` type in
-   `src/types/resource.ts` (unique `id` and `slug`; `dir` = path relative to
-   `src/registry/`).
+1. Create a directory under the matching registry category, following a neighboring resource's `metadata.ts` and the `UIResourceMeta` type in `src/types/resource.ts` (unique `id` and `slug`; `dir` = path relative to `src/registry/`).
 2. Add the source files:
 
-   ```text
-   src/registry/components/forms/my-control/
-   ├── metadata.ts
-   ├── ai.ts              # Optional custom AI guidance
-   └── files/
-       ├── index.html     # HTML body fragment
-       ├── styles.css     # Styles, animation, responsive rules
-       ├── script.js      # Optional interaction logic
-       └── react.tsx      # Optional React implementation
-   ```
+```text
+src/registry/components/forms/my-control/
+├── metadata.ts
+├── ai.ts              # Optional custom AI guidance
+└── files/
+    ├── index.html     # HTML body fragment
+    ├── styles.css     # Styles, animation, responsive rules
+    ├── script.js      # Optional interaction logic
+    └── react.tsx      # Optional React implementation
+```
 
 3. Register the metadata in `src/registry/metas.ts` (`RAW_RESOURCES`).
-4. Custom AI guidance goes into `ai-data.ts`, with searchable terms synced in
-   `ai-terms.ts`. Resources without custom guidance use the `buildResourceAI`
-   fallback.
+4. Custom AI guidance goes into `ai-data.ts`, with searchable terms synced in `ai-terms.ts`. Resources without custom guidance use the `buildResourceAI` fallback.
 
-> Architecture note: client components read `registry/client.ts` (lightweight
-> metadata + search terms) instead of the full registry; `registry/server/loader.ts`
-> reads source files per resource with module-level caching. Previews, code panels,
-> playground prefills and exports always share one implementation.
+> 🧱 **Registry architecture**: client components read `registry/client.ts` (lightweight metadata + search terms) instead of the full registry; `registry/server/loader.ts` reads source files per resource with module-level caching, serving detail pages, the on-demand API, playground prefills and embedded previews.
 
-</details>
-
-<br>
+---
 
 <div align="center">
 
 **✨ VibeUI · copy what you see, prompt what you mean ✨**
+
+[简体中文](./README.zh-CN.md) | **English**
 
 </div>
