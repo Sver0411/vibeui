@@ -9,6 +9,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](#-commands--tech-stack)
 [![简体中文](https://img.shields.io/badge/docs-简体中文-888780)](./README.zh-CN.md)
 
+[Components 101](#-what-you-get) · [Animations 34](#-what-you-get) · [Icons 620](#-what-you-get) · [Blocks 20](#-what-you-get) · [Templates 19](#-what-you-get)
+
 Live previews 👀 · Copyable source 📋 · AI prompts included 🤖 · No accounts · No cloud 🏠
 
 *App interface is Chinese; resource metadata is bilingual (中/EN).*
@@ -25,6 +27,8 @@ cd vibeui
 npm install
 npm run dev          # → http://localhost:3000
 ```
+
+Suggested first tour: **🔍 filter in explore → 📋 preview / edit / copy on a detail page → 🛠️ try ideas in the playground → ⭐ save what you like**.
 
 <br>
 

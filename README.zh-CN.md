@@ -9,6 +9,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](#-命令与技术栈)
 [![English](https://img.shields.io/badge/docs-English-888780)](./README.md)
 
+[组件 101](#-能获得什么) · [动效 34](#-能获得什么) · [图标 620](#-能获得什么) · [区块 20](#-能获得什么) · [模板 19](#-能获得什么)
+
 能实时预览 👀 · 源码可抄 📋 · 配好 AI 提示词 🤖 · 不注册 · 不上云 🏠
 
 </div>
@@ -23,6 +25,8 @@ cd vibeui
 npm install
 npm run dev          # → http://localhost:3000
 ```
+
+打开后建议按这条线逛一遍：**🔍 explore 筛选找灵感 → 📋 详情页预览/改码/复制 → 🛠️ playground 试想法 → ⭐ 收藏沉淀**。
 
 <br>
 
