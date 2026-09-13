@@ -8,7 +8,6 @@
 [![Next.js 14](https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white)](#-命令与技术栈)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](#-命令与技术栈)
 [![English](https://img.shields.io/badge/docs-English-888780)](./README.md)
-[![English](https://img.shields.io/badge/docs-English-888780)](./README.md)
 
 [组件 101](#-能获得什么) · [动效 34](#-能获得什么) · [图标 620](#-能获得什么) · [区块 20](#-能获得什么) · [模板 19](#-能获得什么)
 
