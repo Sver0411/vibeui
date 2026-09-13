@@ -2,19 +2,19 @@
 
 [简体中文](./README.zh-CN.md) | **English**
 
-<img src="docs/assets/banner-en.svg" alt="VibeUI — a local-first UI resource library" width="100%"/>
-
-</div>
-
-# VibeUI
+# ✨ VibeUI
 
 **A local-first UI resource library for vibe coding.**
 
-VibeUI ships **794 real, runnable** frontend resources: UI components, animations, icons, page blocks and page templates. Every resource comes with a sandboxed live preview, directly copyable HTML / CSS / JavaScript / React source, in-place editing, one-click copy and multiple export formats — plus an **AI prompt layer**: terminology, three prompt levels, tunable parameters and common pitfalls, so what you describe to your AI matches what the preview rendered.
+[![resources](https://img.shields.io/badge/resources-794-534AB7)](#-feature-overview)
+[![Next.js 14](https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white)](#-commands--tech-stack)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](#-commands--tech-stack)
 
-🏠 No accounts · No cloud · Favorites and drafts stay in your browser
+Live previews 👀 · Copyable source 📋 · AI prompts included 🤖 · No accounts · No cloud 🏠
 
 *App interface is Chinese; resource metadata is bilingual (中/EN).*
+
+</div>
 
 ---
 
@@ -29,23 +29,7 @@ npm run dev          # → http://localhost:3000
 
 Suggested first tour: **🔍 filter in explore → 📋 preview / edit / copy on a detail page → 🛠️ try ideas in the playground → ⭐ save what you like**.
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Development server (http://localhost:3000) |
-| `npm run build` | Production build (type checks + static generation) |
-| `npm run start` | Serve the production build |
-| `npm run lint` | ESLint |
-| `npm run typecheck` | TypeScript only |
-
----
-
-## 🖼️ How it works
-
-<img src="docs/assets/flow-en.svg" alt="VibeUI workflow: explore → preview → edit & take → AI prompt" width="100%"/>
-
-Four steps from inspiration to code in hand — and the chain never breaks: previews, code panels, playground prefills and exports always share **the same source implementation**. What you see in the preview is exactly what you copy.
-
----
+<br>
 
 ## 📦 What you get
 
@@ -59,7 +43,7 @@ Four steps from inspiration to code in hand — and the chain never breaks: prev
 | 🧱 Page Blocks | 20 | Two Heros, feature grids, stats bar, pricing, testimonial wall, FAQ, CTA banners |
 | 📄 Templates | 19 | Whole-page starting points |
 
----
+<br>
 
 ## 🧭 Feature overview
 
@@ -78,7 +62,7 @@ Four steps from inspiration to code in hand — and the chain never breaks: prev
 | 🎨 Personalization | Theme, accent color, density, radius, motion intensity, editor settings, local data import/export |
 | ⌨️ Navigation & sharing | Command search, keyboard shortcuts, embeddable previews, sitemap, page metadata |
 
----
+<br>
 
 ## 🤖 The AI prompt layer
 
@@ -94,7 +78,7 @@ This is what sets VibeUI apart from a plain component library: every resource is
 
 Usage: open the **AI prompt tab** on a resource page, pick a level and framework, copy, and paste into any AI. The effect the prompt describes is the effect the preview shows.
 
----
+<br>
 
 ## 💡 I want to… → do this
 
@@ -107,7 +91,7 @@ Usage: open the **AI prompt tab** on a resource page, pick a level and framework
 | Test an idea quickly | 🛠️ Playground: run code, watch the console, share via compressed link |
 | Keep a personal library | ⭐ Local favorites & collections with JSON import/export |
 
----
+<br>
 
 ## 🚦 Three design principles
 
@@ -119,7 +103,7 @@ Usage: open the **AI prompt tab** on a resource page, pick a level and framework
 
 > 🔒 **Preview isolation**: previews run in sandboxed iframes (no `allow-same-origin`) and cannot touch the parent page's DOM or storage; console output and runtime errors come back over `postMessage`, with pause/resume controls. Offscreen previews pause CSS animations via IntersectionObserver, so browsing many previews stays fast. The sandbox is not execution-thread isolation — don't run untrusted code.
 
----
+<br>
 
 ## ⌨️ Keyboard shortcuts
 
@@ -132,7 +116,7 @@ Usage: open the **AI prompt tab** on a resource page, pick a level and framework
 | `⌘/Ctrl + Shift + E` | Open export on a resource page |
 | `Esc` | Close a dialog / leave fullscreen |
 
----
+<br>
 
 ## 📤 Export options
 
@@ -143,13 +127,21 @@ Usage: open the **AI prompt tab** on a resource page, pick a level and framework
 
 Export settings cover documentation, demo pages, dependency info, comment retention and conservative compression; favorites reuse the same builders for multi-resource downloads.
 
----
+<br>
 
-## 🧰 Tech stack
+## 🧰 Commands & tech stack
 
-Next.js 14 (App Router) · React 18 · TypeScript (strict) · Tailwind CSS · CSS Variables · Zustand (state) · Framer Motion (motion) · CodeMirror 6 (editing) · JSZip / lz-string / Prettier / Lucide.
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Development server (http://localhost:3000) |
+| `npm run build` | Production build (type checks + static generation) |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript only |
 
----
+Stack: Next.js 14 (App Router) · React 18 · strict TypeScript · Tailwind CSS · CSS Variables · Zustand (state) · Framer Motion (motion) · CodeMirror 6 (editing) · JSZip / lz-string / Prettier / Lucide.
+
+<br>
 
 ## 📁 Project structure & adding a resource
 
@@ -202,8 +194,8 @@ src/registry/components/forms/my-control/
 
 <div align="center">
 
-**✨ VibeUI · copy what you see, prompt what you mean ✨**
-
 [简体中文](./README.zh-CN.md) | **English**
+
+**✨ VibeUI · copy what you see, prompt what you mean ✨**
 
 </div>
