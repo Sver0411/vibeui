@@ -2,17 +2,17 @@
 
 **简体中文** | [English](./README.md)
 
-<img src="docs/assets/banner-zh.svg" alt="VibeUI — 本地优先的 UI 资源库" width="100%"/>
-
-</div>
-
-# VibeUI
+# ✨ VibeUI
 
 **本地优先的 UI 资源库，为 vibe coding 而生。**
 
-VibeUI 内置 **794 个真实可运行**的前端资源：UI 组件、动效、图标、页面区块与页面模板。每个资源都带沙箱实时预览、可直接复制的 HTML / CSS / JavaScript / React 源码、在线编辑、一键复制与多种格式导出；并且配有一套 **AI 提示词层**——术语、三档提示词、可调参数与避坑点，让你在 vibe coding 时能把想要的效果说清楚，让 AI 产出的结果和预览里看到的一致。
+[![资源总数](https://img.shields.io/badge/资源-794-534AB7)](#-功能总览)
+[![Next.js 14](https://img.shields.io/badge/Next.js-14-000000?logo=nextdotjs&logoColor=white)](#-命令与技术栈)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](#-命令与技术栈)
 
-🏠 不需要注册 · 没有云端 · 收藏与草稿都在你的浏览器本地
+能实时预览 👀 · 源码可抄 📋 · 配好 AI 提示词 🤖 · 不注册 · 不上云 🏠
+
+</div>
 
 ---
 
@@ -27,23 +27,7 @@ npm run dev          # → http://localhost:3000
 
 打开后建议按这条线逛一遍：**🔍 explore 筛选找灵感 → 📋 详情页预览 / 改码 / 复制 → 🛠️ playground 试想法 → ⭐ 收藏沉淀**。
 
-| 命令 | 用途 |
-| --- | --- |
-| `npm run dev` | 开发环境（http://localhost:3000） |
-| `npm run build` | 生产构建（含类型检查与静态生成） |
-| `npm run start` | 运行生产构建 |
-| `npm run lint` | ESLint |
-| `npm run typecheck` | 仅 TypeScript 检查 |
-
----
-
-## 🖼️ 它是怎么工作的
-
-<img src="docs/assets/flow-zh.svg" alt="VibeUI 工作流：探索 → 预览 → 取走 → AI 提示词" width="100%"/>
-
-从找灵感到把代码带走，一条线四步走完。中间任何一步都不会"断档"：预览、代码面板、Playground 预填和导出永远共享**同一份源码实现**——你在预览里看到什么，复制到的就是什么。
-
----
+<br>
 
 ## 📦 能获得什么
 
@@ -57,7 +41,7 @@ npm run dev          # → http://localhost:3000
 | 🧱 页面区块 | 20 | 两种 Hero、功能区、数据统计条、定价表、推荐语墙、FAQ、CTA 横幅——整段直接拼进页面 |
 | 📄 页面模板 | 19 | 整页级起点，拿走就能改 |
 
----
+<br>
 
 ## 🧭 功能总览
 
@@ -76,7 +60,7 @@ npm run dev          # → http://localhost:3000
 | 🎨 个性化 | 主题、强调色、密度、圆角、动效强度、编辑器设置，本地数据导入导出 |
 | ⌨️ 导航与分享 | 全局命令搜索、快捷键、可嵌入预览、站点地图、页面元信息 |
 
----
+<br>
 
 ## 🤖 AI 提示词层
 
@@ -92,7 +76,7 @@ npm run dev          # → http://localhost:3000
 
 用法：在资源详情页打开 **AI 提示词 tab**，选好档位与框架，一键复制，贴给任意 AI。提示词里描述的效果，就是预览里渲染的效果。
 
----
+<br>
 
 ## 💡 你想… → 这样做
 
@@ -105,7 +89,7 @@ npm run dev          # → http://localhost:3000
 | 快速验证想法 | 🛠️ Playground：跑代码、看控制台、生成压缩分享链接 |
 | 沉淀自己的库 | ⭐ 本地收藏夹 + 合集，JSON 导入导出 |
 
----
+<br>
 
 ## 🚦 三条设计原则
 
@@ -115,9 +99,9 @@ npm run dev          # → http://localhost:3000
 | 👀 | **预览即真实** | 复制到的代码就是预览渲染的那份。源码可查看、可编辑，不做混淆 |
 | 🤖 | **为 AI 而设计** | 每个资源都带结构化提示词和术语，不只是裸代码 |
 
-> 🔒 **预览隔离**：预览运行在沙箱 iframe 中（不授予 `allow-same-origin`），无法直接访问父页面 DOM 与存储；控制台输出与运行时错误通过 `postMessage` 回传，支持暂停 / 恢复。预览滚出屏幕时通过 IntersectionObserver 自动暂停 CSS 动画，浏览大量预览也不会拖慢页面。沙箱不是线程级隔离——请勿运行不可信代码。
+> 🔒 **预览隔离**：预览运行在沙箱 iframe 中（不授予 `allow-same-origin`），无法直接访问父页面 DOM 与存储；控制台输出与运行时错误通过 `postMessage` 回传，支持暂停 / 恢复。预览滚出屏幕时自动暂停 CSS 动画，浏览大量预览也不拖慢页面。沙箱不是线程级隔离——请勿运行不可信代码。
 
----
+<br>
 
 ## ⌨️ 快捷键
 
@@ -130,7 +114,7 @@ npm run dev          # → http://localhost:3000
 | `⌘/Ctrl + Shift + E` | 资源页打开导出 |
 | `Esc` | 关闭弹窗 / 退出全屏 |
 
----
+<br>
 
 ## 📤 导出选项
 
@@ -141,13 +125,21 @@ npm run dev          # → http://localhost:3000
 
 导出设置支持文档、演示页、依赖说明、注释保留与保守压缩；收藏夹批量下载走同一套导出构建器。
 
----
+<br>
 
-## 🧰 技术栈
+## 🧰 命令与技术栈
 
-Next.js 14 (App Router) · React 18 · TypeScript (strict) · Tailwind CSS · CSS Variables · Zustand（状态） · Framer Motion（动效） · CodeMirror 6（编辑器） · JSZip / lz-string / Prettier / Lucide。
+| 命令 | 用途 |
+| --- | --- |
+| `npm run dev` | 开发环境（http://localhost:3000） |
+| `npm run build` | 生产构建（含类型检查与静态生成） |
+| `npm run start` | 运行生产构建 |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | 仅 TypeScript 检查 |
 
----
+技术栈：Next.js 14 (App Router) · React 18 · TypeScript (strict) · Tailwind CSS · CSS Variables · Zustand（状态） · Framer Motion（动效） · CodeMirror 6（编辑器） · JSZip / lz-string / Prettier / Lucide。
+
+<br>
 
 ## 📁 项目结构与新增资源
 
@@ -200,8 +192,8 @@ src/registry/components/forms/my-control/
 
 <div align="center">
 
-**✨ VibeUI · 看到什么抄什么，想要什么说什么 ✨**
-
 **简体中文** | [English](./README.md)
+
+**✨ VibeUI · 看到什么抄什么，想要什么说什么 ✨**
 
 </div>
